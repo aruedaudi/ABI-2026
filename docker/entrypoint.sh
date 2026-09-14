@@ -6,19 +6,24 @@ cd /var/www/html
 APP_MODE="${APP_MODE:-production}"
 echo ">> ABI container arrancando en APP_MODE=${APP_MODE}"
 
-# 1. Copiar .env si no existe en disco
-if [ ! -f .env ]; then
-    echo ">> No hay .env, copiando .env.docker"
-    cp .env.docker .env
-fi
-
 # 2. Configurar variables de entorno según APP_MODE
 if [ "$APP_MODE" = "production" ]; then
     export APP_ENV=production
     export APP_DEBUG=false
 fi
+# 3. Asegurar que exista la línea APP_KEY= en .env antes de generar la clave
+if [ ! -f .env ]; then
+    echo ">> No hay .env, copiando .env.docker"
+    cp .env.docker .env
+fi
 
-# 3. Asegurar que exista APP_KEY e inyectarla explícitamente al entorno shell
+
+# Si la variable APP_KEY no existe en el archivo .env, añadir la clave vacía
+if ! grep -q '^APP_KEY=' .env; then
+    echo "APP_KEY=" >> .env
+fi
+
+# Si no tiene un valor base64 asignado, generarlo
 if ! grep -q '^APP_KEY=base64:' .env || [ -z "${APP_KEY:-}" ]; then
     echo ">> Generando APP_KEY..."
     php artisan key:generate --force
