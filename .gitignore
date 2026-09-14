@@ -20,7 +20,7 @@ yarn-error.log
 .scribe
 .env
 docker-compose.yml
-
+.claude-flow
 
 .continue
 /database/sql/my-roles.sql
