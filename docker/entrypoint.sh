@@ -6,24 +6,27 @@ cd /var/www/html
 APP_MODE="${APP_MODE:-production}"
 echo ">> ABI container arrancando en APP_MODE=${APP_MODE}"
 
-# Laravel necesita un .env en disco aunque compose ya inyecte variables reales.
+# 1. Copiar .env si no existe en disco
 if [ ! -f .env ]; then
     echo ">> No hay .env, copiando .env.docker"
     cp .env.docker .env
 fi
 
-# En producción forzamos debug apagado
+# 2. Configurar variables de entorno según APP_MODE
 if [ "$APP_MODE" = "production" ]; then
     export APP_ENV=production
     export APP_DEBUG=false
 fi
 
-# Clave de aplicación
-if ! grep -q '^APP_KEY=base64:' .env && [ -z "${APP_KEY:-}" ]; then
+# 3. Asegurar que exista APP_KEY e inyectarla explícitamente al entorno shell
+if ! grep -q '^APP_KEY=base64:' .env || [ -z "${APP_KEY:-}" ]; then
+    echo ">> Generando APP_KEY..."
     php artisan key:generate --force
 fi
 
-# Esperar a la base de datos (Con fallback a 'root' si DB_PASSWORD viene vacía)
+export APP_KEY=$(grep '^APP_KEY=' .env | cut -d '=' -f2-)
+
+# 4. Esperar a que la base de datos esté lista (soporta password vacía o 'root')
 DB_HOST="${DB_HOST:-db}"; DB_PORT="${DB_PORT:-3306}"
 DB_USERNAME="${DB_USERNAME:-root}"; DB_PASSWORD="${DB_PASSWORD:-root}"
 echo ">> Esperando base de datos en ${DB_HOST}:${DB_PORT} ..."
@@ -37,7 +40,7 @@ do
 done
 echo ">> Base de datos disponible"
 
-# 1. Migraciones (+ seeders opcionales) PRIMERO
+# 5. Ejecutar migraciones (+ seeders opcionales)
 if [ "${RUN_SEEDERS:-false}" = "true" ]; then
     echo ">> php artisan migrate --seed --force"
     php artisan migrate --seed --force
@@ -46,9 +49,9 @@ else
     php artisan migrate --force
 fi
 
-# 2. Crear usuarios y otorgar permisos desde database/sql/roles.sql DESPUÉS de migrar
+# 6. Crear usuarios y asignar roles en MariaDB/MySQL desde database/sql/roles.sql
 if [ "${SETUP_DB_ROLES:-false}" = "true" ]; then
-    echo ">> Configurando usuarios y permisos por rol"
+    echo ">> Configurando usuarios y permisos por rol..."
     tmp=$(mktemp)
     sed -e "s|{{DB_DATABASE}}|${DB_DATABASE:-abi}|g" \
         -e "s|{{DB_USER_PASS}}|${DB_USER_PASS:-}|g" \
@@ -61,11 +64,16 @@ if [ "${SETUP_DB_ROLES:-false}" = "true" ]; then
     echo ">> Usuarios por rol listos"
 fi
 
-# Enlace de storage público
+# 7. Crear enlace simbólico de storage público
 php artisan storage:link 2>/dev/null || true
 
-# Caché según el modo
+# 8. Corregir propiedad de carpetas para el usuario de Apache (www-data)
+chown -R www-data:www-data storage bootstrap/cache
+chmod -R 775 storage bootstrap/cache
+
+# 9. Gestionar cachés según el entorno
 if [ "$APP_MODE" = "production" ]; then
+    php artisan config:clear
     php artisan config:cache
     php artisan route:cache
     php artisan view:cache
@@ -74,6 +82,9 @@ else
     php artisan route:clear
     php artisan view:clear
 fi
+
+# Reasegurar que los archivos de caché recién creados sigan perteneciendo a www-data
+chown -R www-data:www-data storage bootstrap/cache
 
 echo ">> Listo. Ejecutando: $*"
 exec "$@"
