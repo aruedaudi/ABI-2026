@@ -124,7 +124,7 @@ $(document).ready(function(){initNavTree('AppServiceProvider_8php_source.html','
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="comment">// Forzar HTTPS en producción</span></div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordflow">if</span> (config(<span class="stringliteral">&#39;app.env&#39;</span>) === <span class="stringliteral">&#39;production&#39;</span>) {</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            URL::forceScheme(<span class="stringliteral">&#39;https&#39;</span>);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            URL::forceScheme(<span class="stringliteral">&#39;http&#39;</span>);</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        }</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        View::composer(<span class="stringliteral">&#39;tablar::partials.header.sidebar-top&#39;</span>, <span class="keyword">static</span> function ($view): <span class="keywordtype">void</span> {</div>
