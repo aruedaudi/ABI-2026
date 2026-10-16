@@ -6,6 +6,7 @@
 /storage/*.key
 /vendor
 .env
+.env.railway
 .env.backup
 .env.production
 Homestead.json
@@ -16,5 +17,11 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+.scribe
 .env
 docker-compose.yml
+.claude-flow
+
+.continue
+/database/sql/my-roles.sql
+/scripts/set-db-roles.ps1

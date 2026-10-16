@@ -244,7 +244,7 @@
 <script>
     document.getElementById('status').addEventListener('change', function() {
         const commentsField = document.getElementById('comments-field');
-        commentsField.style.display = this.value === 'Devuelto para corrección' ? 'block' : 'none';
+        commentsField.style.display = this.value === 'Devuelto para correccion' ? 'block' : 'none';
     });
 </script>
 @endsection
