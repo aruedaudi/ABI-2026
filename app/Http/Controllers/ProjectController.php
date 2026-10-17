@@ -1727,9 +1727,10 @@ SQL;
             $student = $user->student;
             $studentAcademicProgress = app(StudentAcademicProgressService::class);
 
-            if (! $studentAcademicProgress->canCreateProposal($student, $activeAcademicPeriod)) {
-                abort(403, $studentAcademicProgress->blockedProposalMessage($student, $activeAcademicPeriod));
-            }
+           if (! $studentAcademicProgress->canCreateProposal($student, $activeAcademicPeriod)) {
+    return redirect('/students/projects/postulations')
+        ->with('error', $studentAcademicProgress->blockedProposalMessage($student, $activeAcademicPeriod));
+}
 
             $researchGroupId = $student?->cityProgram?->program?->research_group_id;
         }
@@ -1869,8 +1870,9 @@ SQL;
             $studentAcademicProgress = app(StudentAcademicProgressService::class);
 
             if (! $studentAcademicProgress->canCreateProposal($user->student, $activeAcademicPeriod)) {
-                abort(403, $studentAcademicProgress->blockedProposalMessage($user->student, $activeAcademicPeriod));
-            }
+    return redirect('/students/projects/postulations')
+        ->with('error', $studentAcademicProgress->blockedProposalMessage($user->student, $activeAcademicPeriod));
+}
 
             return $this->persistStudentProject($request, $user->student, null, $activeAcademicPeriod, $proposalWindow);
         } catch (ValidationException $exception) {

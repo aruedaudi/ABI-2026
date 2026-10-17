@@ -34,8 +34,9 @@ class BankApprovedIdeasForStudentsController extends Controller
         $activeAcademicPeriod = AcademicCalendarService::currentActivePeriod();
 
         if (! $this->academicProgress->canAccessIdeaBank($student, $activeAcademicPeriod)) {
-            abort(403, $this->academicProgress->blockedIdeaBankMessage($student, $activeAcademicPeriod));
-        }
+    return redirect('/students/projects/postulations')
+        ->with('error', $this->academicProgress->blockedIdeaBankMessage($student, $activeAcademicPeriod));
+}
 
         $perPage = $request->input('per_page', 10);
         $thematicAreaId = $request->input('thematic_area_id');
@@ -103,10 +104,10 @@ class BankApprovedIdeasForStudentsController extends Controller
             ->firstOrFail();
 
         $activeAcademicPeriod = AcademicCalendarService::currentActivePeriod();
-
-        if (! $this->academicProgress->canAccessIdeaBank($student, $activeAcademicPeriod)) {
-            abort(403, $this->academicProgress->blockedIdeaBankMessage($student, $activeAcademicPeriod));
-        }
+if (! $this->academicProgress->canAccessIdeaBank($student, $activeAcademicPeriod)) {
+    return redirect('/students/projects/postulations')
+        ->with('error', $this->academicProgress->blockedIdeaBankMessage($student, $activeAcademicPeriod));
+}
 
         $sameProgram = $project->students()
                 ->where('city_program_id', $student->city_program_id)

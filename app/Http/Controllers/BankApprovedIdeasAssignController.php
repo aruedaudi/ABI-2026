@@ -42,8 +42,9 @@ class BankApprovedIdeasAssignController extends Controller
         $activeAcademicPeriod = AcademicCalendarService::currentActivePeriod();
 
         if (! $this->academicProgress->canAccessIdeaBank($student, $activeAcademicPeriod)) {
-            abort(403, $this->academicProgress->blockedIdeaBankMessage($student, $activeAcademicPeriod));
-        }
+    return redirect('/students/projects/postulations')
+        ->with('error', $this->academicProgress->blockedIdeaBankMessage($student, $activeAcademicPeriod));
+}
 
         if ($project->projectStatus?->name !== 'Aprobado') {
             abort(403, 'Solo puedes seleccionar ideas que esten en estado Aprobado.');

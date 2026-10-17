@@ -58,8 +58,9 @@ class PostulationController extends Controller
         $activePeriod = AcademicCalendarService::currentActivePeriod();
 
         if (! $this->academicProgress->canAccessIdeaBank($student, $activePeriod)) {
-            abort(403, $this->academicProgress->blockedIdeaBankMessage($student, $activePeriod));
-        }
+    return redirect('/students/projects/postulations')
+        ->with('error', $this->academicProgress->blockedIdeaBankMessage($student, $activePeriod));
+}
 
         if ($student->hasActiveProject()) {
             return redirect()->route('students.projects.approved.index')
