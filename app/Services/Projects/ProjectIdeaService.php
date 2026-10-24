@@ -379,7 +379,8 @@ final class ProjectIdeaService
     }
 
     /**
-     * Checks if any teammate already owns a different project idea.
+     * Checks if any teammate already owns a different project idea that is still active.
+     * Projects in Student::INACTIVE_PROJECT_STATUSES (e.g. "Descartado") do not count.
      *
      * @param array<int, int> $teammateIds
      */
@@ -388,7 +389,8 @@ final class ProjectIdeaService
         return Student::query()
             ->whereIn('id', $teammateIds)
             ->whereHas('projects', function ($query) use ($project) {
-                $query->where('project_id', '!=', $project?->id);
+                $query->where('project_id', '!=', $project?->id)
+                    ->whereHas('projectStatus', fn ($status) => $status->whereNotIn('name', Student::INACTIVE_PROJECT_STATUSES));
             })
             ->exists();
     }
