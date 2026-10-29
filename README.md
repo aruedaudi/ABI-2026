@@ -455,7 +455,7 @@ El proyecto maneja:
 Para ejecutar el proyecto en local, **usa XAMPP**. No instales PHP, MySQL ni Apache por separado para evitar conflictos.
 
 - **XAMPP**, con:
-  - **PHP 8.2 o superior con `pdo_mysql`**
+  - **PHP 8.3 o superior con `pdo_mysql`**
   - **MySQL o MariaDB**
   - **Apache**
 - **Composer**, para instalar dependencias de PHP
