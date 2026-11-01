@@ -52,10 +52,10 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="classApp_1_1Models_1_1Project.html#a2957d15a78ccb6a5d46712c9ecb0503b" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="374.5,-78 258.5,-78 258.5,-48 374.5,-48 374.5,-78"/>
-<text text-anchor="start" x="266.5" y="-66" font-family="Helvetica,sans-Serif" font-size="10.00">App::Models::Project</text>
-<text text-anchor="middle" x="316.5" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">::projectStatus</text>
+<g id="a_Node000003"><a xlink:href="classApp_1_1Models_1_1Project.html#a4b152c7d7d63ca6de87cf51ded4d5321" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="380.5,-78 252.5,-78 252.5,-48 380.5,-48 380.5,-78"/>
+<text text-anchor="start" x="260.5" y="-66" font-family="Helvetica,sans-Serif" font-size="10.00">App::Models::Project</text>
+<text text-anchor="middle" x="316.5" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">::isAvailableForStudent</text>
 </a>
 </g>
 </g>
@@ -63,8 +63,8 @@
 <g id="edge2_Node000001_Node000003" class="edge">
 <title>Node1&#45;&gt;Node3</title>
 <g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M200.09,-63C216.32,-63 232.8,-63 248.04,-63"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="248.37,-66.5 258.37,-63 248.37,-59.5 248.37,-66.5"/>
+<path fill="none" stroke="#63b8ff" d="M200.09,-63C214.26,-63 228.62,-63 242.18,-63"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="242.37,-66.5 252.37,-63 242.37,-59.5 242.37,-66.5"/>
 </a>
 </g>
 </g>

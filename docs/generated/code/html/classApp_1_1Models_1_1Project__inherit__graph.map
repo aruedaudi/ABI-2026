@@ -1,11 +1,11 @@
 <map id="App::Models::Project" name="App::Models::Project">
-<area shape="rect" id="Node000001" title=" " alt="" coords="213,119,433,563"/>
-<area shape="rect" id="Node000003" href="$classApp_1_1Models_1_1Professor_1_1ProfessorProject.html" title="Extended model that routes queries through the professor connection so professors and committee leade..." alt="" coords="5,611,201,731"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="208,519,145,612,141,609,203,516"/>
-<area shape="rect" id="Node000004" href="$classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffProject.html" title="Extended model that forces the research staff database connection so the role operates under its rest..." alt="" coords="225,611,421,731"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="326,577,326,610,321,610,321,577"/>
-<area shape="rect" id="Node000005" href="$classApp_1_1Models_1_1Student_1_1StudentProject.html" title="Extended model that leverages the student connection so learners access only the permissions granted ..." alt="" coords="445,611,641,731"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="444,516,506,609,502,612,439,519"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="213,119,433,647"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Models_1_1Professor_1_1ProfessorProject.html" title="Extended model that routes queries through the professor connection so professors and committee leade..." alt="" coords="5,695,201,815"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="208,582,141,696,136,693,204,580"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffProject.html" title="Extended model that forces the research staff database connection so the role operates under its rest..." alt="" coords="225,695,421,815"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="326,660,326,694,321,694,321,660"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Models_1_1Student_1_1StudentProject.html" title="Extended model that leverages the student connection so learners access only the permissions granted ..." alt="" coords="445,695,641,815"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="443,580,511,693,506,696,438,582"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="296,5,351,71"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="326,84,326,119,321,119,321,84"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="326,84,326,118,321,118,321,84"/>
 </map>

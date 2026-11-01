@@ -101,22 +101,51 @@ $(document).ready(function(){initNavTree('Authenticate_8php_source.html',''); in
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="namespaceApp_1_1Http_1_1Middleware.html">    3</a></span><span class="keyword">namespace </span>App\Http\Middleware;</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>use Illuminate\Auth\Middleware\Authenticate as <a class="code hl_class" href="classMiddleware.html">Middleware</a>;</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>use Illuminate\Http\Request;</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="classApp_1_1Http_1_1Middleware_1_1Authenticate.html">    8</a></span><span class="keyword">class </span><a class="code hl_class" href="classApp_1_1Http_1_1Middleware_1_1Authenticate.html">Authenticate</a> <span class="keyword">extends</span> <a class="code hl_class" href="classMiddleware.html">Middleware</a></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
-<div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="classApp_1_1Http_1_1Middleware_1_1Authenticate.html#a372443056da813c65abc04679f824da1">   13</a></span>    <span class="keyword">protected</span> function <a class="code hl_function" href="classApp_1_1Http_1_1Middleware_1_1Authenticate.html#a372443056da813c65abc04679f824da1">redirectTo</a>(Request $request): ?string</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordflow">return</span> $request-&gt;expectsJson() ? null : route(<span class="stringliteral">&#39;login&#39;</span>);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    }</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>use Closure;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>use Illuminate\Auth\Middleware\Authenticate as <a class="code hl_class" href="classMiddleware.html">Middleware</a>;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>use Illuminate\Http\Request;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>use Illuminate\Support\Facades\Auth;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="classApp_1_1Http_1_1Middleware_1_1Authenticate.html">   10</a></span><span class="keyword">class </span><a class="code hl_class" href="classApp_1_1Http_1_1Middleware_1_1Authenticate.html">Authenticate</a> <span class="keyword">extends</span> <a class="code hl_class" href="classMiddleware.html">Middleware</a></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classApp_1_1Http_1_1Middleware_1_1Authenticate.html#ac3db2e86652e8b92741cda4d2d0a425f">   18</a></span>    <span class="keyword">public</span> function <a class="code hl_function" href="classApp_1_1Http_1_1Middleware_1_1Authenticate.html#ac3db2e86652e8b92741cda4d2d0a425f">handle</a>($request, Closure $next, ...$guards)</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        $this-&gt;authenticate($request, $guards);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        $user = Auth::user();</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">if</span> ($user &amp;&amp; (<span class="keywordtype">int</span>) $user-&gt;state === 0) {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            Auth::logout();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            $request-&gt;session()-&gt;invalidate();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            $request-&gt;session()-&gt;regenerateToken();</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            <span class="keywordflow">if</span> ($request-&gt;expectsJson()) {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                <span class="keywordflow">return</span> response()-&gt;json([<span class="stringliteral">&#39;message&#39;</span> =&gt; <span class="stringliteral">&#39;Tu usuario está inactivo. Contacta al administrador.&#39;</span>], 401);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            }</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            <span class="keywordflow">return</span> redirect()-&gt;route(<span class="stringliteral">&#39;login&#39;</span>)-&gt;withErrors([</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                <span class="stringliteral">&#39;email&#39;</span> =&gt; <span class="stringliteral">&#39;Tu usuario está inactivo. Contacta al administrador.&#39;</span>,</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            ]);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">return</span> $next($request);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
 </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>}</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="foldopen" id="foldopen00045" data-start="{" data-end="}">
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classApp_1_1Http_1_1Middleware_1_1Authenticate.html#a372443056da813c65abc04679f824da1">   45</a></span>    <span class="keyword">protected</span> function <a class="code hl_function" href="classApp_1_1Http_1_1Middleware_1_1Authenticate.html#a372443056da813c65abc04679f824da1">redirectTo</a>(Request $request): ?string</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">return</span> $request-&gt;expectsJson() ? null : route(<span class="stringliteral">&#39;login&#39;</span>);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    }</div>
 </div>
-<div class="ttc" id="aclassApp_1_1Http_1_1Middleware_1_1Authenticate_html"><div class="ttname"><a href="classApp_1_1Http_1_1Middleware_1_1Authenticate.html">App::Http::Middleware::Authenticate</a></div><div class="ttdef"><b>Definition</b> <a href="Authenticate_8php_source.html#l00008">Authenticate.php:9</a></div></div>
-<div class="ttc" id="aclassApp_1_1Http_1_1Middleware_1_1Authenticate_html_a372443056da813c65abc04679f824da1"><div class="ttname"><a href="classApp_1_1Http_1_1Middleware_1_1Authenticate.html#a372443056da813c65abc04679f824da1">App::Http::Middleware::Authenticate::redirectTo</a></div><div class="ttdeci">redirectTo(Request $request)</div><div class="ttdoc">Get the path the user should be redirected to when they are not authenticated.</div><div class="ttdef"><b>Definition</b> <a href="Authenticate_8php_source.html#l00013">Authenticate.php:13</a></div></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>}</div>
+</div>
+<div class="ttc" id="aclassApp_1_1Http_1_1Middleware_1_1Authenticate_html"><div class="ttname"><a href="classApp_1_1Http_1_1Middleware_1_1Authenticate.html">App::Http::Middleware::Authenticate</a></div><div class="ttdef"><b>Definition</b> <a href="Authenticate_8php_source.html#l00010">Authenticate.php:11</a></div></div>
+<div class="ttc" id="aclassApp_1_1Http_1_1Middleware_1_1Authenticate_html_a372443056da813c65abc04679f824da1"><div class="ttname"><a href="classApp_1_1Http_1_1Middleware_1_1Authenticate.html#a372443056da813c65abc04679f824da1">App::Http::Middleware::Authenticate::redirectTo</a></div><div class="ttdeci">redirectTo(Request $request)</div><div class="ttdoc">Get the path the user should be redirected to when they are not authenticated.</div><div class="ttdef"><b>Definition</b> <a href="Authenticate_8php_source.html#l00045">Authenticate.php:45</a></div></div>
+<div class="ttc" id="aclassApp_1_1Http_1_1Middleware_1_1Authenticate_html_ac3db2e86652e8b92741cda4d2d0a425f"><div class="ttname"><a href="classApp_1_1Http_1_1Middleware_1_1Authenticate.html#ac3db2e86652e8b92741cda4d2d0a425f">App::Http::Middleware::Authenticate::handle</a></div><div class="ttdeci">handle($request, Closure $next,... $guards)</div><div class="ttdoc">Handle an incoming request.</div><div class="ttdef"><b>Definition</b> <a href="Authenticate_8php_source.html#l00018">Authenticate.php:18</a></div></div>
 <div class="ttc" id="aclassMiddleware_html"><div class="ttname"><a href="classMiddleware.html">Middleware</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

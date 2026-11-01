@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
 
         // Forzar HTTPS en producción
         if (config('app.env') === 'production') {
-            URL::forceScheme('https');
+            URL::forceScheme('http');
         }
 
         View::composer('tablar::partials.header.sidebar-top', static function ($view): void {

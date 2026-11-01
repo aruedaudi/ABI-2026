@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Postulation;
 use App\Models\PostulationPriority;
 use App\Models\Professor;
+use App\Models\Project;
 use App\Models\ProjectStatus;
 use App\Services\AcademicCalendar\AcademicCalendarService;
 use Illuminate\Http\Request;
@@ -42,10 +43,12 @@ class PostulationEvaluationController extends Controller
 
         $postulation->load(['project', 'leadStudent', 'members.student', 'priorities']);
 
-        return view('postulations.evaluation.show', compact('postulation'));
+        $canApprove = $postulation->project->isAvailableForStudent($postulation->leadStudent);
+
+        return view('postulations.evaluation.show', compact('postulation', 'canApprove'));
     }
 
-    public function evaluate(Request $request, Postulation $postulation)
+     public function evaluate(Request $request, Postulation $postulation)
     {
         $user = Auth::user();
         $professor = Professor::where('user_id', $user->id)->firstOrFail();
@@ -60,12 +63,48 @@ class PostulationEvaluationController extends Controller
             'review_comment' => 'required|string|max:1000',
         ]);
 
-        if ($postulation->status !== 'pending') {
-            return back()->with('error', 'Esta postulación ya ha sido evaluada.');
-        }
-
         DB::beginTransaction();
         try {
+            // Serializar las aprobaciones de un mismo proyecto para que dos
+            // evaluaciones simultáneas no puedan reemplazar la asignación.
+            $postulation = Postulation::whereKey($postulation->getKey())
+                ->lockForUpdate()
+                ->firstOrFail();
+
+            if ($postulation->status !== 'pending') {
+                DB::rollBack();
+
+                return back()->with('error', 'Esta postulación ya ha sido evaluada.');
+            }
+
+            $project = Project::whereKey($postulation->project_id)
+                ->lockForUpdate()
+                ->firstOrFail();
+
+            if ($request->status === 'approved') {
+                $assignedStatusId = ProjectStatus::where('name', 'Asignado')->value('id');
+                $alreadyAssigned = $project->approved_postulation_id !== null
+                    || ($assignedStatusId !== null && (int) $project->project_status_id === (int) $assignedStatusId);
+
+                if ($alreadyAssigned) {
+                    DB::rollBack();
+
+                    return back()->with(
+                        'error',
+                        'No se puede aprobar esta postulación: el proyecto ya fue asignado a otra postulación.'
+                    );
+                }
+
+                if (! $project->isAvailableForStudent($postulation->leadStudent)) {
+                    DB::rollBack();
+
+                    return back()->with(
+                        'error',
+                        'No se puede aprobar esta postulación: el proyecto no está disponible para postulación (debe estar "Aprobado" y pertenecer al programa del estudiante).'
+                    );
+                }
+            }
+
             $postulation->update([
                 'status' => $request->status,
                 'review_comment' => $request->review_comment,
@@ -77,7 +116,6 @@ class PostulationEvaluationController extends Controller
             }
 
             if ($request->status === 'approved') {
-                $project = $postulation->project;
                 $activePeriod = AcademicCalendarService::currentActivePeriodOrFail();
                 $assignedStatusId = ProjectStatus::where('name', 'Asignado')->firstOrFail()->id;
 
@@ -137,10 +175,13 @@ class PostulationEvaluationController extends Controller
         } catch (\Exception $e) {
             DB::rollBack();
 
-            return back()->with('error', 'Error al evaluar la postulación: '.$e->getMessage());
+            // Guardamos el error real en el log (solo lo ven los programadores)
+            \Log::error('Error al evaluar la postulación: ' . $e->getMessage(), ['exception' => $e]);
+            
+            // Al comité le mostramos un mensaje amigable sin el SQL
+            return back()->with('error', 'Ocurrió un error inesperado al evaluar la postulación. Por favor, inténtalo de nuevo.');
         }
     }
-
     /**
      * Libera y reordena las prioridades de un estudiante cuando una postulación es rechazada.
      */

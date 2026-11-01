@@ -20,6 +20,7 @@ class Project extends Model
         'evaluation_criteria',
         'thematic_area_id',
         'project_status_id',
+        'approved_postulation_id',
         'proposal_academic_period_id',
         'assignment_academic_period_id',
         'proposed_at',
@@ -66,6 +67,25 @@ class Project extends Model
     {
         return app(\App\Services\Projects\ProjectAgeReviewService::class)
             ->applyPendingReviewDueToAge($query, $thresholdPeriods);
+    }
+
+    /**
+     * Proyectos visibles/seleccionables en el banco de ideas para un estudiante:
+     * aprobados y con al menos un profesor de su mismo programa.
+     */
+    public function scopeAvailableForStudent(Builder $query, Student $student): Builder
+    {
+        return $query
+            ->whereHas('projectStatus', fn ($q) => $q->where('name', 'Aprobado'))
+            ->whereHas('professors', fn ($q) => $q->where('city_program_id', $student->city_program_id));
+    }
+
+    public function isAvailableForStudent(Student $student): bool
+    {
+        return static::query()
+            ->whereKey($this->getKey())
+            ->availableForStudent($student)
+            ->exists();
     }
 
     public function isPendingReviewDueToAge(?int $thresholdPeriods = null): bool

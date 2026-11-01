@@ -2,7 +2,7 @@
     $isEdit = isset($window) && $window->exists;
     $ideaSelectionProcess = \App\Models\AcademicProcessWindow::PROCESS_IDEA_SELECTION;
     $selectedProcess = old('process_key', $window->process_key ?? '');
-    $showRequiresEvaluation = $selectedProcess === $ideaSelectionProcess;
+    $canRequireEvaluation = $selectedProcess === $ideaSelectionProcess;
 @endphp
 
 <div class="row g-3">
@@ -82,7 +82,7 @@
     <input type="hidden" name="requires_evaluation" value="0">
     <div
         id="requires-evaluation-group"
-        class="col-12 col-md-6 {{ $showRequiresEvaluation ? '' : 'd-none' }}"
+        class="col-12 col-md-6"
         data-idea-selection-process="{{ $ideaSelectionProcess }}"
     >
         <label class="form-check form-switch">
@@ -93,11 +93,12 @@
                 name="requires_evaluation"
                 value="1"
                 {{ old('requires_evaluation', $window->requires_evaluation ?? false) ? 'checked' : '' }}
-                {{ $showRequiresEvaluation ? '' : 'disabled' }}
+                {{ $canRequireEvaluation ? '' : 'disabled' }}
+                aria-describedby="requires-evaluation-help"
             >
-            <span class="form-check-label">Requiere evaluación (Postulación)</span>
+            <span class="form-check-label">Requiere evaluación</span>
         </label>
-        <small class="form-hint text-muted">Si se activa, el estudiante debe postularse y esperar aprobación. Si se desactiva, la asignación es directa.</small>
+        <small id="requires-evaluation-help" class="form-hint text-muted">Disponible para el proceso Selección de ideas. Si se activa, el estudiante debe postularse y esperar aprobación; si se desactiva, la asignación es directa.</small>
     </div>
 </div>
 
@@ -122,10 +123,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const ideaSelectionProcess = requiresEvaluationGroup.dataset.ideaSelectionProcess;
 
     const syncRequiresEvaluationVisibility = () => {
-        const shouldShow = processSelect.value === ideaSelectionProcess;
+        const canRequireEvaluation = processSelect.value === ideaSelectionProcess;
 
-        requiresEvaluationGroup.classList.toggle('d-none', !shouldShow);
-        requiresEvaluationCheckbox.disabled = !shouldShow;
+        requiresEvaluationCheckbox.disabled = !canRequireEvaluation;
     };
 
     processSelect.addEventListener('change', syncRequiresEvaluationVisibility);

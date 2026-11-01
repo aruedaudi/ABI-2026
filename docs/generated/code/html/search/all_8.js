@@ -11,13 +11,14 @@ var searchData=
   ['encryptcookies_2ephp_8',['EncryptCookies.php',['../EncryptCookies_8php.html',1,'']]],
   ['ensureprocesswindowopenorfail_9',['ensureProcessWindowOpenOrFail',['../classApp_1_1Services_1_1AcademicCalendar_1_1AcademicCalendarService.html#a732614c77a5e5acb93a35833f307a93a',1,'App::Services::AcademicCalendar::AcademicCalendarService']]],
   ['ensureprojectbelongstocommitteeprogram_10',['ensureProjectBelongsToCommitteeProgram',['../classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController.html#a84721381bb7c33e2f38ad6c52f9327ad',1,'App::Http::Controllers::ProjectEvaluationController']]],
-  ['ensureroleaccess_11',['ensureRoleAccess',['../classApp_1_1Http_1_1Controllers_1_1ProjectController.html#a0b4df7ecfc17be984e8d8d11a299df5d',1,'App::Http::Controllers::ProjectController']]],
-  ['envelope_12',['envelope',['../classApp_1_1Mail_1_1GenericNotificationMail.html#ab1373b01fc26738a04628963f94d8fe1',1,'App::Mail::GenericNotificationMail']]],
-  ['equivalentids_13',['equivalentIds',['../classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffProgram.html#ac13b196a16834c4a62f8d89cc2eb85bf',1,'App::Models::ResearchStaff::ResearchStaffProgram']]],
-  ['esaccesiblepor_14',['esAccesiblePor',['../classApp_1_1Models_1_1FormatoTipo.html#aa7723012de64d5372a8fd844c2d69ee2',1,'App::Models::FormatoTipo']]],
-  ['evaluate_15',['evaluate',['../classApp_1_1Http_1_1Controllers_1_1PostulationEvaluationController.html#ae96488fe5cdf5d367be7cffa75a954ba',1,'App::Http::Controllers::PostulationEvaluationController::evaluate()'],['../classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController.html#af13e4ab54e821c1878ecfd0317015cdf',1,'App::Http::Controllers::ProjectEvaluationController::evaluate()']]],
-  ['eventserviceprovider_16',['EventServiceProvider',['../classApp_1_1Providers_1_1EventServiceProvider.html',1,'App::Providers']]],
-  ['eventserviceprovider_2ephp_17',['EventServiceProvider.php',['../EventServiceProvider_8php.html',1,'']]],
-  ['exceptionhandler_18',['ExceptionHandler',['../classExceptionHandler.html',1,'']]],
-  ['exportpdf_19',['exportPdf',['../classApp_1_1Http_1_1Controllers_1_1Formats_1_1FormatoRegistroController.html#ac30d13899ca0f5aa54c949c0fed8dece',1,'App::Http::Controllers::Formats::FormatoRegistroController']]]
+  ['ensureprojectispostulable_11',['ensureProjectIsPostulable',['../classApp_1_1Http_1_1Controllers_1_1PostulationController.html#a8ab21fd08d8232f7ff9bc0facdfdcad2',1,'App::Http::Controllers::PostulationController']]],
+  ['ensureroleaccess_12',['ensureRoleAccess',['../classApp_1_1Http_1_1Controllers_1_1ProjectController.html#a0b4df7ecfc17be984e8d8d11a299df5d',1,'App::Http::Controllers::ProjectController']]],
+  ['envelope_13',['envelope',['../classApp_1_1Mail_1_1GenericNotificationMail.html#ab1373b01fc26738a04628963f94d8fe1',1,'App::Mail::GenericNotificationMail']]],
+  ['equivalentids_14',['equivalentIds',['../classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffProgram.html#ac13b196a16834c4a62f8d89cc2eb85bf',1,'App::Models::ResearchStaff::ResearchStaffProgram']]],
+  ['esaccesiblepor_15',['esAccesiblePor',['../classApp_1_1Models_1_1FormatoTipo.html#aa7723012de64d5372a8fd844c2d69ee2',1,'App::Models::FormatoTipo']]],
+  ['evaluate_16',['evaluate',['../classApp_1_1Http_1_1Controllers_1_1PostulationEvaluationController.html#ae96488fe5cdf5d367be7cffa75a954ba',1,'App::Http::Controllers::PostulationEvaluationController::evaluate()'],['../classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController.html#af13e4ab54e821c1878ecfd0317015cdf',1,'App::Http::Controllers::ProjectEvaluationController::evaluate()']]],
+  ['eventserviceprovider_17',['EventServiceProvider',['../classApp_1_1Providers_1_1EventServiceProvider.html',1,'App::Providers']]],
+  ['eventserviceprovider_2ephp_18',['EventServiceProvider.php',['../EventServiceProvider_8php.html',1,'']]],
+  ['exceptionhandler_19',['ExceptionHandler',['../classExceptionHandler.html',1,'']]],
+  ['exportpdf_20',['exportPdf',['../classApp_1_1Http_1_1Controllers_1_1Formats_1_1FormatoRegistroController.html#ac30d13899ca0f5aa54c949c0fed8dece',1,'App::Http::Controllers::Formats::FormatoRegistroController']]]
 ];

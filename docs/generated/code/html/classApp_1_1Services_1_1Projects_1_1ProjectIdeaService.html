@@ -164,7 +164,7 @@ Private Member Functions</h2></td></tr>
 <tr class="memdesc:a0b47b1f39f1eeaf3a430ac8317b89639"><td class="mdescLeft">&#160;</td><td class="mdescRight">Synchronises the contact fields for the student and their linked user.  <br /></td></tr>
 <tr class="separator:a0b47b1f39f1eeaf3a430ac8317b89639"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff7e931a99d3894b0909ac0d3df392f6" id="r_aff7e931a99d3894b0909ac0d3df392f6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classApp_1_1Services_1_1Projects_1_1ProjectIdeaService.html#aff7e931a99d3894b0909ac0d3df392f6">teammatesHaveDifferentProjects</a> (array $teammateIds, ?<a class="el" href="classApp_1_1Models_1_1Project.html">Project</a> $project)</td></tr>
-<tr class="memdesc:aff7e931a99d3894b0909ac0d3df392f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if any teammate already owns a different project idea.  <br /></td></tr>
+<tr class="memdesc:aff7e931a99d3894b0909ac0d3df392f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if any teammate already owns a different project idea that is still active.  <br /></td></tr>
 <tr class="separator:aff7e931a99d3894b0909ac0d3df392f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb2836c3bec61a73078c6ea481c3ca61" id="r_adb2836c3bec61a73078c6ea481c3ca61"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classApp_1_1Services_1_1Projects_1_1ProjectIdeaService.html#adb2836c3bec61a73078c6ea481c3ca61">waitingEvaluationStatusId</a> ()</td></tr>
 <tr class="memdesc:adb2836c3bec61a73078c6ea481c3ca61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the identifier for the "waiting evaluation" status reusing the last lookup.  <br /></td></tr>
@@ -245,7 +245,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>array&lt;string, string&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ProjectIdeaService_8php_source.html#l00465">465</a> of file <a class="el" href="ProjectIdeaService_8php_source.html">ProjectIdeaService.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ProjectIdeaService_8php_source.html#l00467">467</a> of file <a class="el" href="ProjectIdeaService_8php_source.html">ProjectIdeaService.php</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ProjectIdeaService_8php_source.html#l00043">persistProfessorIdea()</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -301,7 +301,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>array&lt;string, string&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ProjectIdeaService_8php_source.html#l00486">486</a> of file <a class="el" href="ProjectIdeaService_8php_source.html">ProjectIdeaService.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ProjectIdeaService_8php_source.html#l00488">488</a> of file <a class="el" href="ProjectIdeaService_8php_source.html">ProjectIdeaService.php</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ProjectIdeaService_8php_source.html#l00130">persistStudentIdea()</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -515,7 +515,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ProjectIdeaService_8php_source.html#l00350">350</a> of file <a class="el" href="ProjectIdeaService_8php_source.html">ProjectIdeaService.php</a>.</p>
 
-<p class="reference">References <a class="el" href="Project_8php_source.html#l00087">App::Models::Project::professors()</a>.</p>
+<p class="reference">References <a class="el" href="Project_8php_source.html#l00107">App::Models::Project::professors()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ProjectIdeaService_8php_source.html#l00043">persistProfessorIdea()</a>.</p>
 <div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -585,7 +585,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ProjectIdeaService_8php_source.html#l00368">368</a> of file <a class="el" href="ProjectIdeaService_8php_source.html">ProjectIdeaService.php</a>.</p>
 
-<p class="reference">References <a class="el" href="Project_8php_source.html#l00092">App::Models::Project::students()</a>.</p>
+<p class="reference">References <a class="el" href="Project_8php_source.html#l00112">App::Models::Project::students()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ProjectIdeaService_8php_source.html#l00130">persistStudentIdea()</a>.</p>
 <div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -680,7 +680,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ProjectIdeaService_8php_source.html#l00043">43</a> of file <a class="el" href="ProjectIdeaService_8php_source.html">ProjectIdeaService.php</a>.</p>
 
-<p class="reference">References <a class="el" href="ProjectIdeaService_8php_source.html#l00465">buildProfessorContentMap()</a>, <a class="el" href="Professor_8php_source.html#l00053">App::Models::Professor::cityProgram()</a>, <a class="el" href="ProjectIdeaService_8php_source.html#l00317">collectProfessorIds()</a>, <a class="el" href="ProjectIdeaService_8php_source.html#l00350">hasDuplicateProfessorProject()</a>, <a class="el" href="ProjectIdeaService_8php_source.html#l00283">normalizeTitle()</a>, <a class="el" href="ProjectIdeaService_8php_source.html#l00438">persistProjectRecord()</a>, <a class="el" href="ProjectIdeaService_8php_source.html#l00265">storeContentValues()</a>, and <a class="el" href="ProjectIdeaService_8php_source.html#l00416">syncProfessorContactData()</a>.</p>
+<p class="reference">References <a class="el" href="ProjectIdeaService_8php_source.html#l00467">buildProfessorContentMap()</a>, <a class="el" href="Professor_8php_source.html#l00053">App::Models::Professor::cityProgram()</a>, <a class="el" href="ProjectIdeaService_8php_source.html#l00317">collectProfessorIds()</a>, <a class="el" href="ProjectIdeaService_8php_source.html#l00350">hasDuplicateProfessorProject()</a>, <a class="el" href="ProjectIdeaService_8php_source.html#l00283">normalizeTitle()</a>, <a class="el" href="ProjectIdeaService_8php_source.html#l00440">persistProjectRecord()</a>, <a class="el" href="ProjectIdeaService_8php_source.html#l00265">storeContentValues()</a>, and <a class="el" href="ProjectIdeaService_8php_source.html#l00418">syncProfessorContactData()</a>.</p>
 <div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-11-summary" class="dynsummary" style="display:block;">
@@ -739,7 +739,7 @@ Private Attributes</h2></td></tr>
 
 <p>Inserts or updates a project record maintaining the "waiting evaluation" status. </p>
 
-<p class="definition">Definition at line <a class="el" href="ProjectIdeaService_8php_source.html#l00438">438</a> of file <a class="el" href="ProjectIdeaService_8php_source.html">ProjectIdeaService.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ProjectIdeaService_8php_source.html#l00440">440</a> of file <a class="el" href="ProjectIdeaService_8php_source.html">ProjectIdeaService.php</a>.</p>
 
 <p class="reference">References <a class="el" href="ProjectIdeaService_8php_source.html#l00291">waitingEvaluationStatusId()</a>.</p>
 
@@ -797,7 +797,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ProjectIdeaService_8php_source.html#l00130">130</a> of file <a class="el" href="ProjectIdeaService_8php_source.html">ProjectIdeaService.php</a>.</p>
 
-<p class="reference">References <a class="el" href="ProjectIdeaService_8php_source.html#l00486">buildStudentContentMap()</a>, <a class="el" href="Student_8php_source.html#l00062">App::Models::Student::cityProgram()</a>, <a class="el" href="ProjectIdeaService_8php_source.html#l00334">collectStudentIds()</a>, <a class="el" href="ProjectIdeaService_8php_source.html#l00368">hasDuplicateStudentProject()</a>, <a class="el" href="ProjectIdeaService_8php_source.html#l00283">normalizeTitle()</a>, <a class="el" href="ProjectIdeaService_8php_source.html#l00438">persistProjectRecord()</a>, <a class="el" href="ProjectIdeaService_8php_source.html#l00265">storeContentValues()</a>, <a class="el" href="ProjectIdeaService_8php_source.html#l00399">studentHasActiveIdea()</a>, <a class="el" href="ProjectIdeaService_8php_source.html#l00428">syncStudentContactData()</a>, and <a class="el" href="ProjectIdeaService_8php_source.html#l00386">teammatesHaveDifferentProjects()</a>.</p>
+<p class="reference">References <a class="el" href="ProjectIdeaService_8php_source.html#l00488">buildStudentContentMap()</a>, <a class="el" href="Student_8php_source.html#l00075">App::Models::Student::cityProgram()</a>, <a class="el" href="ProjectIdeaService_8php_source.html#l00334">collectStudentIds()</a>, <a class="el" href="ProjectIdeaService_8php_source.html#l00368">hasDuplicateStudentProject()</a>, <a class="el" href="ProjectIdeaService_8php_source.html#l00283">normalizeTitle()</a>, <a class="el" href="ProjectIdeaService_8php_source.html#l00440">persistProjectRecord()</a>, <a class="el" href="ProjectIdeaService_8php_source.html#l00265">storeContentValues()</a>, <a class="el" href="ProjectIdeaService_8php_source.html#l00401">studentHasActiveIdea()</a>, <a class="el" href="ProjectIdeaService_8php_source.html#l00430">syncStudentContactData()</a>, and <a class="el" href="ProjectIdeaService_8php_source.html#l00387">teammatesHaveDifferentProjects()</a>.</p>
 <div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-14-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-14-summary" class="dynsummary" style="display:block;">
@@ -939,9 +939,9 @@ Private Attributes</h2></td></tr>
 
 <p>Ensures the student does not have another active project awaiting evaluation. </p>
 
-<p class="definition">Definition at line <a class="el" href="ProjectIdeaService_8php_source.html#l00399">399</a> of file <a class="el" href="ProjectIdeaService_8php_source.html">ProjectIdeaService.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ProjectIdeaService_8php_source.html#l00401">401</a> of file <a class="el" href="ProjectIdeaService_8php_source.html">ProjectIdeaService.php</a>.</p>
 
-<p class="reference">References <a class="el" href="Student_8php_source.html#l00070">App::Models::Student::projects()</a>.</p>
+<p class="reference">References <a class="el" href="Student_8php_source.html#l00083">App::Models::Student::projects()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ProjectIdeaService_8php_source.html#l00130">persistStudentIdea()</a>.</p>
 <div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -1003,7 +1003,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="ProjectIdeaService_8php_source.html#l00416">416</a> of file <a class="el" href="ProjectIdeaService_8php_source.html">ProjectIdeaService.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ProjectIdeaService_8php_source.html#l00418">418</a> of file <a class="el" href="ProjectIdeaService_8php_source.html">ProjectIdeaService.php</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ProjectIdeaService_8php_source.html#l00043">persistProfessorIdea()</a>.</p>
 <div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -1058,7 +1058,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="ProjectIdeaService_8php_source.html#l00428">428</a> of file <a class="el" href="ProjectIdeaService_8php_source.html">ProjectIdeaService.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ProjectIdeaService_8php_source.html#l00430">430</a> of file <a class="el" href="ProjectIdeaService_8php_source.html">ProjectIdeaService.php</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ProjectIdeaService_8php_source.html#l00130">persistStudentIdea()</a>.</p>
 <div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -1105,7 +1105,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Checks if any teammate already owns a different project idea. </p>
+<p>Checks if any teammate already owns a different project idea that is still active. </p>
+<p><a class="el" href="namespaceApp_1_1Services_1_1Projects.html">Projects</a> in <a class="el" href="classApp_1_1Models_1_1Student.html#a5b4672a5b22f64fca8706e67bfe2d47a">Student::INACTIVE_PROJECT_STATUSES</a> (e.g. "Descartado") do not count.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">array&lt;int,int&gt;</td><td>$teammateIds </td></tr>
@@ -1113,7 +1114,9 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="ProjectIdeaService_8php_source.html#l00386">386</a> of file <a class="el" href="ProjectIdeaService_8php_source.html">ProjectIdeaService.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ProjectIdeaService_8php_source.html#l00387">387</a> of file <a class="el" href="ProjectIdeaService_8php_source.html">ProjectIdeaService.php</a>.</p>
+
+<p class="reference">References <a class="el" href="Student_8php_source.html#l00029">App::Models::Student::INACTIVE_PROJECT_STATUSES</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ProjectIdeaService_8php_source.html#l00130">persistStudentIdea()</a>.</p>
 <div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -1155,7 +1158,7 @@ Private Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="ProjectIdeaService_8php_source.html#l00034">$waitingStatusId</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ProjectIdeaService_8php_source.html#l00438">persistProjectRecord()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ProjectIdeaService_8php_source.html#l00440">persistProjectRecord()</a>.</p>
 <div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-23-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-23-summary" class="dynsummary" style="display:block;">

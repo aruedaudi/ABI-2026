@@ -1,13 +1,13 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
 <area shape="rect" id="Node000000" title=" " alt="" coords="5,141,129,166"/>
 <area shape="rect" id="Node000001" href="$classApp_1_1Providers_1_1AppServiceProvider.html" title=" " alt="" coords="184,5,381,45"/>
-<area shape="poly" id="edge203_Node000000_Node000001" title=" " alt="" coords="88,128,126,91,176,55,202,43,204,48,179,60,130,95,91,132"/>
+<area shape="poly" id="edge204_Node000000_Node000001" title=" " alt="" coords="88,128,126,91,176,55,202,43,204,48,179,60,130,95,91,132"/>
 <area shape="rect" id="Node000002" href="$classApp_1_1Providers_1_1AuthServiceProvider.html" title=" " alt="" coords="181,69,384,109"/>
-<area shape="poly" id="edge204_Node000000_Node000002" title=" " alt="" coords="123,134,214,107,215,112,125,139"/>
+<area shape="poly" id="edge205_Node000000_Node000002" title=" " alt="" coords="123,134,214,107,215,112,125,139"/>
 <area shape="rect" id="Node000003" href="$classApp_1_1Providers_1_1BroadcastServiceProvider.html" title=" " alt="" coords="188,133,377,173"/>
-<area shape="poly" id="edge205_Node000000_Node000003" title=" " alt="" coords="143,151,188,151,188,156,143,156"/>
+<area shape="poly" id="edge206_Node000000_Node000003" title=" " alt="" coords="143,151,188,151,188,156,143,156"/>
 <area shape="rect" id="Node000004" href="$classApp_1_1Providers_1_1EventServiceProvider.html" title=" " alt="" coords="178,197,387,237"/>
-<area shape="poly" id="edge206_Node000000_Node000004" title=" " alt="" coords="125,168,215,195,214,200,123,173"/>
+<area shape="poly" id="edge207_Node000000_Node000004" title=" " alt="" coords="125,168,215,195,214,200,123,173"/>
 <area shape="rect" id="Node000005" href="$classApp_1_1Providers_1_1RouteServiceProvider.html" title=" " alt="" coords="177,261,388,301"/>
-<area shape="poly" id="edge207_Node000000_Node000005" title=" " alt="" coords="91,175,130,212,179,247,204,259,202,264,176,252,126,216,88,179"/>
+<area shape="poly" id="edge208_Node000000_Node000005" title=" " alt="" coords="91,175,130,212,179,247,204,259,202,264,176,252,126,216,88,179"/>
 </map>

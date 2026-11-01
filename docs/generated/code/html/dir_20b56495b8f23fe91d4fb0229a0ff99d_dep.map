@@ -1,7 +1,8 @@
 <map id="Controllers" name="Controllers">
-<area shape="rect" id="node2" href="dir_8a0826e26e22b2b40f8d14a8b0b20352.html" title="Auth" alt="" coords="38,73,90,99"/>
-<area shape="rect" id="node4" href="dir_c4e2e0386a241f254d712a740444ea5b.html" title="Concerns" alt="" coords="232,73,315,99"/>
-<area shape="rect" id="clust3" href="dir_c9748d356eb3491313e0db39055eaee0.html" alt="" coords="221,63,424,109"/>
-<area shape="rect" id="clust2" href="dir_20b56495b8f23fe91d4fb0229a0ff99d.html" alt="" coords="27,52,435,120"/>
-<area shape="rect" id="clust1" href="dir_9726c684119705db1a61facf08376e77.html" title="Http" alt="" coords="16,16,445,131"/>
+<area shape="rect" id="node2" href="dir_c7e2e5caa6f65ed5f960b39c59b6d629.html" title="Api" alt="" coords="115,73,157,99"/>
+<area shape="rect" id="node3" href="dir_8a0826e26e22b2b40f8d14a8b0b20352.html" title="Auth" alt="" coords="38,73,90,99"/>
+<area shape="rect" id="node5" href="dir_c4e2e0386a241f254d712a740444ea5b.html" title="Concerns" alt="" coords="299,73,381,99"/>
+<area shape="rect" id="clust3" href="dir_c9748d356eb3491313e0db39055eaee0.html" alt="" coords="288,63,491,109"/>
+<area shape="rect" id="clust2" href="dir_20b56495b8f23fe91d4fb0229a0ff99d.html" alt="" coords="27,52,501,120"/>
+<area shape="rect" id="clust1" href="dir_9726c684119705db1a61facf08376e77.html" title="Http" alt="" coords="16,16,512,131"/>
 </map>

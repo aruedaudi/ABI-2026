@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['terminal_5fstatuses_0',['terminal_statuses',['../classApp_1_1Services_1_1Projections_1_1StudentProjectionService.html#a86dc19784b0f1f5a700810bde0ab2c53',1,'App::Services::Projections::StudentProjectionService::TERMINAL_STATUSES'],['../classApp_1_1Services_1_1Students_1_1StudentAcademicProgressService.html#a3e2a340b39e51f00bb54823c5ce1ccb4',1,'App::Services::Students::StudentAcademicProgressService::TERMINAL_STATUSES']]]
+  ['status_5factive_0',['STATUS_ACTIVE',['../classApp_1_1Models_1_1AcademicPeriod.html#a95daf8cda8e1236fb8bfe192bb097096',1,'App::Models::AcademicPeriod']]],
+  ['status_5fclosed_1',['STATUS_CLOSED',['../classApp_1_1Models_1_1AcademicPeriod.html#a0ff681a0cf72ee48ac07c3f6811c8434',1,'App::Models::AcademicPeriod']]],
+  ['status_5fdraft_2',['STATUS_DRAFT',['../classApp_1_1Models_1_1AcademicPeriod.html#a3992a9590472282dcb3fbcb2070a8443',1,'App::Models::AcademicPeriod']]]
 ];

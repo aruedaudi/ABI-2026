@@ -1,11 +1,11 @@
 <map id="App::Models::Student" name="App::Models::Student">
-<area shape="rect" id="Node000001" title="students table model, manages communication with the database using the root user,..." alt="" coords="207,119,405,404"/>
-<area shape="rect" id="Node000003" href="$classApp_1_1Models_1_1Professor_1_1ProfessorStudent.html" title="Extended model that keeps student lookups under the professor connection so assigned faculty only acc..." alt="" coords="5,452,185,552"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="200,386,141,453,137,450,196,383"/>
-<area shape="rect" id="Node000004" href="$classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffStudent.html" title="Extended model that ensures student queries run on the research staff connection, preserving the limi..." alt="" coords="210,452,402,552"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="309,418,309,452,303,452,303,418"/>
-<area shape="rect" id="Node000005" href="$classApp_1_1Models_1_1Student_1_1StudentStudent.html" title="Extended model that keeps the student connection active so database permissions remain aligned with t..." alt="" coords="427,452,607,552"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="416,383,475,450,471,453,412,386"/>
+<area shape="rect" id="Node000001" title="students table model, manages communication with the database using the root user,..." alt="" coords="207,119,405,439"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Models_1_1Professor_1_1ProfessorStudent.html" title="Extended model that keeps student lookups under the professor connection so assigned faculty only acc..." alt="" coords="5,487,185,587"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="201,412,138,488,134,485,197,409"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Models_1_1ResearchStaff_1_1ResearchStaffStudent.html" title="Extended model that ensures student queries run on the research staff connection, preserving the limi..." alt="" coords="210,487,402,587"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="309,452,309,486,303,486,303,452"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Models_1_1Student_1_1StudentStudent.html" title="Extended model that keeps the student connection active so database permissions remain aligned with t..." alt="" coords="427,487,607,587"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="415,409,478,485,474,488,411,412"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="279,5,333,71"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="309,84,309,119,303,119,303,84"/>
 </map>

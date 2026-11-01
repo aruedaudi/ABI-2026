@@ -1,0 +1,15 @@
+<map id="App::Models::Project::isAvailableForStudent" name="App::Models::Project::isAvailableForStudent">
+<area shape="rect" id="Node000001" title=" " alt="" coords="535,131,705,171"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1BankApprovedIdeasAssignController.html#aaa40633f6ad94204084042152841fb74" title=" " alt="" coords="220,5,487,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="578,126,534,99,486,74,457,63,459,58,488,69,537,94,580,121"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Http_1_1Controllers_1_1PostulationController.html#a8ab21fd08d8232f7ff9bc0facdfdcad2" title="Aplica las mismas reglas del banco de ideas: ventana de selección abierta, proyecto aprobado y perten..." alt="" coords="254,84,453,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="520,139,452,129,453,124,521,134"/>
+<area shape="rect" id="Node000006" href="$classApp_1_1Http_1_1Controllers_1_1BankApprovedIdeasAssignController.html#ace082f57e826cf6392e975e360d43e8e" title=" " alt="" coords="220,163,487,217"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="521,168,487,173,486,168,521,163"/>
+<area shape="rect" id="Node000007" href="$classApp_1_1Http_1_1Controllers_1_1BankApprovedIdeasForStudentsController.html#a1da16a4a5c61221cfdcd5ec9887a8a9e" title=" " alt="" coords="235,241,472,296"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="579,181,536,207,488,231,455,244,453,239,486,226,533,202,576,177"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Http_1_1Controllers_1_1PostulationController.html#a4cc7fecbc9a1b921ffd2871bd763a1d1" title=" " alt="" coords="5,45,172,100"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="240,97,172,87,173,82,241,92"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Http_1_1Controllers_1_1PostulationController.html#a4626d798cedd76d73332685f7e877448" title=" " alt="" coords="5,124,172,179"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="241,131,173,141,172,136,240,126"/>
+</map>

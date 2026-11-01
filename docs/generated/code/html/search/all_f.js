@@ -7,6 +7,7 @@ var searchData=
   ['maxstudents_4',['maxStudents',['../classApp_1_1Models_1_1Project.html#ac3c65f1f97724cbf4a68dbaacd492404',1,'App::Models::Project']]],
   ['members_5',['members',['../classApp_1_1Models_1_1Postulation.html#ad733a7797047d55d22e400df605cc3dc',1,'App::Models::Postulation']]],
   ['messages_6',['messages',['../classApp_1_1Http_1_1Requests_1_1AcademicPeriodRequest.html#afd89645b049904514281e888ce5d61ce',1,'App::Http::Requests::AcademicPeriodRequest::messages()'],['../classApp_1_1Http_1_1Requests_1_1AcademicProcessWindowRequest.html#a2117a88b1fcf29684a1faf504988de47',1,'App::Http::Requests::AcademicProcessWindowRequest::messages()'],['../classApp_1_1Http_1_1Requests_1_1ContentRequest.html#ae028faf3735665435192928d7413afd8',1,'App::Http::Requests::ContentRequest::messages()'],['../classApp_1_1Http_1_1Requests_1_1LoadProjectionRequest.html#a4cee17f0ce674e2ca4e68f05fd140863',1,'App::Http::Requests::LoadProjectionRequest::messages()'],['../classApp_1_1Http_1_1Requests_1_1ProjectRequest.html#ad90f83c3c53be614fe8ee389952199db',1,'App::Http::Requests::ProjectRequest::messages()'],['../classApp_1_1Http_1_1Requests_1_1TeacherAssignmentRequest.html#a41aa05e158bda7a033f59a2d3b758231',1,'App::Http::Requests::TeacherAssignmentRequest::messages()']]],
-  ['middleware_7',['Middleware',['../classMiddleware.html',1,'']]],
-  ['migration_8',['Migration',['../classMigration.html',1,'']]]
+  ['meta_7',['meta',['../classApp_1_1Http_1_1Controllers_1_1Api_1_1ProjectApiController.html#a53e33056d09a48387d6f76f7df38e35c',1,'App::Http::Controllers::Api::ProjectApiController']]],
+  ['middleware_8',['Middleware',['../classMiddleware.html',1,'']]],
+  ['migration_9',['Migration',['../classMigration.html',1,'']]]
 ];

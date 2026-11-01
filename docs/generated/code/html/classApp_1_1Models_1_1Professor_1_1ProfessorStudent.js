@@ -13,6 +13,7 @@ var classApp_1_1Models_1_1Professor_1_1ProfessorStudent =
     [ "$connection", "classApp_1_1Models_1_1Professor_1_1ProfessorStudent.html#a051531ded961a5b6d4ee60541b71506f", null ],
     [ "$fillable", "classApp_1_1Models_1_1Professor_1_1ProfessorStudent.html#a2e239037e4466cd5a5322d2951e06835", null ],
     [ "$table", "classApp_1_1Models_1_1Professor_1_1ProfessorStudent.html#ad12521a87e838e044e5bb5e51022b15d", null ],
+    [ "INACTIVE_PROJECT_STATUSES", "classApp_1_1Models_1_1Professor_1_1ProfessorStudent.html#a5b4672a5b22f64fca8706e67bfe2d47a", null ],
     [ "PG_STAGE_PG1", "classApp_1_1Models_1_1Professor_1_1ProfessorStudent.html#ae82188857691363f8d748517dfc2529a", null ],
     [ "PG_STAGE_PG2", "classApp_1_1Models_1_1Professor_1_1ProfessorStudent.html#ae0cf80fe377ca5eb306c5b5679b0cd03", null ]
 ];

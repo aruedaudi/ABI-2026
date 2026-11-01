@@ -9,9 +9,11 @@ var classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController =
     [ "ensureProjectBelongsToCommitteeProgram", "classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController.html#a84721381bb7c33e2f38ad6c52f9327ad", null ],
     [ "evaluate", "classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController.html#af13e4ab54e821c1878ecfd0317015cdf", null ],
     [ "index", "classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController.html#a242ddacaab9456585601a8eb9bb3f993", null ],
+    [ "isPendingEvaluation", "classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController.html#a34d392276546219afb67ad14eb8f6809", null ],
     [ "normalizeComments", "classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController.html#a31a85374ed6ec80f43833df7f50489d1", null ],
     [ "programProjectsQuery", "classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController.html#ab1f88212523849b7aa557aa47f024476", null ],
     [ "publicAssetDataUri", "classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController.html#a61dddccee54514855270cbaf4ddeb24b", null ],
+    [ "redirectAlreadyEvaluated", "classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController.html#a509d7c8dc63935d3ca57d42cdd9e86f3", null ],
     [ "resolveCommitteeLeader", "classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController.html#a810cc4bedafa100ef4c8806abfeaffb0", null ],
     [ "show", "classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController.html#aa6ad08d9d2d47f827a4147947f210082", null ]
 ];

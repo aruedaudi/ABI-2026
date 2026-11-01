@@ -34,8 +34,9 @@ class BankApprovedIdeasForStudentsController extends Controller
         $activeAcademicPeriod = AcademicCalendarService::currentActivePeriod();
 
         if (! $this->academicProgress->canAccessIdeaBank($student, $activeAcademicPeriod)) {
-            abort(403, $this->academicProgress->blockedIdeaBankMessage($student, $activeAcademicPeriod));
-        }
+    return redirect('/students/projects/postulations')
+        ->with('error', $this->academicProgress->blockedIdeaBankMessage($student, $activeAcademicPeriod));
+}
 
         $perPage = $request->input('per_page', 10);
         $thematicAreaId = $request->input('thematic_area_id');
@@ -54,10 +55,7 @@ class BankApprovedIdeasForStudentsController extends Controller
             ->orderBy('name')
             ->get();
 
-        $projectsQuery = Project::whereHas('projectStatus', fn ($q) => $q->where('name', 'Aprobado'))
-            ->whereHas('professors', function ($q) use ($student) {
-                $q->where('city_program_id', $student->city_program_id);
-            });
+        $projectsQuery = Project::availableForStudent($student);
 
         if (! empty($thematicAreaId)) {
             $projectsQuery->where('thematic_area_id', $thematicAreaId);
@@ -103,19 +101,16 @@ class BankApprovedIdeasForStudentsController extends Controller
             ->firstOrFail();
 
         $activeAcademicPeriod = AcademicCalendarService::currentActivePeriod();
+if (! $this->academicProgress->canAccessIdeaBank($student, $activeAcademicPeriod)) {
+    return redirect('/students/projects/postulations')
+        ->with('error', $this->academicProgress->blockedIdeaBankMessage($student, $activeAcademicPeriod));
+}
 
-        if (! $this->academicProgress->canAccessIdeaBank($student, $activeAcademicPeriod)) {
-            abort(403, $this->academicProgress->blockedIdeaBankMessage($student, $activeAcademicPeriod));
-        }
+        // Ideas aprobadas de su programa (banco) o proyectos en los que participa.
+        $canView = $project->isAvailableForStudent($student)
+            || $project->students()->where('students.id', $student->id)->exists();
 
-        $sameProgram = $project->students()
-                ->where('city_program_id', $student->city_program_id)
-                ->exists()
-            || $project->professors()
-                ->where('city_program_id', $student->city_program_id)
-                ->exists();
-
-        if (! $sameProgram) {
+        if (! $canView) {
             abort(403, 'No tienes permiso para ver este proyecto.');
         }
 
@@ -153,8 +148,8 @@ class BankApprovedIdeasForStudentsController extends Controller
 
         $canSelectProject = true;
         
-        // Check if already assigned
-        if ($student->hasActiveProject()) {
+        // Check if already assigned, or the idea is no longer in the student's bank
+        if ($student->hasActiveProject() || ! $project->isAvailableForStudent($student)) {
             $canSelectProject = false;
         }
 

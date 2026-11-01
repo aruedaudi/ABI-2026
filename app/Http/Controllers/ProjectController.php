@@ -1728,7 +1728,9 @@ SQL;
             $studentAcademicProgress = app(StudentAcademicProgressService::class);
 
             if (! $studentAcademicProgress->canCreateProposal($student, $activeAcademicPeriod)) {
-                abort(403, $studentAcademicProgress->blockedProposalMessage($student, $activeAcademicPeriod));
+                return redirect()
+                    ->route('projects.index')
+                    ->with('warning', $studentAcademicProgress->blockedProposalMessage($student, $activeAcademicPeriod));
             }
 
             $researchGroupId = $student?->cityProgram?->program?->research_group_id;
@@ -1801,12 +1803,8 @@ SQL;
             $availableStudents = Student::query()
                 ->where('city_program_id', $student->city_program_id)
                 ->where('id', '!=', $student->id)
-                ->where(function ($q) {
-                    $q->whereDoesntHave('projects')
-                        ->orWhere(function ($q2) {
-                            $q2->whereHas('projects', fn ($p) => $p->whereHas('projectStatus', fn ($s) => $s->where('name', 'Rechazado')))
-                                ->whereDoesntHave('projects', fn ($p) => $p->whereHas('projectStatus', fn ($s) => $s->whereNot('name', 'Rechazado')));
-                        });
+                ->whereDoesntHave('projects', function ($q) {
+                    $q->whereHas('projectStatus', fn ($s) => $s->whereNotIn('name', Student::INACTIVE_PROJECT_STATUSES));
                 })
                 ->orderBy('last_name')
                 ->orderBy('name')
@@ -1869,7 +1867,9 @@ SQL;
             $studentAcademicProgress = app(StudentAcademicProgressService::class);
 
             if (! $studentAcademicProgress->canCreateProposal($user->student, $activeAcademicPeriod)) {
-                abort(403, $studentAcademicProgress->blockedProposalMessage($user->student, $activeAcademicPeriod));
+                return redirect()
+                    ->route('projects.index')
+                    ->with('warning', $studentAcademicProgress->blockedProposalMessage($user->student, $activeAcademicPeriod));
             }
 
             return $this->persistStudentProject($request, $user->student, null, $activeAcademicPeriod, $proposalWindow);
@@ -2686,7 +2686,7 @@ SQL;
                 ->whereHas('projects', function ($query) use ($project) {
                     $query->where('project_id', '!=', $project?->id)
                         ->whereHas('projectStatus', function ($statusQuery) {
-                            $statusQuery->whereNotIn('name', ['Rechazado']);
+                            $statusQuery->whereNotIn('name', Student::INACTIVE_PROJECT_STATUSES);
                         });
                 })
                 ->exists();

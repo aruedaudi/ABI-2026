@@ -1,5 +1,5 @@
 <map id="App::Services::Projects::ProjectIdeaService::teammatesHaveDifferentProjects" name="App::Services::Projects::ProjectIdeaService::teammatesHaveDifferentProjects">
-<area shape="rect" id="Node000001" title="Checks if any teammate already owns a different project idea." alt="" coords="224,5,464,60"/>
+<area shape="rect" id="Node000001" title="Checks if any teammate already owns a different project idea that is still active." alt="" coords="224,5,464,60"/>
 <area shape="rect" id="Node000002" href="$classApp_1_1Services_1_1Projects_1_1ProjectIdeaService.html#a1cc2ae9ac23b365acdedb1b839ece004" title="Persist a project idea coming from a student." alt="" coords="5,5,176,60"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,35,176,35,176,30,210,30"/>
 </map>

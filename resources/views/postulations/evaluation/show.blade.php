@@ -72,8 +72,16 @@
                                     @error('review_comment') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
                                 
+                                @unless ($canApprove)
+                                    <div class="alert alert-warning">
+                                        Esta idea no está disponible para postulación (estado: {{ $postulation->project->projectStatus->name }}). Solo puedes rechazar la solicitud.
+                                    </div>
+                                @endunless
+
                                 <div class="d-flex gap-2">
+                                    @if ($canApprove)
                                     <button type="submit" name="status" value="approved" class="btn btn-success" onclick="return confirm('¿Confirmas que deseas APROBAR esta postulación? Se asignará la idea y se cancelarán otras solicitudes de los estudiantes.')">Aprobar Postulación</button>
+                                    @endif
                                     <button type="submit" name="status" value="rejected" class="btn btn-danger" onclick="return confirm('¿Estás seguro de RECHAZAR esta postulación?')">Rechazar</button>
                                 </div>
                             </form>

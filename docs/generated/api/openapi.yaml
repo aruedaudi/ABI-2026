@@ -594,10 +594,39 @@ paths:
         required: true
         schema:
           type: integer
+  /api/projects/meta:
+    get:
+      summary: ''
+      operationId: getApiProjectsMeta
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      security: []
+  '/api/projects/{project}/restore':
+    post:
+      summary: ''
+      operationId: postApiProjectsProjectRestore
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      security: []
+    parameters:
+      -
+        in: path
+        name: project
+        description: 'The project.'
+        example: omnis
+        required: true
+        schema:
+          type: string
   /api/projects:
     get:
-      summary: 'Display a paginated list of projects for the authenticated user.'
-      operationId: displayAPaginatedListOfProjectsForTheAuthenticatedUser
+      summary: ''
+      operationId: getApiProjects
       description: ''
       parameters: []
       responses: {  }
@@ -605,18 +634,60 @@ paths:
         - 'API Endpoints'
       security: []
     post:
-      summary: 'Persist a new project idea following the role specific business rules.'
-      operationId: persistANewProjectIdeaFollowingTheRoleSpecificBusinessRules
+      summary: ''
+      operationId: postApiProjects
       description: ''
       parameters: []
       responses: {  }
       tags:
         - 'API Endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'El campo value no debe tener más de 255 caracteres.'
+                  example: ufkaaacsmazquuxslxug
+                evaluation_criteria:
+                  type: string
+                  description: ''
+                  example: omnis
+                  nullable: true
+                thematic_area_id:
+                  type: integer
+                  description: ''
+                  example: 16
+                project_status_id:
+                  type: integer
+                  description: ''
+                  example: 16
+                professor_ids:
+                  type: array
+                  description: ''
+                  example:
+                    - 16
+                  items:
+                    type: integer
+                student_ids:
+                  type: array
+                  description: ''
+                  example:
+                    - 16
+                  items:
+                    type: integer
+              required:
+                - title
+                - thematic_area_id
+                - project_status_id
       security: []
   '/api/projects/{id}':
     get:
-      summary: 'Display the details of a project, including its latest version.'
-      operationId: displayTheDetailsOfAProjectIncludingItsLatestVersion
+      summary: ''
+      operationId: getApiProjectsId
       description: ''
       parameters: []
       responses: {  }
@@ -624,8 +695,55 @@ paths:
         - 'API Endpoints'
       security: []
     put:
-      summary: 'Update the project information by creating a new version with the submitted content.'
-      operationId: updateTheProjectInformationByCreatingANewVersionWithTheSubmittedContent
+      summary: ''
+      operationId: putApiProjectsId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'API Endpoints'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'El campo value no debe tener más de 255 caracteres.'
+                  example: ufkaaacsmazquuxslxug
+                evaluation_criteria:
+                  type: string
+                  description: ''
+                  example: omnis
+                  nullable: true
+                thematic_area_id:
+                  type: integer
+                  description: ''
+                  example: 16
+                project_status_id:
+                  type: integer
+                  description: ''
+                  example: 16
+                professor_ids:
+                  type: array
+                  description: ''
+                  example:
+                    - 16
+                  items:
+                    type: integer
+                student_ids:
+                  type: array
+                  description: ''
+                  example:
+                    - 16
+                  items:
+                    type: integer
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiProjectsId
       description: ''
       parameters: []
       responses: {  }

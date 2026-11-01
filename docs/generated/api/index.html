@@ -175,17 +175,26 @@
                                                                                 <li class="tocify-item level-2" data-unique="api-endpoints-DELETEapi-content-versions--id-">
                                 <a href="#api-endpoints-DELETEapi-content-versions--id-">Elimina lógicamente (soft delete) un registro contenido-versión</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="api-endpoints-GETapi-projects-meta">
+                                <a href="#api-endpoints-GETapi-projects-meta">GET api/projects/meta</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="api-endpoints-POSTapi-projects--project--restore">
+                                <a href="#api-endpoints-POSTapi-projects--project--restore">POST api/projects/{project}/restore</a>
+                            </li>
                                                                                 <li class="tocify-item level-2" data-unique="api-endpoints-GETapi-projects">
-                                <a href="#api-endpoints-GETapi-projects">Display a paginated list of projects for the authenticated user.</a>
+                                <a href="#api-endpoints-GETapi-projects">GET api/projects</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="api-endpoints-POSTapi-projects">
-                                <a href="#api-endpoints-POSTapi-projects">Persist a new project idea following the role specific business rules.</a>
+                                <a href="#api-endpoints-POSTapi-projects">POST api/projects</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="api-endpoints-GETapi-projects--id-">
-                                <a href="#api-endpoints-GETapi-projects--id-">Display the details of a project, including its latest version.</a>
+                                <a href="#api-endpoints-GETapi-projects--id-">GET api/projects/{id}</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="api-endpoints-PUTapi-projects--id-">
-                                <a href="#api-endpoints-PUTapi-projects--id-">Update the project information by creating a new version with the submitted content.</a>
+                                <a href="#api-endpoints-PUTapi-projects--id-">PUT api/projects/{id}</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="api-endpoints-DELETEapi-projects--id-">
+                                <a href="#api-endpoints-DELETEapi-projects--id-">DELETE api/projects/{id}</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -198,7 +207,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: 2026-09-05 22:07:30</li>
+        <li>Last updated: 2026-10-29 10:39:29</li>
     </ul>
 </div>
 
@@ -4903,7 +4912,240 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                     </form>
 
-                    <h2 id="api-endpoints-GETapi-projects">Display a paginated list of projects for the authenticated user.</h2>
+                    <h2 id="api-endpoints-GETapi-projects-meta">GET api/projects/meta</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-projects-meta">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/projects/meta" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/projects/meta"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/projects/meta';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-projects-meta">
+    </span>
+<span id="execution-results-GETapi-projects-meta" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-projects-meta"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-projects-meta"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-projects-meta" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-projects-meta">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-projects-meta" data-method="GET"
+      data-path="api/projects/meta"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-projects-meta', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/projects/meta</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-projects-meta"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-projects-meta"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="api-endpoints-POSTapi-projects--project--restore">POST api/projects/{project}/restore</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-projects--project--restore">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/projects/omnis/restore" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/projects/omnis/restore"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/projects/omnis/restore';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-projects--project--restore">
+</span>
+<span id="execution-results-POSTapi-projects--project--restore" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-projects--project--restore"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-projects--project--restore"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-projects--project--restore" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-projects--project--restore">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-projects--project--restore" data-method="POST"
+      data-path="api/projects/{project}/restore"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-projects--project--restore', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/projects/{project}/restore</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-projects--project--restore"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-projects--project--restore"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>project</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="project"                data-endpoint="POSTapi-projects--project--restore"
+               value="omnis"
+               data-component="url">
+    <br>
+<p>The project. Example: <code>omnis</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="api-endpoints-GETapi-projects">GET api/projects</h2>
 
 <p>
 </p>
@@ -5013,7 +5255,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="api-endpoints-POSTapi-projects">Persist a new project idea following the role specific business rules.</h2>
+                    <h2 id="api-endpoints-POSTapi-projects">POST api/projects</h2>
 
 <p>
 </p>
@@ -5028,7 +5270,20 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request POST \
     "http://localhost/api/projects" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --data "{
+    \"title\": \"ufkaaacsmazquuxslxug\",
+    \"evaluation_criteria\": \"omnis\",
+    \"thematic_area_id\": 16,
+    \"project_status_id\": 16,
+    \"professor_ids\": [
+        16
+    ],
+    \"student_ids\": [
+        16
+    ]
+}"
+</code></pre></div>
 
 
 <div class="javascript-example">
@@ -5041,10 +5296,23 @@ const headers = {
     "Accept": "application/json",
 };
 
+let body = {
+    "title": "ufkaaacsmazquuxslxug",
+    "evaluation_criteria": "omnis",
+    "thematic_area_id": 16,
+    "project_status_id": 16,
+    "professor_ids": [
+        16
+    ],
+    "student_ids": [
+        16
+    ]
+};
 
 fetch(url, {
     method: "POST",
     headers,
+    body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
 
 
@@ -5057,6 +5325,18 @@ $response = $client-&gt;post(
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'title' =&gt; 'ufkaaacsmazquuxslxug',
+            'evaluation_criteria' =&gt; 'omnis',
+            'thematic_area_id' =&gt; 16,
+            'project_status_id' =&gt; 16,
+            'professor_ids' =&gt; [
+                16,
+            ],
+            'student_ids' =&gt; [
+                16,
+            ],
         ],
     ]
 );
@@ -5121,9 +5401,86 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
-                        </form>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>title</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="title"                data-endpoint="POSTapi-projects"
+               value="ufkaaacsmazquuxslxug"
+               data-component="body">
+    <br>
+<p>El campo value no debe tener más de 255 caracteres. Example: <code>ufkaaacsmazquuxslxug</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>evaluation_criteria</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="evaluation_criteria"                data-endpoint="POSTapi-projects"
+               value="omnis"
+               data-component="body">
+    <br>
+<p>Example: <code>omnis</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>thematic_area_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="thematic_area_id"                data-endpoint="POSTapi-projects"
+               value="16"
+               data-component="body">
+    <br>
+<p>Example: <code>16</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>project_status_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="project_status_id"                data-endpoint="POSTapi-projects"
+               value="16"
+               data-component="body">
+    <br>
+<p>Example: <code>16</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>professor_ids</code></b>&nbsp;&nbsp;
+<small>integer[]</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="professor_ids[0]"                data-endpoint="POSTapi-projects"
+               data-component="body">
+        <input type="number" style="display: none"
+               name="professor_ids[1]"                data-endpoint="POSTapi-projects"
+               data-component="body">
+    <br>
 
-                    <h2 id="api-endpoints-GETapi-projects--id-">Display the details of a project, including its latest version.</h2>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>student_ids</code></b>&nbsp;&nbsp;
+<small>integer[]</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="student_ids[0]"                data-endpoint="POSTapi-projects"
+               data-component="body">
+        <input type="number" style="display: none"
+               name="student_ids[1]"                data-endpoint="POSTapi-projects"
+               data-component="body">
+    <br>
+
+        </div>
+        </form>
+
+                    <h2 id="api-endpoints-GETapi-projects--id-">GET api/projects/{id}</h2>
 
 <p>
 </p>
@@ -5246,7 +5603,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                     </form>
 
-                    <h2 id="api-endpoints-PUTapi-projects--id-">Update the project information by creating a new version with the submitted content.</h2>
+                    <h2 id="api-endpoints-PUTapi-projects--id-">PUT api/projects/{id}</h2>
 
 <p>
 </p>
@@ -5261,7 +5618,20 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-bash">curl --request PUT \
     "http://localhost/api/projects/16" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
+    --header "Accept: application/json" \
+    --data "{
+    \"title\": \"ufkaaacsmazquuxslxug\",
+    \"evaluation_criteria\": \"omnis\",
+    \"thematic_area_id\": 16,
+    \"project_status_id\": 16,
+    \"professor_ids\": [
+        16
+    ],
+    \"student_ids\": [
+        16
+    ]
+}"
+</code></pre></div>
 
 
 <div class="javascript-example">
@@ -5274,10 +5644,23 @@ const headers = {
     "Accept": "application/json",
 };
 
+let body = {
+    "title": "ufkaaacsmazquuxslxug",
+    "evaluation_criteria": "omnis",
+    "thematic_area_id": 16,
+    "project_status_id": 16,
+    "professor_ids": [
+        16
+    ],
+    "student_ids": [
+        16
+    ]
+};
 
 fetch(url, {
     method: "PUT",
     headers,
+    body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
 
 
@@ -5290,6 +5673,18 @@ $response = $client-&gt;put(
         'headers' =&gt; [
             'Content-Type' =&gt; 'application/json',
             'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'title' =&gt; 'ufkaaacsmazquuxslxug',
+            'evaluation_criteria' =&gt; 'omnis',
+            'thematic_area_id' =&gt; 16,
+            'project_status_id' =&gt; 16,
+            'professor_ids' =&gt; [
+                16,
+            ],
+            'student_ids' =&gt; [
+                16,
+            ],
         ],
     ]
 );
@@ -5366,6 +5761,206 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="PUTapi-projects--id-"
+               value="16"
+               data-component="url">
+    <br>
+<p>The ID of the project. Example: <code>16</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>title</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="title"                data-endpoint="PUTapi-projects--id-"
+               value="ufkaaacsmazquuxslxug"
+               data-component="body">
+    <br>
+<p>El campo value no debe tener más de 255 caracteres. Example: <code>ufkaaacsmazquuxslxug</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>evaluation_criteria</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="evaluation_criteria"                data-endpoint="PUTapi-projects--id-"
+               value="omnis"
+               data-component="body">
+    <br>
+<p>Example: <code>omnis</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>thematic_area_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="thematic_area_id"                data-endpoint="PUTapi-projects--id-"
+               value="16"
+               data-component="body">
+    <br>
+<p>Example: <code>16</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>project_status_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="project_status_id"                data-endpoint="PUTapi-projects--id-"
+               value="16"
+               data-component="body">
+    <br>
+<p>Example: <code>16</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>professor_ids</code></b>&nbsp;&nbsp;
+<small>integer[]</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="professor_ids[0]"                data-endpoint="PUTapi-projects--id-"
+               data-component="body">
+        <input type="number" style="display: none"
+               name="professor_ids[1]"                data-endpoint="PUTapi-projects--id-"
+               data-component="body">
+    <br>
+
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>student_ids</code></b>&nbsp;&nbsp;
+<small>integer[]</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="student_ids[0]"                data-endpoint="PUTapi-projects--id-"
+               data-component="body">
+        <input type="number" style="display: none"
+               name="student_ids[1]"                data-endpoint="PUTapi-projects--id-"
+               data-component="body">
+    <br>
+
+        </div>
+        </form>
+
+                    <h2 id="api-endpoints-DELETEapi-projects--id-">DELETE api/projects/{id}</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-projects--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://localhost/api/projects/16" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/projects/16"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/projects/16';
+$response = $client-&gt;delete(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-projects--id-">
+</span>
+<span id="execution-results-DELETEapi-projects--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-projects--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-projects--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-projects--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-projects--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-projects--id-" data-method="DELETE"
+      data-path="api/projects/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-projects--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/projects/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-projects--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-projects--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="DELETEapi-projects--id-"
                value="16"
                data-component="url">
     <br>

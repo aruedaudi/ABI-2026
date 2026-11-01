@@ -16,6 +16,7 @@ var hierarchy =
       [ "App::Http::Controllers::Controller", "classApp_1_1Http_1_1Controllers_1_1Controller.html", [
         [ "App::Http::Controllers::AcademicPeriodController", "classApp_1_1Http_1_1Controllers_1_1AcademicPeriodController.html", null ],
         [ "App::Http::Controllers::AcademicProcessWindowController", "classApp_1_1Http_1_1Controllers_1_1AcademicProcessWindowController.html", null ],
+        [ "App::Http::Controllers::Api::ProjectApiController", "classApp_1_1Http_1_1Controllers_1_1Api_1_1ProjectApiController.html", null ],
         [ "App::Http::Controllers::Auth::ConfirmPasswordController", "classApp_1_1Http_1_1Controllers_1_1Auth_1_1ConfirmPasswordController.html", null ],
         [ "App::Http::Controllers::Auth::ForgotPasswordController", "classApp_1_1Http_1_1Controllers_1_1Auth_1_1ForgotPasswordController.html", null ],
         [ "App::Http::Controllers::Auth::LoginController", "classApp_1_1Http_1_1Controllers_1_1Auth_1_1LoginController.html", null ],

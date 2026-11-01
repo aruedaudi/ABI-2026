@@ -21,6 +21,19 @@ class Student extends Model
     public const PG_STAGE_PG2 = 'pg2';
 
     /**
+     * Project statuses that do not count as an active assignment.
+     * A student whose projects are only in these states may apply to a new idea.
+     *
+     * @var array<int, string>
+     */
+    public const INACTIVE_PROJECT_STATUSES = [
+        'Rechazado',
+        'Descartado',
+        'Devuelto para correccion',
+        'Devuelto para corrección',
+    ];
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
@@ -104,10 +117,8 @@ class Student extends Model
 
     public function hasActiveProject(): bool
     {
-        $allowedStatuses = ['Rechazado', 'Devuelto para correccion'];
-
         return $this->projects()
-            ->whereHas('projectStatus', fn ($status) => $status->whereNotIn('name', $allowedStatuses))
+            ->whereHas('projectStatus', fn ($status) => $status->whereNotIn('name', self::INACTIVE_PROJECT_STATUSES))
             ->exists();
     }
 

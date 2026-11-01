@@ -1,19 +1,19 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
 <area shape="rect" id="Node000000" href="$classMiddleware.html" title=" " alt="" coords="5,237,104,262"/>
 <area shape="rect" id="Node000001" href="$classApp_1_1Http_1_1Middleware_1_1Authenticate.html" title=" " alt="" coords="202,5,369,45"/>
-<area shape="poly" id="edge65_Node000000_Node000001" title=" " alt="" coords="59,222,70,184,88,139,115,94,150,55,174,41,201,31,203,36,177,45,154,59,119,97,93,142,75,186,64,223"/>
+<area shape="poly" id="edge66_Node000000_Node000001" title=" " alt="" coords="59,222,70,184,88,139,115,94,150,55,174,41,201,31,203,36,177,45,154,59,119,97,93,142,75,186,64,223"/>
 <area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Middleware_1_1EncryptCookies.html" title=" " alt="" coords="202,69,369,109"/>
-<area shape="poly" id="edge66_Node000000_Node000002" title=" " alt="" coords="66,223,99,170,123,142,151,119,175,106,201,97,203,103,177,111,153,124,126,146,103,173,70,226"/>
+<area shape="poly" id="edge67_Node000000_Node000002" title=" " alt="" coords="66,223,99,170,123,142,151,119,175,106,201,97,203,103,177,111,153,124,126,146,103,173,70,226"/>
 <area shape="rect" id="Node000003" href="$classApp_1_1Http_1_1Middleware_1_1PreventRequestsDuringMaintenance.html" title=" " alt="" coords="152,133,419,173"/>
-<area shape="poly" id="edge67_Node000000_Node000003" title=" " alt="" coords="81,226,113,203,151,183,184,171,186,176,153,188,116,208,84,230"/>
+<area shape="poly" id="edge68_Node000000_Node000003" title=" " alt="" coords="81,226,113,203,151,183,184,171,186,176,153,188,116,208,84,230"/>
 <area shape="rect" id="Node000004" href="$classApp_1_1Http_1_1Middleware_1_1TrimStrings.html" title=" " alt="" coords="202,197,369,237"/>
-<area shape="poly" id="edge68_Node000000_Node000004" title=" " alt="" coords="117,238,201,226,202,232,118,243"/>
+<area shape="poly" id="edge69_Node000000_Node000004" title=" " alt="" coords="117,238,201,226,202,232,118,243"/>
 <area shape="rect" id="Node000005" href="$classApp_1_1Http_1_1Middleware_1_1TrustHosts.html" title=" " alt="" coords="202,261,369,301"/>
-<area shape="poly" id="edge69_Node000000_Node000005" title=" " alt="" coords="118,255,202,267,201,272,117,261"/>
+<area shape="poly" id="edge70_Node000000_Node000005" title=" " alt="" coords="118,255,202,267,201,272,117,261"/>
 <area shape="rect" id="Node000006" href="$classApp_1_1Http_1_1Middleware_1_1TrustProxies.html" title=" " alt="" coords="202,325,369,365"/>
-<area shape="poly" id="edge70_Node000000_Node000006" title=" " alt="" coords="84,268,116,291,153,311,203,328,201,333,151,316,113,295,81,273"/>
+<area shape="poly" id="edge71_Node000000_Node000006" title=" " alt="" coords="84,268,116,291,153,311,203,328,201,333,151,316,113,295,81,273"/>
 <area shape="rect" id="Node000007" href="$classApp_1_1Http_1_1Middleware_1_1ValidateSignature.html" title=" " alt="" coords="202,389,369,429"/>
-<area shape="poly" id="edge71_Node000000_Node000007" title=" " alt="" coords="70,273,103,325,126,352,153,375,177,387,203,396,201,401,175,392,151,380,123,356,99,329,66,276"/>
+<area shape="poly" id="edge72_Node000000_Node000007" title=" " alt="" coords="70,273,103,325,126,352,153,375,177,387,203,396,201,401,175,392,151,380,123,356,99,329,66,276"/>
 <area shape="rect" id="Node000008" href="$classApp_1_1Http_1_1Middleware_1_1VerifyCsrfToken.html" title=" " alt="" coords="202,453,369,493"/>
-<area shape="poly" id="edge72_Node000000_Node000008" title=" " alt="" coords="64,275,75,313,93,357,119,402,154,439,177,453,203,462,201,467,174,458,150,443,115,405,88,359,70,314,59,277"/>
+<area shape="poly" id="edge73_Node000000_Node000008" title=" " alt="" coords="64,275,75,313,93,357,119,402,154,439,177,453,203,462,201,467,174,458,150,443,115,405,88,359,70,314,59,277"/>
 </map>

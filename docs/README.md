@@ -12,49 +12,87 @@ Este directorio reúne la documentación técnica del proyecto. La guía de esta
 
 ## Instalación y configuración
 
-### Requisitos
+### Prerrequisitos
 
-- PHP **8.2 o superior** con las extensiones requeridas por Laravel, incluido `pdo_mysql`.
-- Composer.
-- Node.js y npm.
-- MySQL o MariaDB.
-- Git.
+Para ejecutar el proyecto en local, **usa XAMPP**. No instales PHP, MySQL ni Apache por separado para evitar conflictos.
 
-En Windows, XAMPP es una opción compatible para proporcionar Apache, MySQL y PHP. En Linux o macOS puede usarse cualquier instalación equivalente que cumpla los requisitos.
+- **XAMPP**, con:
+  - **PHP 8.2 o superior con `pdo_mysql`**
+  - **MySQL o MariaDB**
+  - **Apache**
+- **Composer**, para instalar dependencias de PHP
+- **Node.js y npm**, para compilar los assets del frontend
 
-### 1. Clonar e instalar dependencias
+> **Importante:** este proyecto asume en Windows que XAMPP está instalado en `C:\xampp`. Si lo instalaste en otra ruta, debes ajustar los scripts o la variable PATH.
 
-```bash
-git clone <url-del-repositorio>
-cd ABI
-composer install
-npm install
-```
+### Instalación local en Windows con XAMPP
 
-En Windows con XAMPP, asegúrate primero de que la terminal use el PHP de XAMPP:
+#### 1. Instala XAMPP
+Instala XAMPP según el sistema operativo donde vayas a desplegarlo y, al terminar, abre el panel de control de XAMPP.
+Link para la instalación de XAMPP: https://www.apachefriends.org/es/index.html
+
+#### 2. Inicia servicios
+En el panel de XAMPP, inicia:
+- **Apache**
+- **MySQL**
+
+#### 3. Verifica que estás usando el PHP de XAMPP
+Antes de ejecutar comandos de Laravel, abre **PowerShell** y asegúrate de que `php` apunte al PHP de XAMPP.
+
+Puedes hacerlo temporalmente en la terminal actual con:
 
 ```powershell
 $env:Path = "C:\xampp\php;C:\xampp\mysql\bin;" + $env:Path
 php --ini
 ```
 
-La ruta mostrada por `php --ini` debe corresponder a `C:\xampp\php`.
+La salida de `php --ini` debe apuntar a un `php.ini` dentro de `C:\xampp\php`.
 
-### 2. Crear y completar `.env`
+> **No uses otro PHP instalado aparte**, porque eso suele causar errores como `could not find driver` al correr migraciones.
 
-Parte siempre de la plantilla local, que no contiene secretos:
+#### 4. Instala Composer
+Instala Composer y durante el proceso de instalación en caso de que se habilite la opción debes seleccionar "Add This PHP To Your PATH".
+Link para descargar la ultima versión de Composer: https://getcomposer.org/Composer-Setup.exe
+
+#### 5. Reiniciar el equipo
+Debes reiniciar el equipo para que el sistema operativo actualice sus rutas internas y reconozca el comando Composer.
+
+#### 6. Clona el repositorio
+```bash
+git clone <url-del-repositorio>
+cd ABI-2026-main
+```
+
+#### 7. Instala dependencias de PHP
+```bash
+composer install
+```
+
+```
+En caso de que Composer presente problemas de instalación reemplacen el archivo php.ini del Config de Apache en XAMPP.
+```
+> PHP.INI corregido: https://drive.google.com/file/d/1EquA3PZSD6l0HsOLjGdzTbd6wqDecLKb/view?usp=sharing
+
+#### 8. Instala dependencias del frontend
+```bash
+npm install
+```
+
+#### 9. Configura el archivo `.env`
+Si vas a trabajar con base de datos local:
 
 ```bash
-cp .env.example .env
+copy .env.example .env
 ```
 
-En Windows PowerShell, usa:
+Si vas a usar base de datos en la nube:
 
-```powershell
-Copy-Item .env.example .env
+```bash
+copy .env.examplenube .env
 ```
 
-Configura al menos la aplicación y la conexión administrativa de MySQL:
+#### 10. Ajusta las variables de entorno
+Si trabajas en local, revisa como mínimo estos valores en `.env`:
 
 ```env
 APP_NAME=ABI
@@ -65,33 +103,84 @@ APP_URL=http://127.0.0.1:8000
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=abi
+DB_DATABASE=laravel
 DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-No versiones `.env` ni credenciales. Para una base de datos remota, crea tu propia copia local con las variables del proveedor; no uses valores de ejemplo como si fueran secretos compartidos.
+Si tu usuario `root` en MySQL tiene contraseña, colócala en `DB_PASSWORD`.
 
-### 3. Generar la clave y preparar archivos públicos
-
+#### 11. Genera la clave de la aplicación
 ```bash
 php artisan key:generate
-php artisan storage:link
 ```
 
-El enlace de almacenamiento permite servir, entre otros archivos, las fotos de perfil guardadas en el disco `public`.
+#### 12. Inicializa la base de datos local
+Este paso solo aplica si estás usando `.env` local.
 
-### 4. Inicializar la base de datos
+En Windows PowerShell, desde la raíz del proyecto:
 
-Primero crea la base de datos indicada por `DB_DATABASE` (por ejemplo, `abi`). Después elige **una** de estas opciones:
+```powershell
+.\scripts\set-db-roles.ps1
+```
 
-**Esquema y datos de muestra, sin usuarios MySQL restringidos:**
+Ese script realiza dos acciones:
+- ejecuta migraciones y seeders
+- crea los usuarios y permisos de MySQL usados por el sistema
+
+> **Importante:** si vas a usar base de datos en la nube, omite este paso.
+
+#### 12. Compila los assets
+```bash
+npm run build
+```
+
+#### 13. Inicia el servidor de desarrollo
+```bash
+php artisan serve
+```
+
+La aplicación quedará disponible en:
+
+```text
+http://127.0.0.1:8000
+```
+
+### Instalación local en Linux
+
+1. Instala PHP 8.1+, Composer, Node.js y MySQL/MariaDB.
+2. Copia `.env.example` a `.env`.
+3. Ajusta credenciales de base de datos.
+4. Ejecuta:
 
 ```bash
-php artisan migrate --seed
+composer install
+npm install
+php artisan key:generate
+bash scripts/set-db-roles.sh
+npm run build
+php artisan serve
 ```
 
-**Esquema, datos de muestra y usuarios MySQL por rol:** completa las variables de la siguiente sección y ejecuta el script apropiado:
+### Para manejar un inicio rápido
+
+```bash
+composer install
+npm install
+cp .env.example .env
+Abre XAMPP y enciende:
+- Apache
+- MySQL
+
+php artisan key:generate
+.\scripts\set-db-roles.ps1
+npm run build
+php artisan serve
+```
+
+### Base de datos con privilegios por rol
+
+El inicio rápido usa una única conexión administrativa. Si necesitas reproducir las restricciones MySQL por rol, configura las variables `DB_USER_*`, `DB_RESEARCH_*`, `DB_PROFESSOR_PASS` y `DB_STUDENT_PASS` en tu `.env`, y ejecuta el script para tu sistema:
 
 ```bash
 # Linux o Git Bash

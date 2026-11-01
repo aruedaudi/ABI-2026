@@ -90,6 +90,7 @@ $(document).ready(function(){initNavTree('classApp_1_1Http_1_1Middleware_1_1Auth
 
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classApp_1_1Http_1_1Middleware_1_1Authenticate-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">App::Http::Middleware::Authenticate Class Reference</div></div>
@@ -100,16 +101,22 @@ $(document).ready(function(){initNavTree('classApp_1_1Http_1_1Middleware_1_1Auth
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classApp_1_1Http_1_1Middleware_1_1Authenticate__inherit__graph.svg" width="170" height="219"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classApp_1_1Http_1_1Middleware_1_1Authenticate__inherit__graph.svg" width="203" height="254"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for App::Http::Middleware::Authenticate:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classApp_1_1Http_1_1Middleware_1_1Authenticate__coll__graph.svg" width="170" height="219"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classApp_1_1Http_1_1Middleware_1_1Authenticate__coll__graph.svg" width="203" height="254"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ac3db2e86652e8b92741cda4d2d0a425f" id="r_ac3db2e86652e8b92741cda4d2d0a425f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classApp_1_1Http_1_1Middleware_1_1Authenticate.html#ac3db2e86652e8b92741cda4d2d0a425f">handle</a> ($request, Closure $next,... $guards)</td></tr>
+<tr class="memdesc:ac3db2e86652e8b92741cda4d2d0a425f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle an incoming request.  <br /></td></tr>
+<tr class="separator:ac3db2e86652e8b92741cda4d2d0a425f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a372443056da813c65abc04679f824da1" id="r_a372443056da813c65abc04679f824da1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classApp_1_1Http_1_1Middleware_1_1Authenticate.html#a372443056da813c65abc04679f824da1">redirectTo</a> (Request $request)</td></tr>
@@ -118,8 +125,47 @@ Protected Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="Authenticate_8php_source.html#l00008">8</a> of file <a class="el" href="Authenticate_8php_source.html">Authenticate.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Authenticate_8php_source.html#l00010">10</a> of file <a class="el" href="Authenticate_8php_source.html">Authenticate.php</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac3db2e86652e8b92741cda4d2d0a425f" name="ac3db2e86652e8b92741cda4d2d0a425f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3db2e86652e8b92741cda4d2d0a425f">&#9670;&#160;</a></span>handle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">App::Http::Middleware::Authenticate::handle </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$request</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Closure&#160;</td>
+          <td class="paramname"><em>$next</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$guards</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Handle an incoming request. </p>
+<p>Besides checking that the user is authenticated, closes the session of users that have been inactivated (state = 0) while logged in. </p>
+
+<p class="definition">Definition at line <a class="el" href="Authenticate_8php_source.html#l00018">18</a> of file <a class="el" href="Authenticate_8php_source.html">Authenticate.php</a>.</p>
+
+</div>
+</div>
 <a id="a372443056da813c65abc04679f824da1" name="a372443056da813c65abc04679f824da1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a372443056da813c65abc04679f824da1">&#9670;&#160;</a></span>redirectTo()</h2>
 
@@ -146,7 +192,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Get the path the user should be redirected to when they are not authenticated. </p>
 
-<p class="definition">Definition at line <a class="el" href="Authenticate_8php_source.html#l00013">13</a> of file <a class="el" href="Authenticate_8php_source.html">Authenticate.php</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Authenticate_8php_source.html#l00045">45</a> of file <a class="el" href="Authenticate_8php_source.html">Authenticate.php</a>.</p>
 
 </div>
 </div>

@@ -65,6 +65,12 @@
             @if (session('error'))
                 <div class="alert alert-danger">{{ session('error') }}</div>
             @endif
+            @if (session('warning'))
+                <div class="alert alert-warning alert-dismissible" role="alert">
+                    {{ session('warning') }}
+                    <a class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></a>
+                </div>
+            @endif
 
             @if ($isProfessor || $isStudent)
                 <div class="alert {{ $proposalWindowOpen ? 'alert-info' : 'alert-warning' }} mb-3">

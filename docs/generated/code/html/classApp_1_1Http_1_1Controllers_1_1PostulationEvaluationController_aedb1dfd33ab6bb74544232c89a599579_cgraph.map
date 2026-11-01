@@ -1,5 +1,7 @@
 <map id="App::Http::Controllers::PostulationEvaluationController::show" name="App::Http::Controllers::PostulationEvaluationController::show">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,284,45"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,37,284,77"/>
 <area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1Postulation.html#a9a9c2e59583c73e7b45e46343bd4c28a" title=" " alt="" coords="332,5,515,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="284,23,318,23,318,28,284,28"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="284,39,318,35,319,40,285,44"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Models_1_1Postulation.html#a9d222d82509f0612bffa0e37263aff54" title=" " alt="" coords="332,69,515,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="285,71,319,75,318,80,284,76"/>
 </map>

@@ -1,23 +1,25 @@
 <map id="App::Models::Project::versions" name="App::Models::Project::versions">
-<area shape="rect" id="Node000001" title=" " alt="" coords="519,300,673,340"/>
-<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#a1a5cbe33cd3fb125fa815009ad08ece0" title="Display the edit form with the existing project information." alt="" coords="259,5,431,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="586,287,572,236,550,174,516,112,494,84,469,59,451,48,430,39,433,34,453,43,472,55,498,80,520,109,555,172,578,235,591,286"/>
-<area shape="rect" id="Node000003" href="$classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController.html#af13e4ab54e821c1878ecfd0317015cdf" title=" " alt="" coords="241,70,449,125"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="578,289,561,254,536,214,506,174,469,139,448,127,451,122,472,135,510,170,541,211,565,251,583,286"/>
-<area shape="rect" id="Node000004" href="$classApp_1_1Models_1_1Project.html#ac3c65f1f97724cbf4a68dbaacd492404" title="Get the maximum number of students allowed for this project." alt="" coords="268,149,423,189"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="569,291,525,246,498,223,469,204,422,185,424,180,472,199,502,219,529,242,573,288"/>
-<area shape="rect" id="Node000006" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#ac2f30c9debf1c8b4a2909a4bfea8312c" title="Extract correction comments from version content and fallback stage notes." alt="" coords="249,214,441,269"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="519,298,470,283,434,271,436,266,471,277,521,293"/>
-<area shape="rect" id="Node000007" href="$classApp_1_1Http_1_1Controllers_1_1BankApprovedIdeasForProfessorsController.html#aeb7ae4b548502b0d6d8ff88d43a38acf" title="Los profesores pueden ver el detalle de una idea aprobada sin depender de la ventana del calendario." alt="" coords="221,293,469,347"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="505,323,470,323,470,317,505,317"/>
-<area shape="rect" id="Node000008" href="$classApp_1_1Http_1_1Controllers_1_1BankApprovedIdeasForStudentsController.html#a1da16a4a5c61221cfdcd5ec9887a8a9e" title=" " alt="" coords="227,371,464,426"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="519,347,434,374,432,369,518,342"/>
-<area shape="rect" id="Node000009" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#ae1323a36bd9ece1992b9536d1cb3e1f0" title="Display the details of a project, including its latest version." alt="" coords="255,451,436,491"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="572,352,529,398,501,420,472,440,437,455,435,450,469,435,498,416,525,394,568,349"/>
-<area shape="rect" id="Node000010" href="$classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController.html#aa6ad08d9d2d47f827a4147947f210082" title=" " alt="" coords="220,515,471,555"/>
-<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="584,353,566,389,542,430,510,471,472,505,451,517,448,512,469,501,506,467,537,427,562,387,579,351"/>
-<area shape="rect" id="Node000011" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#a4aa26f2ac46451d8caf3c750e75de7dd" title="Create a version record that captures the current project snapshot." alt="" coords="233,579,458,634"/>
-<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="589,354,575,402,551,459,517,518,496,545,472,569,454,581,451,577,469,565,492,541,513,515,546,457,570,400,584,353"/>
-<area shape="rect" id="Node000005" href="$classApp_1_1Http_1_1Controllers_1_1PostulationController.html#a4cc7fecbc9a1b921ffd2871bd763a1d1" title=" " alt="" coords="5,142,172,197"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="254,172,172,172,172,167,254,167"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="519,341,673,381"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1Api_1_1ProjectApiController.html#aa29f0fa9d8cd374259c22fae513967c0" title=" " alt="" coords="251,5,440,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="587,328,575,273,552,205,518,135,495,103,469,75,439,55,442,51,472,71,499,99,522,132,557,203,580,271,592,327"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#a1a5cbe33cd3fb125fa815009ad08ece0" title="Display the edit form with the existing project information." alt="" coords="259,85,431,125"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="583,328,567,284,544,233,511,182,491,159,469,139,451,128,431,119,433,114,453,123,472,135,495,155,515,179,548,231,572,282,588,326"/>
+<area shape="rect" id="Node000004" href="$classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController.html#af13e4ab54e821c1878ecfd0317015cdf" title=" " alt="" coords="241,149,449,204"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="573,330,529,273,501,244,469,219,447,207,450,202,472,214,505,240,533,270,577,327"/>
+<area shape="rect" id="Node000005" href="$classApp_1_1Models_1_1Project.html#ac3c65f1f97724cbf4a68dbaacd492404" title="Get the maximum number of students allowed for this project." alt="" coords="268,229,423,269"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="557,335,516,308,470,283,422,267,424,262,472,278,519,303,560,330"/>
+<area shape="rect" id="Node000007" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#ac2f30c9debf1c8b4a2909a4bfea8312c" title="Extract correction comments from version content and fallback stage notes." alt="" coords="249,293,441,348"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="505,349,441,339,442,333,506,344"/>
+<area shape="rect" id="Node000008" href="$classApp_1_1Http_1_1Controllers_1_1BankApprovedIdeasForProfessorsController.html#aeb7ae4b548502b0d6d8ff88d43a38acf" title="Los profesores pueden ver el detalle de una idea aprobada sin depender de la ventana del calendario." alt="" coords="221,372,469,427"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="506,377,470,383,469,378,505,372"/>
+<area shape="rect" id="Node000009" href="$classApp_1_1Http_1_1Controllers_1_1BankApprovedIdeasForStudentsController.html#a1da16a4a5c61221cfdcd5ec9887a8a9e" title=" " alt="" coords="227,451,464,505"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="557,391,517,416,472,440,441,453,439,448,470,436,514,412,554,386"/>
+<area shape="rect" id="Node000010" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#ae1323a36bd9ece1992b9536d1cb3e1f0" title="Display the details of a project, including its latest version." alt="" coords="255,530,436,570"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="580,394,537,458,507,491,472,519,438,536,435,531,469,514,503,487,533,454,576,391"/>
+<area shape="rect" id="Node000011" href="$classApp_1_1Http_1_1Controllers_1_1ProjectEvaluationController.html#aa6ad08d9d2d47f827a4147947f210082" title=" " alt="" coords="220,594,471,634"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="588,395,572,438,548,489,515,541,495,564,472,584,453,596,450,592,469,580,491,560,511,537,543,487,567,436,583,393"/>
+<area shape="rect" id="Node000012" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#a4aa26f2ac46451d8caf3c750e75de7dd" title="Create a version record that captures the current project snapshot." alt="" coords="233,659,458,713"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="592,395,579,450,557,518,522,587,499,620,472,648,455,661,452,656,469,644,495,616,517,585,552,515,574,448,587,394"/>
+<area shape="rect" id="Node000006" href="$classApp_1_1Http_1_1Controllers_1_1PostulationController.html#a4cc7fecbc9a1b921ffd2871bd763a1d1" title=" " alt="" coords="5,221,172,276"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="254,251,172,251,172,246,254,246"/>
 </map>

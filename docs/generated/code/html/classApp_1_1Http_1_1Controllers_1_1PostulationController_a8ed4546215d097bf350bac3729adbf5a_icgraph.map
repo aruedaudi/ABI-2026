@@ -1,0 +1,7 @@
+<map id="App::Http::Controllers::PostulationController::ensureProjectIsAvailable" name="App::Http::Controllers::PostulationController::ensureProjectIsAvailable">
+<area shape="rect" id="Node000001" title="Aplica las mismas reglas del Banco de Ideas Aprobadas: la idea debe estar &quot;Aprobado&quot;,..." alt="" coords="220,45,411,100"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1PostulationController.html#a4cc7fecbc9a1b921ffd2871bd763a1d1" title=" " alt="" coords="5,5,172,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="206,56,172,50,173,45,207,51"/>
+<area shape="rect" id="Node000003" href="$classApp_1_1Http_1_1Controllers_1_1PostulationController.html#a4626d798cedd76d73332685f7e877448" title=" " alt="" coords="5,84,172,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="207,94,173,100,172,95,206,89"/>
+</map>

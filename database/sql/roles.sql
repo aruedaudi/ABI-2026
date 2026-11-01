@@ -1,19 +1,19 @@
 -- ======================================
 -- ROLES AND PERMISSIONS MYSQL
 -- ======================================
--- This file defines MySQL users and assigns permissions 
--- for different roles in the system: 
+-- This file defines MySQL users and assigns permissions
+-- for different roles in the system:
 --   - db_user (basic login)
 --   - db_student
 --   - db_professor
 --   - db_research_staff
 --
 -- General notes:
--- 1. Users are defined for three hosts: %, localhost, and 127.0.0.1 
---    to ensure compatibility across the development team. 
+-- 1. Users are defined for three hosts: %, localhost, and 127.0.0.1
+--    to ensure compatibility across the development team.
 --    In production, only the required host should remain (usually %).
 --
--- 2. Placeholders like {{DB_DATABASE}}, {{DB_USER_PASS}}, etc. 
+-- 2. Placeholders like {{DB_DATABASE}}, {{DB_USER_PASS}}, etc.
 --    are replaced at runtime using environment variables defined in `.env`.
 --
 -- 3. Main permissions used in this setup:
@@ -115,6 +115,10 @@ GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.programs TO 'db_research_staff'@
 GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.research_groups TO 'db_research_staff'@'%';
 GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.investigation_lines TO 'db_research_staff'@'%';
 GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.thematic_areas TO 'db_research_staff'@'%';
+GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.academic_periods TO 'db_research_staff'@'%';
+GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.academic_process_windows TO 'db_research_staff'@'%';
+GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.load_projections TO 'db_research_staff'@'%';
+GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.teacher_assignments TO 'db_research_staff'@'%';
 GRANT SELECT, UPDATE ON {{DB_DATABASE}}.projects TO 'db_research_staff'@'%';
 GRANT SELECT ON {{DB_DATABASE}}.project_statuses TO 'db_research_staff'@'%';
 GRANT SELECT ON {{DB_DATABASE}}.content_framework_project TO 'db_research_staff'@'%';
@@ -225,6 +229,10 @@ GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.programs TO 'db_research_staff'@
 GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.research_groups TO 'db_research_staff'@'localhost';
 GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.investigation_lines TO 'db_research_staff'@'localhost';
 GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.thematic_areas TO 'db_research_staff'@'localhost';
+GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.academic_periods TO 'db_research_staff'@'localhost';
+GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.academic_process_windows TO 'db_research_staff'@'localhost';
+GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.load_projections TO 'db_research_staff'@'localhost';
+GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.teacher_assignments TO 'db_research_staff'@'localhost';
 GRANT SELECT, UPDATE ON {{DB_DATABASE}}.projects TO 'db_research_staff'@'localhost';
 GRANT SELECT ON {{DB_DATABASE}}.project_statuses TO 'db_research_staff'@'localhost';
 GRANT SELECT ON {{DB_DATABASE}}.content_framework_project TO 'db_research_staff'@'localhost';
@@ -335,6 +343,10 @@ GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.programs TO 'db_research_staff'@
 GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.research_groups TO 'db_research_staff'@'127.0.0.1';
 GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.investigation_lines TO 'db_research_staff'@'127.0.0.1';
 GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.thematic_areas TO 'db_research_staff'@'127.0.0.1';
+GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.academic_periods TO 'db_research_staff'@'127.0.0.1';
+GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.academic_process_windows TO 'db_research_staff'@'127.0.0.1';
+GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.load_projections TO 'db_research_staff'@'127.0.0.1';
+GRANT SELECT, INSERT, UPDATE ON {{DB_DATABASE}}.teacher_assignments TO 'db_research_staff'@'127.0.0.1';
 GRANT SELECT, UPDATE ON {{DB_DATABASE}}.projects TO 'db_research_staff'@'127.0.0.1';
 GRANT SELECT ON {{DB_DATABASE}}.project_statuses TO 'db_research_staff'@'127.0.0.1';
 GRANT SELECT ON {{DB_DATABASE}}.content_framework_project TO 'db_research_staff'@'127.0.0.1';

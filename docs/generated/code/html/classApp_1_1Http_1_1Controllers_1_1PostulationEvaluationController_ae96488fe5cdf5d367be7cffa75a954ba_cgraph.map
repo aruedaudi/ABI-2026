@@ -1,11 +1,9 @@
 <map id="App::Http::Controllers::PostulationEvaluationController::evaluate" name="App::Http::Controllers::PostulationEvaluationController::evaluate">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,109,241,164"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,77,241,132"/>
 <area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1PostulationEvaluationController.html#abe157d29af02f42218ae04125f2fdecf" title="Libera y reordena las prioridades de un estudiante cuando una postulación es rechazada." alt="" coords="289,5,525,60"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,107,288,70,311,62,313,67,290,75,194,112"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="231,75,285,61,287,66,232,80"/>
 <area shape="rect" id="Node000003" href="$classApp_1_1Models_1_1Postulation.html#a9a9c2e59583c73e7b45e46343bd4c28a" title=" " alt="" coords="316,85,499,125"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="241,121,302,114,302,119,242,126"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="242,102,302,102,302,107,242,107"/>
 <area shape="rect" id="Node000004" href="$classApp_1_1Models_1_1Postulation.html#ad733a7797047d55d22e400df605cc3dc" title=" " alt="" coords="316,149,499,189"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="242,147,302,154,302,160,241,153"/>
-<area shape="rect" id="Node000005" href="$classApp_1_1Models_1_1Postulation.html#a9d222d82509f0612bffa0e37263aff54" title=" " alt="" coords="316,213,499,253"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="192,162,290,198,316,206,315,211,288,203,190,167"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="242,129,305,143,304,148,241,134"/>
 </map>

@@ -1,7 +1,7 @@
 <map id="App::Models::Professor::ProfessorProject" name="App::Models::Professor::ProfessorProject">
-<area shape="rect" id="Node000001" title="Extended model that routes queries through the professor connection so professors and committee leade..." alt="" coords="17,611,213,731"/>
-<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1Project.html" title=" " alt="" coords="5,119,225,563"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,577,118,610,113,610,113,577"/>
+<area shape="rect" id="Node000001" title="Extended model that routes queries through the professor connection so professors and committee leade..." alt="" coords="17,695,213,815"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1Project.html" title=" " alt="" coords="5,119,225,647"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,660,118,694,113,694,113,660"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="88,5,143,71"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="118,84,118,119,113,119,113,84"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="118,84,118,118,113,118,113,84"/>
 </map>

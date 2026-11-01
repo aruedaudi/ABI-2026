@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\Api\ProjectApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContentController;
@@ -42,7 +42,8 @@ Route::middleware(['web', 'auth', 'role:research_staff'])->name('api.')->group(f
     Route::apiResource('contents', ContentController::class);
     Route::apiResource('versions', VersionController::class);
     Route::apiResource('content-versions', ContentVersionController::class);
-    Route::get('projects/meta', [ProjectController::class, 'meta'])->name('projects.meta');
-    Route::post('projects/{project}/restore', [ProjectController::class, 'restore'])->name('projects.restore');
-    Route::apiResource('projects', ProjectController::class);
+    Route::get('projects/meta', [ProjectApiController::class, 'meta'])->name('projects.meta');
+    Route::post('projects/{project}/restore', [ProjectApiController::class, 'restore'])->name('projects.restore');
+    Route::apiResource('projects', ProjectApiController::class);
+
 });

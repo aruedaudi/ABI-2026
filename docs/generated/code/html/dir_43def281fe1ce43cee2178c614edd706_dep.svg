@@ -46,7 +46,7 @@
   </g>
 </defs>
 <script type="application/ecmascript">
-var viewWidth = 2717;
+var viewWidth = 2767;
 var viewHeight = 142;
 var sectionId = 'dynsection-0';
 </script>
@@ -57,43 +57,43 @@ var sectionId = 'dynsection-0';
 <g id="clust1" class="cluster">
 <title>clusterdir_d0d2e33c8849892932e2aed3ea15dbb6</title>
 <g id="a_clust1"><a xlink:href="dir_d0d2e33c8849892932e2aed3ea15dbb6.html" target="_top" xlink:title="ABI&#45;2026">
-<polygon fill="#edf0f7" stroke="#7f7f7f" stroke-dasharray="5,2" points="8,-8 8,-126 2701,-126 2701,-8 8,-8"/>
-<text text-anchor="middle" x="1354.5" y="-114" font-family="Helvetica,sans-Serif" font-size="10.00">ABI&#45;2026</text>
+<polygon fill="#edf0f7" stroke="#7f7f7f" stroke-dasharray="5,2" points="8,-8 8,-126 2751,-126 2751,-8 8,-8"/>
+<text text-anchor="middle" x="1379.5" y="-114" font-family="Helvetica,sans-Serif" font-size="10.00">ABI&#45;2026</text>
 </a>
 </g>
 </g>
 <g id="clust2" class="cluster">
 <title>clusterdir_43def281fe1ce43cee2178c614edd706</title>
 <g id="a_clust2"><a xlink:href="dir_43def281fe1ce43cee2178c614edd706.html" target="_top">
-<polygon fill="#edf0f7" stroke="#404040" stroke-width="2" points="16,-16 16,-99 2693,-99 2693,-16 16,-16"/>
+<polygon fill="#edf0f7" stroke="#404040" stroke-width="2" points="16,-16 16,-99 2743,-99 2743,-16 16,-16"/>
 </a>
 </g>
 </g>
 <g id="clust3" class="cluster">
 <title>clusterdir_4edc6b62e191e8b315609ceadd05d9cf</title>
 <g id="a_clust3"><a xlink:href="dir_4edc6b62e191e8b315609ceadd05d9cf.html" target="_top">
-<polygon fill="#dae1ef" stroke="#404040" points="484,-24 484,-91 2685,-91 2685,-24 484,-24"/>
+<polygon fill="#dae1ef" stroke="#404040" points="484,-24 484,-91 2735,-91 2735,-24 484,-24"/>
 </a>
 </g>
 </g>
 <g id="clust4" class="cluster">
 <title>clusterdir_7a5a10649533e5a2740d5f820a95433f</title>
 <g id="a_clust4"><a xlink:href="dir_7a5a10649533e5a2740d5f820a95433f.html" target="_top">
-<polygon fill="#c8d2e7" stroke="#404040" points="2515,-40 2515,-75 2677,-75 2677,-40 2515,-40"/>
+<polygon fill="#c8d2e7" stroke="#404040" points="2565,-40 2565,-75 2727,-75 2727,-40 2565,-40"/>
 </a>
 </g>
 </g>
 <g id="clust5" class="cluster">
 <title>clusterdir_9726c684119705db1a61facf08376e77</title>
 <g id="a_clust5"><a xlink:href="dir_9726c684119705db1a61facf08376e77.html" target="_top">
-<polygon fill="#c8d2e7" stroke="#404040" points="2053,-32 2053,-83 2507,-83 2507,-32 2053,-32"/>
+<polygon fill="#c8d2e7" stroke="#404040" points="2053,-32 2053,-83 2557,-83 2557,-32 2053,-32"/>
 </a>
 </g>
 </g>
 <g id="clust6" class="cluster">
 <title>clusterdir_20b56495b8f23fe91d4fb0229a0ff99d</title>
 <g id="a_clust6"><a xlink:href="dir_20b56495b8f23fe91d4fb0229a0ff99d.html" target="_top">
-<polygon fill="#b5c3df" stroke="#404040" points="2281,-40 2281,-75 2499,-75 2499,-40 2281,-40"/>
+<polygon fill="#b5c3df" stroke="#404040" points="2281,-40 2281,-75 2549,-75 2549,-40 2281,-40"/>
 </a>
 </g>
 </g>
@@ -138,14 +138,14 @@ var sectionId = 'dynsection-0';
 <!-- dir_7a5a10649533e5a2740d5f820a95433f -->
 <g id="node3" class="node">
 <title>dir_7a5a10649533e5a2740d5f820a95433f</title>
-<text text-anchor="middle" x="2641" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">Console</text>
+<text text-anchor="middle" x="2691" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">Console</text>
 </g>
 <!-- dir_0b549ec500c6fc6565c3f5f2cf03f264 -->
 <g id="node4" class="node">
 <title>dir_0b549ec500c6fc6565c3f5f2cf03f264</title>
 <g id="a_node4"><a xlink:href="dir_0b549ec500c6fc6565c3f5f2cf03f264.html" target="_top" xlink:title="Commands">
-<polygon fill="#b5c3df" stroke="#404040" points="2595,-67 2523,-67 2523,-48 2595,-48 2595,-67"/>
-<text text-anchor="middle" x="2559" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">Commands</text>
+<polygon fill="#b5c3df" stroke="#404040" points="2645,-67 2573,-67 2573,-48 2645,-48 2645,-67"/>
+<text text-anchor="middle" x="2609" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">Commands</text>
 </a>
 </g>
 </g>
@@ -193,203 +193,212 @@ var sectionId = 'dynsection-0';
 <!-- dir_20b56495b8f23fe91d4fb0229a0ff99d -->
 <g id="node10" class="node">
 <title>dir_20b56495b8f23fe91d4fb0229a0ff99d</title>
-<text text-anchor="middle" x="2456" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">Controllers</text>
+<text text-anchor="middle" x="2506" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">Controllers</text>
+</g>
+<!-- dir_c7e2e5caa6f65ed5f960b39c59b6d629 -->
+<g id="node11" class="node">
+<title>dir_c7e2e5caa6f65ed5f960b39c59b6d629</title>
+<g id="a_node11"><a xlink:href="dir_c7e2e5caa6f65ed5f960b39c59b6d629.html" target="_top" xlink:title="Api">
+<polygon fill="#a2b4d6" stroke="#404040" points="2453,-67 2421,-67 2421,-48 2453,-48 2453,-67"/>
+<text text-anchor="middle" x="2437" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">Api</text>
+</a>
+</g>
 </g>
 <!-- dir_8a0826e26e22b2b40f8d14a8b0b20352 -->
-<g id="node11" class="node">
+<g id="node12" class="node">
 <title>dir_8a0826e26e22b2b40f8d14a8b0b20352</title>
-<g id="a_node11"><a xlink:href="dir_8a0826e26e22b2b40f8d14a8b0b20352.html" target="_top" xlink:title="Auth">
+<g id="a_node12"><a xlink:href="dir_8a0826e26e22b2b40f8d14a8b0b20352.html" target="_top" xlink:title="Auth">
 <polygon fill="#a2b4d6" stroke="#404040" points="2402.5,-67 2363.5,-67 2363.5,-48 2402.5,-48 2402.5,-67"/>
 <text text-anchor="middle" x="2383" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">Auth</text>
 </a>
 </g>
 </g>
 <!-- dir_c9748d356eb3491313e0db39055eaee0 -->
-<g id="node12" class="node">
+<g id="node13" class="node">
 <title>dir_c9748d356eb3491313e0db39055eaee0</title>
-<g id="a_node12"><a xlink:href="dir_c9748d356eb3491313e0db39055eaee0.html" target="_top" xlink:title="Formats">
+<g id="a_node13"><a xlink:href="dir_c9748d356eb3491313e0db39055eaee0.html" target="_top" xlink:title="Formats">
 <polygon fill="#a2b4d6" stroke="#404040" points="2345,-67 2289,-67 2289,-48 2345,-48 2345,-67"/>
 <text text-anchor="middle" x="2317" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">Formats</text>
 </a>
 </g>
 </g>
 <!-- dir_a2d3541aa4e3b630cacf6d97613edbe2 -->
-<g id="node13" class="node">
+<g id="node14" class="node">
 <title>dir_a2d3541aa4e3b630cacf6d97613edbe2</title>
-<g id="a_node13"><a xlink:href="dir_a2d3541aa4e3b630cacf6d97613edbe2.html" target="_top" xlink:title="Middleware">
+<g id="a_node14"><a xlink:href="dir_a2d3541aa4e3b630cacf6d97613edbe2.html" target="_top" xlink:title="Middleware">
 <polygon fill="#b5c3df" stroke="#404040" points="2215,-67 2141,-67 2141,-48 2215,-48 2215,-67"/>
 <text text-anchor="middle" x="2178" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">Middleware</text>
 </a>
 </g>
 </g>
 <!-- dir_1e3a38a080b8aea3593c770632510bde -->
-<g id="node14" class="node">
+<g id="node15" class="node">
 <title>dir_1e3a38a080b8aea3593c770632510bde</title>
-<g id="a_node14"><a xlink:href="dir_1e3a38a080b8aea3593c770632510bde.html" target="_top" xlink:title="Requests">
+<g id="a_node15"><a xlink:href="dir_1e3a38a080b8aea3593c770632510bde.html" target="_top" xlink:title="Requests">
 <polygon fill="#b5c3df" stroke="#404040" points="2123,-67 2061,-67 2061,-48 2123,-48 2123,-67"/>
 <text text-anchor="middle" x="2092" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">Requests</text>
 </a>
 </g>
 </g>
 <!-- dir_ffeeac4a81846887d388699f97ce117a -->
-<g id="node15" class="node">
+<g id="node16" class="node">
 <title>dir_ffeeac4a81846887d388699f97ce117a</title>
-<g id="a_node15"><a xlink:href="dir_ffeeac4a81846887d388699f97ce117a.html" target="_top" xlink:title="Listeners">
+<g id="a_node16"><a xlink:href="dir_ffeeac4a81846887d388699f97ce117a.html" target="_top" xlink:title="Listeners">
 <polygon fill="#c8d2e7" stroke="#404040" points="689.5,-67 628.5,-67 628.5,-48 689.5,-48 689.5,-67"/>
 <text text-anchor="middle" x="659" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">Listeners</text>
 </a>
 </g>
 </g>
 <!-- dir_185dc71a86fb4e8386ad2175290c8199 -->
-<g id="node16" class="node">
+<g id="node17" class="node">
 <title>dir_185dc71a86fb4e8386ad2175290c8199</title>
-<g id="a_node16"><a xlink:href="dir_185dc71a86fb4e8386ad2175290c8199.html" target="_top" xlink:title="Mail">
+<g id="a_node17"><a xlink:href="dir_185dc71a86fb4e8386ad2175290c8199.html" target="_top" xlink:title="Mail">
 <polygon fill="#c8d2e7" stroke="#404040" points="610,-67 572,-67 572,-48 610,-48 610,-67"/>
 <text text-anchor="middle" x="591" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">Mail</text>
 </a>
 </g>
 </g>
 <!-- dir_27e15ef9f5d9a6fb0a2aa01631024136 -->
-<g id="node17" class="node">
+<g id="node18" class="node">
 <title>dir_27e15ef9f5d9a6fb0a2aa01631024136</title>
 <text text-anchor="middle" x="2011" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">Models</text>
 </g>
 <!-- dir_581ea4cbcc8f960d97931cd37d738f3a -->
-<g id="node18" class="node">
+<g id="node19" class="node">
 <title>dir_581ea4cbcc8f960d97931cd37d738f3a</title>
-<g id="a_node18"><a xlink:href="dir_581ea4cbcc8f960d97931cd37d738f3a.html" target="_top" xlink:title="Professor">
+<g id="a_node19"><a xlink:href="dir_581ea4cbcc8f960d97931cd37d738f3a.html" target="_top" xlink:title="Professor">
 <polygon fill="#b5c3df" stroke="#404040" points="1967,-67 1905,-67 1905,-48 1967,-48 1967,-67"/>
 <text text-anchor="middle" x="1936" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">Professor</text>
 </a>
 </g>
 </g>
 <!-- dir_118aa955063b0ac74010aa0ee8fd7797 -->
-<g id="node19" class="node">
+<g id="node20" class="node">
 <title>dir_118aa955063b0ac74010aa0ee8fd7797</title>
-<g id="a_node19"><a xlink:href="dir_118aa955063b0ac74010aa0ee8fd7797.html" target="_top" xlink:title="ResearchStaff">
+<g id="a_node20"><a xlink:href="dir_118aa955063b0ac74010aa0ee8fd7797.html" target="_top" xlink:title="ResearchStaff">
 <polygon fill="#b5c3df" stroke="#404040" points="1887,-67 1803,-67 1803,-48 1887,-48 1887,-67"/>
 <text text-anchor="middle" x="1845" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">ResearchStaff</text>
 </a>
 </g>
 </g>
 <!-- dir_742faeb593571b76dd1f3728cd63bf87 -->
-<g id="node20" class="node">
+<g id="node21" class="node">
 <title>dir_742faeb593571b76dd1f3728cd63bf87</title>
-<g id="a_node20"><a xlink:href="dir_742faeb593571b76dd1f3728cd63bf87.html" target="_top" xlink:title="Student">
+<g id="a_node21"><a xlink:href="dir_742faeb593571b76dd1f3728cd63bf87.html" target="_top" xlink:title="Student">
 <polygon fill="#b5c3df" stroke="#404040" points="1785,-67 1731,-67 1731,-48 1785,-48 1785,-67"/>
 <text text-anchor="middle" x="1758" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">Student</text>
 </a>
 </g>
 </g>
 <!-- dir_c84a2d594405db9fd387fec99ed04bec -->
-<g id="node21" class="node">
+<g id="node22" class="node">
 <title>dir_c84a2d594405db9fd387fec99ed04bec</title>
-<g id="a_node21"><a xlink:href="dir_c84a2d594405db9fd387fec99ed04bec.html" target="_top" xlink:title="User">
+<g id="a_node22"><a xlink:href="dir_c84a2d594405db9fd387fec99ed04bec.html" target="_top" xlink:title="User">
 <polygon fill="#b5c3df" stroke="#404040" points="1712.5,-67 1673.5,-67 1673.5,-48 1712.5,-48 1712.5,-67"/>
 <text text-anchor="middle" x="1693" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">User</text>
 </a>
 </g>
 </g>
 <!-- dir_87696f47565265e5cb48efecee2e6357 -->
-<g id="node22" class="node">
+<g id="node23" class="node">
 <title>dir_87696f47565265e5cb48efecee2e6357</title>
-<g id="a_node22"><a xlink:href="dir_87696f47565265e5cb48efecee2e6357.html" target="_top" xlink:title="Providers">
+<g id="a_node23"><a xlink:href="dir_87696f47565265e5cb48efecee2e6357.html" target="_top" xlink:title="Providers">
 <polygon fill="#c8d2e7" stroke="#404040" points="554,-67 492,-67 492,-48 554,-48 554,-67"/>
 <text text-anchor="middle" x="523" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">Providers</text>
 </a>
 </g>
 </g>
 <!-- dir_58e7a93db32c5239945943de052a60f8 -->
-<g id="node23" class="node">
+<g id="node24" class="node">
 <title>dir_58e7a93db32c5239945943de052a60f8</title>
 <text text-anchor="middle" x="1450" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">Services</text>
 </g>
 <!-- dir_6b4056668490783c20116e7e3045353c -->
-<g id="node24" class="node">
+<g id="node25" class="node">
 <title>dir_6b4056668490783c20116e7e3045353c</title>
-<g id="a_node24"><a xlink:href="dir_6b4056668490783c20116e7e3045353c.html" target="_top" xlink:title="AcademicCalendar">
+<g id="a_node25"><a xlink:href="dir_6b4056668490783c20116e7e3045353c.html" target="_top" xlink:title="AcademicCalendar">
 <polygon fill="#b5c3df" stroke="#404040" points="1403,-67 1295,-67 1295,-48 1403,-48 1403,-67"/>
 <text text-anchor="middle" x="1349" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">AcademicCalendar</text>
 </a>
 </g>
 </g>
 <!-- dir_9823cfbbc400117ab66c3e84aca59209 -->
-<g id="node25" class="node">
+<g id="node26" class="node">
 <title>dir_9823cfbbc400117ab66c3e84aca59209</title>
-<g id="a_node25"><a xlink:href="dir_9823cfbbc400117ab66c3e84aca59209.html" target="_top" xlink:title="Projections">
+<g id="a_node26"><a xlink:href="dir_9823cfbbc400117ab66c3e84aca59209.html" target="_top" xlink:title="Projections">
 <polygon fill="#b5c3df" stroke="#404040" points="1276.5,-67 1205.5,-67 1205.5,-48 1276.5,-48 1276.5,-67"/>
 <text text-anchor="middle" x="1241" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">Projections</text>
 </a>
 </g>
 </g>
 <!-- dir_63348a32252ba7336f9ad0e20fc7b748 -->
-<g id="node26" class="node">
+<g id="node27" class="node">
 <title>dir_63348a32252ba7336f9ad0e20fc7b748</title>
 <text text-anchor="middle" x="1613" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">Projects</text>
 </g>
 <!-- dir_57f8caaff6c69ae3db23d945b998c23d -->
-<g id="node27" class="node">
+<g id="node28" class="node">
 <title>dir_57f8caaff6c69ae3db23d945b998c23d</title>
-<g id="a_node27"><a xlink:href="dir_57f8caaff6c69ae3db23d945b998c23d.html" target="_top" xlink:title="Exceptions">
+<g id="a_node28"><a xlink:href="dir_57f8caaff6c69ae3db23d945b998c23d.html" target="_top" xlink:title="Exceptions">
 <polygon fill="#a2b4d6" stroke="#404040" points="1567,-67 1497,-67 1497,-48 1567,-48 1567,-67"/>
 <text text-anchor="middle" x="1532" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">Exceptions</text>
 </a>
 </g>
 </g>
 <!-- dir_5fcd9b93d7588c475ae345fc1e6f248d -->
-<g id="node28" class="node">
+<g id="node29" class="node">
 <title>dir_5fcd9b93d7588c475ae345fc1e6f248d</title>
-<g id="a_node28"><a xlink:href="dir_5fcd9b93d7588c475ae345fc1e6f248d.html" target="_top" xlink:title="Reports">
+<g id="a_node29"><a xlink:href="dir_5fcd9b93d7588c475ae345fc1e6f248d.html" target="_top" xlink:title="Reports">
 <polygon fill="#b5c3df" stroke="#404040" points="1187,-67 1133,-67 1133,-48 1187,-48 1187,-67"/>
 <text text-anchor="middle" x="1160" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">Reports</text>
 </a>
 </g>
 </g>
 <!-- dir_45f209ba039b7b0f30e8f3c77aeb5d1d -->
-<g id="node29" class="node">
+<g id="node30" class="node">
 <title>dir_45f209ba039b7b0f30e8f3c77aeb5d1d</title>
-<g id="a_node29"><a xlink:href="dir_45f209ba039b7b0f30e8f3c77aeb5d1d.html" target="_top" xlink:title="Students">
+<g id="a_node30"><a xlink:href="dir_45f209ba039b7b0f30e8f3c77aeb5d1d.html" target="_top" xlink:title="Students">
 <polygon fill="#b5c3df" stroke="#404040" points="1114.5,-67 1055.5,-67 1055.5,-48 1114.5,-48 1114.5,-67"/>
 <text text-anchor="middle" x="1085" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">Students</text>
 </a>
 </g>
 </g>
 <!-- dir_6523f6ddebf8b1837704907db8b2d6ed -->
-<g id="node30" class="node">
+<g id="node31" class="node">
 <title>dir_6523f6ddebf8b1837704907db8b2d6ed</title>
 <text text-anchor="middle" x="437" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">database</text>
 </g>
 <!-- dir_482fe1f2086db8631fc7c9c364088013 -->
-<g id="node31" class="node">
+<g id="node32" class="node">
 <title>dir_482fe1f2086db8631fc7c9c364088013</title>
-<g id="a_node31"><a xlink:href="dir_482fe1f2086db8631fc7c9c364088013.html" target="_top" xlink:title="factories">
+<g id="a_node32"><a xlink:href="dir_482fe1f2086db8631fc7c9c364088013.html" target="_top" xlink:title="factories">
 <polygon fill="#c8d2e7" stroke="#404040" points="387.5,-67 328.5,-67 328.5,-48 387.5,-48 387.5,-67"/>
 <text text-anchor="middle" x="358" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">factories</text>
 </a>
 </g>
 </g>
 <!-- dir_5a92dac36c0687e051da79ea20d1cdd0 -->
-<g id="node32" class="node">
+<g id="node33" class="node">
 <title>dir_5a92dac36c0687e051da79ea20d1cdd0</title>
-<g id="a_node32"><a xlink:href="dir_5a92dac36c0687e051da79ea20d1cdd0.html" target="_top" xlink:title="migrations">
+<g id="a_node33"><a xlink:href="dir_5a92dac36c0687e051da79ea20d1cdd0.html" target="_top" xlink:title="migrations">
 <polygon fill="#c8d2e7" stroke="#404040" points="310.5,-67 241.5,-67 241.5,-48 310.5,-48 310.5,-67"/>
 <text text-anchor="middle" x="276" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">migrations</text>
 </a>
 </g>
 </g>
 <!-- dir_df1817feba38406e4e9783d354794327 -->
-<g id="node33" class="node">
+<g id="node34" class="node">
 <title>dir_df1817feba38406e4e9783d354794327</title>
-<g id="a_node33"><a xlink:href="dir_df1817feba38406e4e9783d354794327.html" target="_top" xlink:title="seeders">
+<g id="a_node34"><a xlink:href="dir_df1817feba38406e4e9783d354794327.html" target="_top" xlink:title="seeders">
 <polygon fill="#c8d2e7" stroke="#404040" points="223.5,-67 168.5,-67 168.5,-48 223.5,-48 223.5,-67"/>
 <text text-anchor="middle" x="196" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">seeders</text>
 </a>
 </g>
 </g>
 <!-- dir_51b4c452dc581ff407fc0be03fbfd44d -->
-<g id="node34" class="node">
+<g id="node35" class="node">
 <title>dir_51b4c452dc581ff407fc0be03fbfd44d</title>
-<g id="a_node34"><a xlink:href="dir_51b4c452dc581ff407fc0be03fbfd44d.html" target="_top" xlink:title="routes">
+<g id="a_node35"><a xlink:href="dir_51b4c452dc581ff407fc0be03fbfd44d.html" target="_top" xlink:title="routes">
 <polygon fill="#dae1ef" stroke="#404040" points="71.5,-67 24.5,-67 24.5,-48 71.5,-48 71.5,-67"/>
 <text text-anchor="middle" x="48" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">routes</text>
 </a>

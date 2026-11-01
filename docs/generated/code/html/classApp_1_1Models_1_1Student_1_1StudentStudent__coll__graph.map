@@ -1,9 +1,9 @@
 <map id="App::Models::Student::StudentStudent" name="App::Models::Student::StudentStudent">
-<area shape="rect" id="Node000001" title="Extended model that keeps the student connection active so database permissions remain aligned with t..." alt="" coords="14,443,194,543"/>
-<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1Student.html" title="students table model, manages communication with the database using the root user,..." alt="" coords="5,148,203,393"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,407,107,442,101,442,101,407"/>
+<area shape="rect" id="Node000001" title="Extended model that keeps the student connection active so database permissions remain aligned with t..." alt="" coords="14,457,194,557"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1Student.html" title="students table model, manages communication with the database using the root user,..." alt="" coords="5,163,203,408"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,422,107,457,101,457,101,422"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="39,5,94,71"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="77,84,87,147,82,148,71,85"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="76,84,88,162,83,163,71,85"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="118,5,167,71"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="140,71,130,132,124,131,135,70"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="140,71,128,147,123,146,135,70"/>
 </map>

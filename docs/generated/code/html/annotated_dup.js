@@ -25,6 +25,9 @@ var annotated_dup =
       ] ],
       [ "Http", "namespaceApp_1_1Http.html", [
         [ "Controllers", "namespaceApp_1_1Http_1_1Controllers.html", [
+          [ "Api", "namespaceApp_1_1Http_1_1Controllers_1_1Api.html", [
+            [ "ProjectApiController", "classApp_1_1Http_1_1Controllers_1_1Api_1_1ProjectApiController.html", "classApp_1_1Http_1_1Controllers_1_1Api_1_1ProjectApiController" ]
+          ] ],
           [ "Auth", "namespaceApp_1_1Http_1_1Controllers_1_1Auth.html", [
             [ "ConfirmPasswordController", "classApp_1_1Http_1_1Controllers_1_1Auth_1_1ConfirmPasswordController.html", "classApp_1_1Http_1_1Controllers_1_1Auth_1_1ConfirmPasswordController" ],
             [ "ForgotPasswordController", "classApp_1_1Http_1_1Controllers_1_1Auth_1_1ForgotPasswordController.html", "classApp_1_1Http_1_1Controllers_1_1Auth_1_1ForgotPasswordController" ],

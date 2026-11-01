@@ -123,9 +123,11 @@ class User extends Authenticatable
 
     protected function normalizeRole($role)
     {
-        return match ((string) $role) {
+        $role = mb_strtolower(trim((string) $role));
+
+        return match ($role) {
             'committe_leader' => 'committee_leader',
-            default => (string) $role,
+            default => $role,
         };
     }
 }

@@ -1,5 +1,5 @@
 <map id="App::Http::Middleware::Authenticate" name="App::Http::Middleware::Authenticate">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,119,164,213"/>
-<area shape="rect" id="Node000002" href="$classMiddleware.html" title=" " alt="" coords="39,5,130,71"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,84,87,118,82,118,82,84"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,119,197,248"/>
+<area shape="rect" id="Node000002" href="$classMiddleware.html" title=" " alt="" coords="56,5,147,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,84,104,118,99,118,99,84"/>
 </map>

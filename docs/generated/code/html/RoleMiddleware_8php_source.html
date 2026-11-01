@@ -122,7 +122,7 @@ $(document).ready(function(){initNavTree('RoleMiddleware_8php_source.html',''); 
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        $allowedRoles = collect($roles)</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            -&gt;flatMap(fn (<span class="keywordtype">string</span> $role) =&gt; explode(<span class="charliteral">&#39;,&#39;</span>, $role))</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            -&gt;map(fn (<span class="keywordtype">string</span> $role) =&gt; trim($role))</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            -&gt;map(fn (<span class="keywordtype">string</span> $role) =&gt; $this-&gt;<a class="code hl_function" href="classApp_1_1Http_1_1Middleware_1_1RoleMiddleware.html#afcaa5dc5d77866b5e5e3668afe64c8f0">normalizeRole</a>($role))</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            -&gt;filter()</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            -&gt;unique()</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            -&gt;values();</div>
@@ -148,13 +148,15 @@ $(document).ready(function(){initNavTree('RoleMiddleware_8php_source.html',''); 
 <div class="foldopen" id="foldopen00053" data-start="{" data-end="}">
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classApp_1_1Http_1_1Middleware_1_1RoleMiddleware.html#afcaa5dc5d77866b5e5e3668afe64c8f0">   53</a></span>    <span class="keyword">protected</span> function <a class="code hl_function" href="classApp_1_1Http_1_1Middleware_1_1RoleMiddleware.html#afcaa5dc5d77866b5e5e3668afe64c8f0">normalizeRole</a>(<span class="keywordtype">string</span> $role): string</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    {</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keywordflow">return</span> match ($role) {</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            <span class="stringliteral">&#39;committe_leader&#39;</span> =&gt; <span class="stringliteral">&#39;committee_leader&#39;</span>,</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <span class="keywordflow">default</span> =&gt; $role,</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        };</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        $role = mb_strtolower(trim($role));</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keywordflow">return</span> match ($role) {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <span class="stringliteral">&#39;committe_leader&#39;</span> =&gt; <span class="stringliteral">&#39;committee_leader&#39;</span>,</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            <span class="keywordflow">default</span> =&gt; $role,</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        };</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    }</div>
 </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>}</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>}</div>
 </div>
 <div class="ttc" id="aclassApp_1_1Http_1_1Middleware_1_1RoleMiddleware_html"><div class="ttname"><a href="classApp_1_1Http_1_1Middleware_1_1RoleMiddleware.html">App::Http::Middleware::RoleMiddleware</a></div><div class="ttdef"><b>Definition</b> <a href="RoleMiddleware_8php_source.html#l00008">RoleMiddleware.php:9</a></div></div>
 <div class="ttc" id="aclassApp_1_1Http_1_1Middleware_1_1RoleMiddleware_html_a3b9c8bea3438f38912daa83c005314f9"><div class="ttname"><a href="classApp_1_1Http_1_1Middleware_1_1RoleMiddleware.html#a3b9c8bea3438f38912daa83c005314f9">App::Http::Middleware::RoleMiddleware::handle</a></div><div class="ttdeci">handle($request, Closure $next,... $roles)</div><div class="ttdoc">Handle an incoming request.</div><div class="ttdef"><b>Definition</b> <a href="RoleMiddleware_8php_source.html#l00017">RoleMiddleware.php:17</a></div></div>

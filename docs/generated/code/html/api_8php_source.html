@@ -98,7 +98,7 @@ $(document).ready(function(){initNavTree('api_8php_source.html',''); initResizab
 </div><!--header-->
 <div class="contents">
 <a href="api_8php.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>&lt;?php</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>use App\Http\Controllers\Api\ProjectApiController;</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>use Illuminate\Http\Request;</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>use Illuminate\Support\Facades\Route;</div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>use App\Http\Controllers\ContentController;</div>
@@ -141,10 +141,11 @@ $(document).ready(function(){initNavTree('api_8php_source.html',''); initResizab
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    Route::apiResource(<span class="stringliteral">&#39;contents&#39;</span>, ContentController::class);</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    Route::apiResource(<span class="stringliteral">&#39;versions&#39;</span>, VersionController::class);</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    Route::apiResource(<span class="stringliteral">&#39;content-versions&#39;</span>, ContentVersionController::class);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    Route::get(<span class="stringliteral">&#39;projects/meta&#39;</span>, [ProjectController::class, <span class="stringliteral">&#39;meta&#39;</span>])-&gt;name(<span class="stringliteral">&#39;projects.meta&#39;</span>);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    Route::post(<span class="stringliteral">&#39;projects/{project}/restore&#39;</span>, [ProjectController::class, <span class="stringliteral">&#39;restore&#39;</span>])-&gt;name(<span class="stringliteral">&#39;projects.restore&#39;</span>);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    Route::apiResource(<span class="stringliteral">&#39;projects&#39;</span>, ProjectController::class);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>});</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    Route::get(<span class="stringliteral">&#39;projects/meta&#39;</span>, [ProjectApiController::class, <span class="stringliteral">&#39;meta&#39;</span>])-&gt;name(<span class="stringliteral">&#39;projects.meta&#39;</span>);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    Route::post(<span class="stringliteral">&#39;projects/{project}/restore&#39;</span>, [ProjectApiController::class, <span class="stringliteral">&#39;restore&#39;</span>])-&gt;name(<span class="stringliteral">&#39;projects.restore&#39;</span>);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    Route::apiResource(<span class="stringliteral">&#39;projects&#39;</span>, ProjectApiController::class);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>});</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

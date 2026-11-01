@@ -195,13 +195,15 @@ $(document).ready(function(){initNavTree('User_8php_source.html',''); initResiza
 <div class="foldopen" id="foldopen00124" data-start="{" data-end="}">
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="classApp_1_1Models_1_1User.html#ac74f59ca3323a52b5aa95cba4343906e">  124</a></span>    <span class="keyword">protected</span> function <a class="code hl_function" href="classApp_1_1Models_1_1User.html#ac74f59ca3323a52b5aa95cba4343906e">normalizeRole</a>($role)</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    {</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <span class="keywordflow">return</span> match ((<span class="keywordtype">string</span>) $role) {</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            <span class="stringliteral">&#39;committe_leader&#39;</span> =&gt; <span class="stringliteral">&#39;committee_leader&#39;</span>,</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            <span class="keywordflow">default</span> =&gt; (string) $role,</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        };</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    }</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        $role = mb_strtolower(trim((<span class="keywordtype">string</span>) $role));</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <span class="keywordflow">return</span> match ($role) {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            <span class="stringliteral">&#39;committe_leader&#39;</span> =&gt; <span class="stringliteral">&#39;committee_leader&#39;</span>,</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            <span class="keywordflow">default</span> =&gt; $role,</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        };</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    }</div>
 </div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>}</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>}</div>
 </div>
 <div class="ttc" id="aclassApp_1_1Models_1_1User_html"><div class="ttname"><a href="classApp_1_1Models_1_1User.html">App::Models::User</a></div><div class="ttdoc">user table model, manages communication with the database using the root user, should not be used by ...</div><div class="ttdef"><b>Definition</b> <a href="User_8php_source.html#l00017">User.php:18</a></div></div>
 <div class="ttc" id="aclassApp_1_1Models_1_1User_html_a1c460dfee2ba912e187f5475dc54fac3"><div class="ttname"><a href="classApp_1_1Models_1_1User.html#a1c460dfee2ba912e187f5475dc54fac3">App::Models::User::$fillable</a></div><div class="ttdeci">$fillable</div><div class="ttdef"><b>Definition</b> <a href="User_8php_source.html#l00026">User.php:26</a></div></div>

@@ -1,7 +1,7 @@
 <map id="App::Models::Student::StudentStudent" name="App::Models::Student::StudentStudent">
-<area shape="rect" id="Node000001" title="Extended model that keeps the student connection active so database permissions remain aligned with t..." alt="" coords="14,452,194,552"/>
-<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1Student.html" title="students table model, manages communication with the database using the root user,..." alt="" coords="5,119,203,404"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,418,107,452,101,452,101,418"/>
+<area shape="rect" id="Node000001" title="Extended model that keeps the student connection active so database permissions remain aligned with t..." alt="" coords="14,487,194,587"/>
+<area shape="rect" id="Node000002" href="$classApp_1_1Models_1_1Student.html" title="students table model, manages communication with the database using the root user,..." alt="" coords="5,119,203,439"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,452,107,486,101,486,101,452"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="77,5,131,71"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="107,84,107,119,101,119,101,84"/>
 </map>

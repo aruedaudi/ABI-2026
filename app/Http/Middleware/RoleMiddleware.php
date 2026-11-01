@@ -28,7 +28,7 @@ class RoleMiddleware
 
         $allowedRoles = collect($roles)
             ->flatMap(fn (string $role) => explode(',', $role))
-            ->map(fn (string $role) => trim($role))
+            ->map(fn (string $role) => $this->normalizeRole($role))
             ->filter()
             ->unique()
             ->values();
@@ -52,6 +52,8 @@ class RoleMiddleware
 
     protected function normalizeRole(string $role): string
     {
+        $role = mb_strtolower(trim($role));
+
         return match ($role) {
             'committe_leader' => 'committee_leader',
             default => $role,

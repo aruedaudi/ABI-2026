@@ -20,7 +20,7 @@ var searchData=
   ['city_2ephp_17',['City.php',['../City_8php.html',1,'']]],
   ['citycontroller_18',['CityController',['../classApp_1_1Http_1_1Controllers_1_1CityController.html',1,'App::Http::Controllers']]],
   ['citycontroller_2ephp_19',['CityController.php',['../CityController_8php.html',1,'']]],
-  ['cityprogram_20',['cityprogram',['../classApp_1_1Models_1_1Student.html#a46fcfb5c48fcf7591c7541e8767ac37f',1,'App::Models::Student::cityProgram()'],['../classApp_1_1Models_1_1Professor.html#ad2da7b4e640a943b256c39e03b9bf74c',1,'App::Models::Professor::cityProgram()'],['../classApp_1_1Models_1_1CityProgram.html',1,'App::Models::CityProgram']]],
+  ['cityprogram_20',['cityprogram',['../classApp_1_1Models_1_1CityProgram.html',1,'App::Models::CityProgram'],['../classApp_1_1Models_1_1Student.html#a46fcfb5c48fcf7591c7541e8767ac37f',1,'App::Models::Student::cityProgram()'],['../classApp_1_1Models_1_1Professor.html#ad2da7b4e640a943b256c39e03b9bf74c',1,'App::Models::Professor::cityProgram()']]],
   ['cityprogram_2ephp_21',['CityProgram.php',['../CityProgram_8php.html',1,'']]],
   ['cityprogramcontroller_22',['CityProgramController',['../classApp_1_1Http_1_1Controllers_1_1CityProgramController.html',1,'App::Http::Controllers']]],
   ['cityprogramcontroller_2ephp_23',['CityProgramController.php',['../CityProgramController_8php.html',1,'']]],

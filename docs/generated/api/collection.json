@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "ABI-2026 API Documentation",
-        "_postman_id": "432cc50a-2319-473c-ab26-f7d020b3eb58",
+        "_postman_id": "9833e7f9-efda-4963-8a2a-e0d02be35094",
         "description": "Documentacion automatica de los endpoints API del proyecto ABI-2026.",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -1220,13 +1220,13 @@
                     "response": []
                 },
                 {
-                    "name": "Display a paginated list of projects for the authenticated user.",
+                    "name": "GET api\/projects\/meta",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/projects",
+                            "path": "api\/projects\/meta",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/projects"
+                            "raw": "{{baseUrl}}\/api\/projects\/meta"
                         },
                         "method": "GET",
                         "header": [
@@ -1248,13 +1248,21 @@
                     "response": []
                 },
                 {
-                    "name": "Persist a new project idea following the role specific business rules.",
+                    "name": "POST api\/projects\/{project}\/restore",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/projects",
+                            "path": "api\/projects\/:project\/restore",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/projects"
+                            "raw": "{{baseUrl}}\/api\/projects\/:project\/restore",
+                            "variable": [
+                                {
+                                    "id": "project",
+                                    "key": "project",
+                                    "value": "omnis",
+                                    "description": "The project."
+                                }
+                            ]
                         },
                         "method": "POST",
                         "header": [
@@ -1276,7 +1284,66 @@
                     "response": []
                 },
                 {
-                    "name": "Display the details of a project, including its latest version.",
+                    "name": "GET api\/projects",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/projects",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/projects"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/projects",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/projects",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/projects"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"title\":\"ufkaaacsmazquuxslxug\",\"evaluation_criteria\":\"omnis\",\"thematic_area_id\":16,\"project_status_id\":16,\"professor_ids\":[16],\"student_ids\":[16]}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api\/projects\/{id}",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -1312,7 +1379,7 @@
                     "response": []
                 },
                 {
-                    "name": "Update the project information by creating a new version with the submitted content.",
+                    "name": "PUT api\/projects\/{id}",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -1329,6 +1396,45 @@
                             ]
                         },
                         "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"title\":\"ufkaaacsmazquuxslxug\",\"evaluation_criteria\":\"omnis\",\"thematic_area_id\":16,\"project_status_id\":16,\"professor_ids\":[16],\"student_ids\":[16]}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DELETE api\/projects\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/projects\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/projects\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "16",
+                                    "description": "The ID of the project."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
                         "header": [
                             {
                                 "key": "Content-Type",

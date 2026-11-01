@@ -6,6 +6,15 @@ use Knuckles\Scribe\Extracting\Strategies;
 
 use function Knuckles\Scribe\Config\removeStrategies;
 
+// Si el paquete no está instalado (entorno de producción --no-dev), retornamos una configuración neutra
+if (! class_exists('Knuckles\Scribe\Config\AuthIn')) {
+    return [
+        'title' => 'ABI-2026 API Documentation',
+        'auth' => ['enabled' => false],
+        'routes' => [],
+    ];
+}
+
 return [
     'title' => 'ABI-2026 API Documentation',
     'description' => 'Documentacion automatica de los endpoints API del proyecto ABI-2026.',

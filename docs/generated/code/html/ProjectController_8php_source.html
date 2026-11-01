@@ -1724,147 +1724,147 @@ $(document).ready(function(){initNavTree('ProjectController_8php_source.html',''
 <div class="line"><a id="l01728" name="l01728"></a><span class="lineno"> 1728</span>            $studentAcademicProgress = app(StudentAcademicProgressService::class);</div>
 <div class="line"><a id="l01729" name="l01729"></a><span class="lineno"> 1729</span> </div>
 <div class="line"><a id="l01730" name="l01730"></a><span class="lineno"> 1730</span>            <span class="keywordflow">if</span> (! $studentAcademicProgress-&gt;canCreateProposal($student, $activeAcademicPeriod)) {</div>
-<div class="line"><a id="l01731" name="l01731"></a><span class="lineno"> 1731</span>                abort(403, $studentAcademicProgress-&gt;blockedProposalMessage($student, $activeAcademicPeriod));</div>
-<div class="line"><a id="l01732" name="l01732"></a><span class="lineno"> 1732</span>            }</div>
-<div class="line"><a id="l01733" name="l01733"></a><span class="lineno"> 1733</span> </div>
-<div class="line"><a id="l01734" name="l01734"></a><span class="lineno"> 1734</span>            $researchGroupId = $student?-&gt;cityProgram?-&gt;program?-&gt;research_group_id;</div>
-<div class="line"><a id="l01735" name="l01735"></a><span class="lineno"> 1735</span>        }</div>
-<div class="line"><a id="l01736" name="l01736"></a><span class="lineno"> 1736</span> </div>
-<div class="line"><a id="l01737" name="l01737"></a><span class="lineno"> 1737</span>        $cities = City::query()-&gt;orderBy(<span class="stringliteral">&#39;name&#39;</span>)-&gt;get();</div>
-<div class="line"><a id="l01738" name="l01738"></a><span class="lineno"> 1738</span>        $programs = Program::query()-&gt;with(<span class="stringliteral">&#39;researchGroup&#39;</span>)-&gt;orderBy(<span class="stringliteral">&#39;name&#39;</span>)-&gt;get();</div>
-<div class="line"><a id="l01739" name="l01739"></a><span class="lineno"> 1739</span>        $investigationLines = InvestigationLine::where(<span class="stringliteral">&#39;research_group_id&#39;</span>, $researchGroupId)</div>
-<div class="line"><a id="l01740" name="l01740"></a><span class="lineno"> 1740</span>            -&gt;whereNull(<span class="stringliteral">&#39;deleted_at&#39;</span>)</div>
-<div class="line"><a id="l01741" name="l01741"></a><span class="lineno"> 1741</span>            -&gt;get();</div>
-<div class="line"><a id="l01742" name="l01742"></a><span class="lineno"> 1742</span>        $thematicAreas = ThematicArea::query()-&gt;orderBy(<span class="stringliteral">&#39;name&#39;</span>)-&gt;get();</div>
-<div class="line"><a id="l01743" name="l01743"></a><span class="lineno"> 1743</span> </div>
-<div class="line"><a id="l01744" name="l01744"></a><span class="lineno"> 1744</span>        $year = now()-&gt;year;</div>
+<div class="line"><a id="l01731" name="l01731"></a><span class="lineno"> 1731</span>                <span class="keywordflow">return</span> redirect()</div>
+<div class="line"><a id="l01732" name="l01732"></a><span class="lineno"> 1732</span>                    -&gt;route(<span class="stringliteral">&#39;projects.index&#39;</span>)</div>
+<div class="line"><a id="l01733" name="l01733"></a><span class="lineno"> 1733</span>                    -&gt;with(<span class="stringliteral">&#39;warning&#39;</span>, $studentAcademicProgress-&gt;blockedProposalMessage($student, $activeAcademicPeriod));</div>
+<div class="line"><a id="l01734" name="l01734"></a><span class="lineno"> 1734</span>            }</div>
+<div class="line"><a id="l01735" name="l01735"></a><span class="lineno"> 1735</span> </div>
+<div class="line"><a id="l01736" name="l01736"></a><span class="lineno"> 1736</span>            $researchGroupId = $student?-&gt;cityProgram?-&gt;program?-&gt;research_group_id;</div>
+<div class="line"><a id="l01737" name="l01737"></a><span class="lineno"> 1737</span>        }</div>
+<div class="line"><a id="l01738" name="l01738"></a><span class="lineno"> 1738</span> </div>
+<div class="line"><a id="l01739" name="l01739"></a><span class="lineno"> 1739</span>        $cities = City::query()-&gt;orderBy(<span class="stringliteral">&#39;name&#39;</span>)-&gt;get();</div>
+<div class="line"><a id="l01740" name="l01740"></a><span class="lineno"> 1740</span>        $programs = Program::query()-&gt;with(<span class="stringliteral">&#39;researchGroup&#39;</span>)-&gt;orderBy(<span class="stringliteral">&#39;name&#39;</span>)-&gt;get();</div>
+<div class="line"><a id="l01741" name="l01741"></a><span class="lineno"> 1741</span>        $investigationLines = InvestigationLine::where(<span class="stringliteral">&#39;research_group_id&#39;</span>, $researchGroupId)</div>
+<div class="line"><a id="l01742" name="l01742"></a><span class="lineno"> 1742</span>            -&gt;whereNull(<span class="stringliteral">&#39;deleted_at&#39;</span>)</div>
+<div class="line"><a id="l01743" name="l01743"></a><span class="lineno"> 1743</span>            -&gt;get();</div>
+<div class="line"><a id="l01744" name="l01744"></a><span class="lineno"> 1744</span>        $thematicAreas = ThematicArea::query()-&gt;orderBy(<span class="stringliteral">&#39;name&#39;</span>)-&gt;get();</div>
 <div class="line"><a id="l01745" name="l01745"></a><span class="lineno"> 1745</span> </div>
-<div class="line"><a id="l01746" name="l01746"></a><span class="lineno"> 1746</span>        $frameworks = Framework::with(<span class="stringliteral">&#39;contentFrameworks&#39;</span>)</div>
-<div class="line"><a id="l01747" name="l01747"></a><span class="lineno"> 1747</span>            -&gt;where(<span class="stringliteral">&#39;start_year&#39;</span>, <span class="stringliteral">&#39;&lt;=&#39;</span>, $year)</div>
-<div class="line"><a id="l01748" name="l01748"></a><span class="lineno"> 1748</span>            -&gt;where(<span class="stringliteral">&#39;end_year&#39;</span>, <span class="stringliteral">&#39;&gt;=&#39;</span>, $year)</div>
-<div class="line"><a id="l01749" name="l01749"></a><span class="lineno"> 1749</span>            -&gt;orderBy(<span class="stringliteral">&#39;name&#39;</span>)</div>
-<div class="line"><a id="l01750" name="l01750"></a><span class="lineno"> 1750</span>            -&gt;get();</div>
-<div class="line"><a id="l01751" name="l01751"></a><span class="lineno"> 1751</span> </div>
-<div class="line"><a id="l01752" name="l01752"></a><span class="lineno"> 1752</span>        $prefill = [</div>
-<div class="line"><a id="l01753" name="l01753"></a><span class="lineno"> 1753</span>            <span class="stringliteral">&#39;delivery_date&#39;</span> =&gt; Carbon::now()-&gt;format(<span class="stringliteral">&#39;Y-m-d&#39;</span>),</div>
-<div class="line"><a id="l01754" name="l01754"></a><span class="lineno"> 1754</span>        ];</div>
-<div class="line"><a id="l01755" name="l01755"></a><span class="lineno"> 1755</span> </div>
-<div class="line"><a id="l01756" name="l01756"></a><span class="lineno"> 1756</span>        $availableStudents = collect();</div>
-<div class="line"><a id="l01757" name="l01757"></a><span class="lineno"> 1757</span>        $availableProfessors = collect();</div>
-<div class="line"><a id="l01758" name="l01758"></a><span class="lineno"> 1758</span>        $ideaBalanceRecommendations = null;</div>
-<div class="line"><a id="l01759" name="l01759"></a><span class="lineno"> 1759</span> </div>
-<div class="line"><a id="l01760" name="l01760"></a><span class="lineno"> 1760</span>        <span class="keywordflow">if</span> ($isProfessor) {</div>
-<div class="line"><a id="l01761" name="l01761"></a><span class="lineno"> 1761</span>            $professor = $activeProfessor;</div>
-<div class="line"><a id="l01762" name="l01762"></a><span class="lineno"> 1762</span>            <span class="keywordflow">if</span> (! $professor) {</div>
-<div class="line"><a id="l01763" name="l01763"></a><span class="lineno"> 1763</span>                abort(403, <span class="stringliteral">&#39;Se requiere un perfil docente para enviar propuestas.&#39;</span>);</div>
-<div class="line"><a id="l01764" name="l01764"></a><span class="lineno"> 1764</span>            }</div>
-<div class="line"><a id="l01765" name="l01765"></a><span class="lineno"> 1765</span> </div>
-<div class="line"><a id="l01766" name="l01766"></a><span class="lineno"> 1766</span>            $prefill = array_merge($prefill, [</div>
-<div class="line"><a id="l01767" name="l01767"></a><span class="lineno"> 1767</span>                <span class="stringliteral">&#39;first_name&#39;</span> =&gt; $professor-&gt;name,</div>
-<div class="line"><a id="l01768" name="l01768"></a><span class="lineno"> 1768</span>                <span class="stringliteral">&#39;last_name&#39;</span> =&gt; $professor-&gt;last_name,</div>
-<div class="line"><a id="l01769" name="l01769"></a><span class="lineno"> 1769</span>                <span class="stringliteral">&#39;email&#39;</span> =&gt; $professor-&gt;mail ?? $user-&gt;email,</div>
-<div class="line"><a id="l01770" name="l01770"></a><span class="lineno"> 1770</span>                <span class="stringliteral">&#39;phone&#39;</span> =&gt; $professor-&gt;phone,</div>
-<div class="line"><a id="l01771" name="l01771"></a><span class="lineno"> 1771</span>                <span class="stringliteral">&#39;city_id&#39;</span> =&gt; optional($professor-&gt;cityProgram)-&gt;city_id,</div>
-<div class="line"><a id="l01772" name="l01772"></a><span class="lineno"> 1772</span>                <span class="stringliteral">&#39;program_id&#39;</span> =&gt; optional($professor-&gt;cityProgram)-&gt;program_id,</div>
-<div class="line"><a id="l01773" name="l01773"></a><span class="lineno"> 1773</span>            ]);</div>
-<div class="line"><a id="l01774" name="l01774"></a><span class="lineno"> 1774</span> </div>
-<div class="line"><a id="l01775" name="l01775"></a><span class="lineno"> 1775</span>            $availableProfessors = $this-&gt;participantQuery($professor-&gt;id)</div>
-<div class="line"><a id="l01776" name="l01776"></a><span class="lineno"> 1776</span>                -&gt;get()</div>
-<div class="line"><a id="l01777" name="l01777"></a><span class="lineno"> 1777</span>                -&gt;map(fn (<a class="code hl_class" href="classApp_1_1Models_1_1Professor.html">Professor</a> $participant) =&gt; $this-&gt;presentParticipant($participant));</div>
-<div class="line"><a id="l01778" name="l01778"></a><span class="lineno"> 1778</span> </div>
-<div class="line"><a id="l01779" name="l01779"></a><span class="lineno"> 1779</span>            $ideaBalanceRecommendations = app(TeacherIdeaBalanceService::class)-&gt;recommendationsForUser($user);</div>
-<div class="line"><a id="l01780" name="l01780"></a><span class="lineno"> 1780</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l01781" name="l01781"></a><span class="lineno"> 1781</span>            $student = $user-&gt;<a class="code hl_function" href="classApp_1_1Models_1_1User.html#af8dcd04bd243a915211126ed63a33839">student</a>;</div>
-<div class="line"><a id="l01782" name="l01782"></a><span class="lineno"> 1782</span>            <span class="keywordflow">if</span> (! $student) {</div>
-<div class="line"><a id="l01783" name="l01783"></a><span class="lineno"> 1783</span>                abort(403, <span class="stringliteral">&#39;Se requiere un perfil de estudiante para enviar propuestas.&#39;</span>);</div>
-<div class="line"><a id="l01784" name="l01784"></a><span class="lineno"> 1784</span>            }</div>
-<div class="line"><a id="l01785" name="l01785"></a><span class="lineno"> 1785</span> </div>
-<div class="line"><a id="l01786" name="l01786"></a><span class="lineno"> 1786</span>            $cityProgram = $student-&gt;cityProgram;</div>
-<div class="line"><a id="l01787" name="l01787"></a><span class="lineno"> 1787</span>            $program = $cityProgram?-&gt;program;</div>
-<div class="line"><a id="l01788" name="l01788"></a><span class="lineno"> 1788</span>            $researchGroup = $program?-&gt;researchGroup;</div>
-<div class="line"><a id="l01789" name="l01789"></a><span class="lineno"> 1789</span> </div>
-<div class="line"><a id="l01790" name="l01790"></a><span class="lineno"> 1790</span>            $prefill = array_merge($prefill, [</div>
-<div class="line"><a id="l01791" name="l01791"></a><span class="lineno"> 1791</span>                <span class="stringliteral">&#39;first_name&#39;</span> =&gt; $student-&gt;name,</div>
-<div class="line"><a id="l01792" name="l01792"></a><span class="lineno"> 1792</span>                <span class="stringliteral">&#39;last_name&#39;</span> =&gt; $student-&gt;last_name,</div>
-<div class="line"><a id="l01793" name="l01793"></a><span class="lineno"> 1793</span>                <span class="stringliteral">&#39;card_id&#39;</span> =&gt; $student-&gt;card_id,</div>
-<div class="line"><a id="l01794" name="l01794"></a><span class="lineno"> 1794</span>                <span class="stringliteral">&#39;email&#39;</span> =&gt; $user-&gt;email,</div>
-<div class="line"><a id="l01795" name="l01795"></a><span class="lineno"> 1795</span>                <span class="stringliteral">&#39;phone&#39;</span> =&gt; $student-&gt;phone,</div>
-<div class="line"><a id="l01796" name="l01796"></a><span class="lineno"> 1796</span>                <span class="stringliteral">&#39;city_id&#39;</span> =&gt; $cityProgram?-&gt;city_id,</div>
-<div class="line"><a id="l01797" name="l01797"></a><span class="lineno"> 1797</span>                <span class="stringliteral">&#39;program_id&#39;</span> =&gt; $program?-&gt;id,</div>
-<div class="line"><a id="l01798" name="l01798"></a><span class="lineno"> 1798</span>                <span class="stringliteral">&#39;research_group&#39;</span> =&gt; $researchGroup?-&gt;name,</div>
-<div class="line"><a id="l01799" name="l01799"></a><span class="lineno"> 1799</span>            ]);</div>
-<div class="line"><a id="l01800" name="l01800"></a><span class="lineno"> 1800</span> </div>
-<div class="line"><a id="l01801" name="l01801"></a><span class="lineno"> 1801</span>            $availableStudents = Student::query()</div>
-<div class="line"><a id="l01802" name="l01802"></a><span class="lineno"> 1802</span>                -&gt;where(<span class="stringliteral">&#39;city_program_id&#39;</span>, $student-&gt;city_program_id)</div>
-<div class="line"><a id="l01803" name="l01803"></a><span class="lineno"> 1803</span>                -&gt;where(<span class="stringliteral">&#39;id&#39;</span>, <span class="stringliteral">&#39;!=&#39;</span>, $student-&gt;id)</div>
-<div class="line"><a id="l01804" name="l01804"></a><span class="lineno"> 1804</span>                -&gt;where(function ($q) {</div>
-<div class="line"><a id="l01805" name="l01805"></a><span class="lineno"> 1805</span>                    $q-&gt;whereDoesntHave(<span class="stringliteral">&#39;projects&#39;</span>)</div>
-<div class="line"><a id="l01806" name="l01806"></a><span class="lineno"> 1806</span>                        -&gt;orWhere(function ($q2) {</div>
-<div class="line"><a id="l01807" name="l01807"></a><span class="lineno"> 1807</span>                            $q2-&gt;whereHas(<span class="stringliteral">&#39;projects&#39;</span>, fn ($p) =&gt; $p-&gt;whereHas(<span class="stringliteral">&#39;projectStatus&#39;</span>, fn ($s) =&gt; $s-&gt;where(<span class="stringliteral">&#39;name&#39;</span>, <span class="stringliteral">&#39;Rechazado&#39;</span>)))</div>
-<div class="line"><a id="l01808" name="l01808"></a><span class="lineno"> 1808</span>                                -&gt;whereDoesntHave(<span class="stringliteral">&#39;projects&#39;</span>, fn ($p) =&gt; $p-&gt;whereHas(<span class="stringliteral">&#39;projectStatus&#39;</span>, fn ($s) =&gt; $s-&gt;whereNot(<span class="stringliteral">&#39;name&#39;</span>, <span class="stringliteral">&#39;Rechazado&#39;</span>)));</div>
-<div class="line"><a id="l01809" name="l01809"></a><span class="lineno"> 1809</span>                        });</div>
-<div class="line"><a id="l01810" name="l01810"></a><span class="lineno"> 1810</span>                })</div>
-<div class="line"><a id="l01811" name="l01811"></a><span class="lineno"> 1811</span>                -&gt;orderBy(<span class="stringliteral">&#39;last_name&#39;</span>)</div>
-<div class="line"><a id="l01812" name="l01812"></a><span class="lineno"> 1812</span>                -&gt;orderBy(<span class="stringliteral">&#39;name&#39;</span>)</div>
-<div class="line"><a id="l01813" name="l01813"></a><span class="lineno"> 1813</span>                -&gt;get();</div>
-<div class="line"><a id="l01814" name="l01814"></a><span class="lineno"> 1814</span>        }</div>
-<div class="line"><a id="l01815" name="l01815"></a><span class="lineno"> 1815</span> </div>
-<div class="line"><a id="l01816" name="l01816"></a><span class="lineno"> 1816</span>        <span class="keywordflow">return</span> view(<span class="stringliteral">&#39;projects.create&#39;</span>, [</div>
-<div class="line"><a id="l01817" name="l01817"></a><span class="lineno"> 1817</span>            <span class="stringliteral">&#39;cities&#39;</span> =&gt; $cities,</div>
-<div class="line"><a id="l01818" name="l01818"></a><span class="lineno"> 1818</span>            <span class="stringliteral">&#39;programs&#39;</span> =&gt; $programs,</div>
-<div class="line"><a id="l01819" name="l01819"></a><span class="lineno"> 1819</span>            <span class="stringliteral">&#39;investigationLines&#39;</span> =&gt; $investigationLines,</div>
-<div class="line"><a id="l01820" name="l01820"></a><span class="lineno"> 1820</span>            <span class="stringliteral">&#39;thematicAreas&#39;</span> =&gt; $thematicAreas,</div>
-<div class="line"><a id="l01821" name="l01821"></a><span class="lineno"> 1821</span>            <span class="stringliteral">&#39;frameworks&#39;</span> =&gt; $frameworks,</div>
-<div class="line"><a id="l01822" name="l01822"></a><span class="lineno"> 1822</span>            <span class="stringliteral">&#39;prefill&#39;</span> =&gt; $prefill,</div>
-<div class="line"><a id="l01823" name="l01823"></a><span class="lineno"> 1823</span>            <span class="stringliteral">&#39;isProfessor&#39;</span> =&gt; $isProfessor,</div>
-<div class="line"><a id="l01824" name="l01824"></a><span class="lineno"> 1824</span>            <span class="stringliteral">&#39;isStudent&#39;</span> =&gt; $isStudent,</div>
-<div class="line"><a id="l01825" name="l01825"></a><span class="lineno"> 1825</span>            <span class="stringliteral">&#39;isCommitteeLeader&#39;</span> =&gt; $isCommitteeLeader,</div>
-<div class="line"><a id="l01826" name="l01826"></a><span class="lineno"> 1826</span>            <span class="stringliteral">&#39;availableStudents&#39;</span> =&gt; $availableStudents,</div>
-<div class="line"><a id="l01827" name="l01827"></a><span class="lineno"> 1827</span>            <span class="stringliteral">&#39;availableProfessors&#39;</span> =&gt; $availableProfessors,</div>
-<div class="line"><a id="l01828" name="l01828"></a><span class="lineno"> 1828</span>            <span class="stringliteral">&#39;activeAcademicPeriod&#39;</span> =&gt; $activeAcademicPeriod,</div>
-<div class="line"><a id="l01829" name="l01829"></a><span class="lineno"> 1829</span>            <span class="stringliteral">&#39;proposalWindow&#39;</span> =&gt; $proposalWindow,</div>
-<div class="line"><a id="l01830" name="l01830"></a><span class="lineno"> 1830</span>            <span class="stringliteral">&#39;ideaBalanceRecommendations&#39;</span> =&gt; $ideaBalanceRecommendations,</div>
-<div class="line"><a id="l01831" name="l01831"></a><span class="lineno"> 1831</span>        ]);</div>
-<div class="line"><a id="l01832" name="l01832"></a><span class="lineno"> 1832</span>    }</div>
+<div class="line"><a id="l01746" name="l01746"></a><span class="lineno"> 1746</span>        $year = now()-&gt;year;</div>
+<div class="line"><a id="l01747" name="l01747"></a><span class="lineno"> 1747</span> </div>
+<div class="line"><a id="l01748" name="l01748"></a><span class="lineno"> 1748</span>        $frameworks = Framework::with(<span class="stringliteral">&#39;contentFrameworks&#39;</span>)</div>
+<div class="line"><a id="l01749" name="l01749"></a><span class="lineno"> 1749</span>            -&gt;where(<span class="stringliteral">&#39;start_year&#39;</span>, <span class="stringliteral">&#39;&lt;=&#39;</span>, $year)</div>
+<div class="line"><a id="l01750" name="l01750"></a><span class="lineno"> 1750</span>            -&gt;where(<span class="stringliteral">&#39;end_year&#39;</span>, <span class="stringliteral">&#39;&gt;=&#39;</span>, $year)</div>
+<div class="line"><a id="l01751" name="l01751"></a><span class="lineno"> 1751</span>            -&gt;orderBy(<span class="stringliteral">&#39;name&#39;</span>)</div>
+<div class="line"><a id="l01752" name="l01752"></a><span class="lineno"> 1752</span>            -&gt;get();</div>
+<div class="line"><a id="l01753" name="l01753"></a><span class="lineno"> 1753</span> </div>
+<div class="line"><a id="l01754" name="l01754"></a><span class="lineno"> 1754</span>        $prefill = [</div>
+<div class="line"><a id="l01755" name="l01755"></a><span class="lineno"> 1755</span>            <span class="stringliteral">&#39;delivery_date&#39;</span> =&gt; Carbon::now()-&gt;format(<span class="stringliteral">&#39;Y-m-d&#39;</span>),</div>
+<div class="line"><a id="l01756" name="l01756"></a><span class="lineno"> 1756</span>        ];</div>
+<div class="line"><a id="l01757" name="l01757"></a><span class="lineno"> 1757</span> </div>
+<div class="line"><a id="l01758" name="l01758"></a><span class="lineno"> 1758</span>        $availableStudents = collect();</div>
+<div class="line"><a id="l01759" name="l01759"></a><span class="lineno"> 1759</span>        $availableProfessors = collect();</div>
+<div class="line"><a id="l01760" name="l01760"></a><span class="lineno"> 1760</span>        $ideaBalanceRecommendations = null;</div>
+<div class="line"><a id="l01761" name="l01761"></a><span class="lineno"> 1761</span> </div>
+<div class="line"><a id="l01762" name="l01762"></a><span class="lineno"> 1762</span>        <span class="keywordflow">if</span> ($isProfessor) {</div>
+<div class="line"><a id="l01763" name="l01763"></a><span class="lineno"> 1763</span>            $professor = $activeProfessor;</div>
+<div class="line"><a id="l01764" name="l01764"></a><span class="lineno"> 1764</span>            <span class="keywordflow">if</span> (! $professor) {</div>
+<div class="line"><a id="l01765" name="l01765"></a><span class="lineno"> 1765</span>                abort(403, <span class="stringliteral">&#39;Se requiere un perfil docente para enviar propuestas.&#39;</span>);</div>
+<div class="line"><a id="l01766" name="l01766"></a><span class="lineno"> 1766</span>            }</div>
+<div class="line"><a id="l01767" name="l01767"></a><span class="lineno"> 1767</span> </div>
+<div class="line"><a id="l01768" name="l01768"></a><span class="lineno"> 1768</span>            $prefill = array_merge($prefill, [</div>
+<div class="line"><a id="l01769" name="l01769"></a><span class="lineno"> 1769</span>                <span class="stringliteral">&#39;first_name&#39;</span> =&gt; $professor-&gt;name,</div>
+<div class="line"><a id="l01770" name="l01770"></a><span class="lineno"> 1770</span>                <span class="stringliteral">&#39;last_name&#39;</span> =&gt; $professor-&gt;last_name,</div>
+<div class="line"><a id="l01771" name="l01771"></a><span class="lineno"> 1771</span>                <span class="stringliteral">&#39;email&#39;</span> =&gt; $professor-&gt;mail ?? $user-&gt;email,</div>
+<div class="line"><a id="l01772" name="l01772"></a><span class="lineno"> 1772</span>                <span class="stringliteral">&#39;phone&#39;</span> =&gt; $professor-&gt;phone,</div>
+<div class="line"><a id="l01773" name="l01773"></a><span class="lineno"> 1773</span>                <span class="stringliteral">&#39;city_id&#39;</span> =&gt; optional($professor-&gt;cityProgram)-&gt;city_id,</div>
+<div class="line"><a id="l01774" name="l01774"></a><span class="lineno"> 1774</span>                <span class="stringliteral">&#39;program_id&#39;</span> =&gt; optional($professor-&gt;cityProgram)-&gt;program_id,</div>
+<div class="line"><a id="l01775" name="l01775"></a><span class="lineno"> 1775</span>            ]);</div>
+<div class="line"><a id="l01776" name="l01776"></a><span class="lineno"> 1776</span> </div>
+<div class="line"><a id="l01777" name="l01777"></a><span class="lineno"> 1777</span>            $availableProfessors = $this-&gt;participantQuery($professor-&gt;id)</div>
+<div class="line"><a id="l01778" name="l01778"></a><span class="lineno"> 1778</span>                -&gt;get()</div>
+<div class="line"><a id="l01779" name="l01779"></a><span class="lineno"> 1779</span>                -&gt;map(fn (<a class="code hl_class" href="classApp_1_1Models_1_1Professor.html">Professor</a> $participant) =&gt; $this-&gt;presentParticipant($participant));</div>
+<div class="line"><a id="l01780" name="l01780"></a><span class="lineno"> 1780</span> </div>
+<div class="line"><a id="l01781" name="l01781"></a><span class="lineno"> 1781</span>            $ideaBalanceRecommendations = app(TeacherIdeaBalanceService::class)-&gt;recommendationsForUser($user);</div>
+<div class="line"><a id="l01782" name="l01782"></a><span class="lineno"> 1782</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l01783" name="l01783"></a><span class="lineno"> 1783</span>            $student = $user-&gt;<a class="code hl_function" href="classApp_1_1Models_1_1User.html#af8dcd04bd243a915211126ed63a33839">student</a>;</div>
+<div class="line"><a id="l01784" name="l01784"></a><span class="lineno"> 1784</span>            <span class="keywordflow">if</span> (! $student) {</div>
+<div class="line"><a id="l01785" name="l01785"></a><span class="lineno"> 1785</span>                abort(403, <span class="stringliteral">&#39;Se requiere un perfil de estudiante para enviar propuestas.&#39;</span>);</div>
+<div class="line"><a id="l01786" name="l01786"></a><span class="lineno"> 1786</span>            }</div>
+<div class="line"><a id="l01787" name="l01787"></a><span class="lineno"> 1787</span> </div>
+<div class="line"><a id="l01788" name="l01788"></a><span class="lineno"> 1788</span>            $cityProgram = $student-&gt;cityProgram;</div>
+<div class="line"><a id="l01789" name="l01789"></a><span class="lineno"> 1789</span>            $program = $cityProgram?-&gt;program;</div>
+<div class="line"><a id="l01790" name="l01790"></a><span class="lineno"> 1790</span>            $researchGroup = $program?-&gt;researchGroup;</div>
+<div class="line"><a id="l01791" name="l01791"></a><span class="lineno"> 1791</span> </div>
+<div class="line"><a id="l01792" name="l01792"></a><span class="lineno"> 1792</span>            $prefill = array_merge($prefill, [</div>
+<div class="line"><a id="l01793" name="l01793"></a><span class="lineno"> 1793</span>                <span class="stringliteral">&#39;first_name&#39;</span> =&gt; $student-&gt;name,</div>
+<div class="line"><a id="l01794" name="l01794"></a><span class="lineno"> 1794</span>                <span class="stringliteral">&#39;last_name&#39;</span> =&gt; $student-&gt;last_name,</div>
+<div class="line"><a id="l01795" name="l01795"></a><span class="lineno"> 1795</span>                <span class="stringliteral">&#39;card_id&#39;</span> =&gt; $student-&gt;card_id,</div>
+<div class="line"><a id="l01796" name="l01796"></a><span class="lineno"> 1796</span>                <span class="stringliteral">&#39;email&#39;</span> =&gt; $user-&gt;email,</div>
+<div class="line"><a id="l01797" name="l01797"></a><span class="lineno"> 1797</span>                <span class="stringliteral">&#39;phone&#39;</span> =&gt; $student-&gt;phone,</div>
+<div class="line"><a id="l01798" name="l01798"></a><span class="lineno"> 1798</span>                <span class="stringliteral">&#39;city_id&#39;</span> =&gt; $cityProgram?-&gt;city_id,</div>
+<div class="line"><a id="l01799" name="l01799"></a><span class="lineno"> 1799</span>                <span class="stringliteral">&#39;program_id&#39;</span> =&gt; $program?-&gt;id,</div>
+<div class="line"><a id="l01800" name="l01800"></a><span class="lineno"> 1800</span>                <span class="stringliteral">&#39;research_group&#39;</span> =&gt; $researchGroup?-&gt;name,</div>
+<div class="line"><a id="l01801" name="l01801"></a><span class="lineno"> 1801</span>            ]);</div>
+<div class="line"><a id="l01802" name="l01802"></a><span class="lineno"> 1802</span> </div>
+<div class="line"><a id="l01803" name="l01803"></a><span class="lineno"> 1803</span>            $availableStudents = Student::query()</div>
+<div class="line"><a id="l01804" name="l01804"></a><span class="lineno"> 1804</span>                -&gt;where(<span class="stringliteral">&#39;city_program_id&#39;</span>, $student-&gt;city_program_id)</div>
+<div class="line"><a id="l01805" name="l01805"></a><span class="lineno"> 1805</span>                -&gt;where(<span class="stringliteral">&#39;id&#39;</span>, <span class="stringliteral">&#39;!=&#39;</span>, $student-&gt;id)</div>
+<div class="line"><a id="l01806" name="l01806"></a><span class="lineno"> 1806</span>                -&gt;whereDoesntHave(<span class="stringliteral">&#39;projects&#39;</span>, function ($q) {</div>
+<div class="line"><a id="l01807" name="l01807"></a><span class="lineno"> 1807</span>                    $q-&gt;whereHas(<span class="stringliteral">&#39;projectStatus&#39;</span>, fn ($s) =&gt; $s-&gt;whereNotIn(<span class="stringliteral">&#39;name&#39;</span>, Student::INACTIVE_PROJECT_STATUSES));</div>
+<div class="line"><a id="l01808" name="l01808"></a><span class="lineno"> 1808</span>                })</div>
+<div class="line"><a id="l01809" name="l01809"></a><span class="lineno"> 1809</span>                -&gt;orderBy(<span class="stringliteral">&#39;last_name&#39;</span>)</div>
+<div class="line"><a id="l01810" name="l01810"></a><span class="lineno"> 1810</span>                -&gt;orderBy(<span class="stringliteral">&#39;name&#39;</span>)</div>
+<div class="line"><a id="l01811" name="l01811"></a><span class="lineno"> 1811</span>                -&gt;get();</div>
+<div class="line"><a id="l01812" name="l01812"></a><span class="lineno"> 1812</span>        }</div>
+<div class="line"><a id="l01813" name="l01813"></a><span class="lineno"> 1813</span> </div>
+<div class="line"><a id="l01814" name="l01814"></a><span class="lineno"> 1814</span>        <span class="keywordflow">return</span> view(<span class="stringliteral">&#39;projects.create&#39;</span>, [</div>
+<div class="line"><a id="l01815" name="l01815"></a><span class="lineno"> 1815</span>            <span class="stringliteral">&#39;cities&#39;</span> =&gt; $cities,</div>
+<div class="line"><a id="l01816" name="l01816"></a><span class="lineno"> 1816</span>            <span class="stringliteral">&#39;programs&#39;</span> =&gt; $programs,</div>
+<div class="line"><a id="l01817" name="l01817"></a><span class="lineno"> 1817</span>            <span class="stringliteral">&#39;investigationLines&#39;</span> =&gt; $investigationLines,</div>
+<div class="line"><a id="l01818" name="l01818"></a><span class="lineno"> 1818</span>            <span class="stringliteral">&#39;thematicAreas&#39;</span> =&gt; $thematicAreas,</div>
+<div class="line"><a id="l01819" name="l01819"></a><span class="lineno"> 1819</span>            <span class="stringliteral">&#39;frameworks&#39;</span> =&gt; $frameworks,</div>
+<div class="line"><a id="l01820" name="l01820"></a><span class="lineno"> 1820</span>            <span class="stringliteral">&#39;prefill&#39;</span> =&gt; $prefill,</div>
+<div class="line"><a id="l01821" name="l01821"></a><span class="lineno"> 1821</span>            <span class="stringliteral">&#39;isProfessor&#39;</span> =&gt; $isProfessor,</div>
+<div class="line"><a id="l01822" name="l01822"></a><span class="lineno"> 1822</span>            <span class="stringliteral">&#39;isStudent&#39;</span> =&gt; $isStudent,</div>
+<div class="line"><a id="l01823" name="l01823"></a><span class="lineno"> 1823</span>            <span class="stringliteral">&#39;isCommitteeLeader&#39;</span> =&gt; $isCommitteeLeader,</div>
+<div class="line"><a id="l01824" name="l01824"></a><span class="lineno"> 1824</span>            <span class="stringliteral">&#39;availableStudents&#39;</span> =&gt; $availableStudents,</div>
+<div class="line"><a id="l01825" name="l01825"></a><span class="lineno"> 1825</span>            <span class="stringliteral">&#39;availableProfessors&#39;</span> =&gt; $availableProfessors,</div>
+<div class="line"><a id="l01826" name="l01826"></a><span class="lineno"> 1826</span>            <span class="stringliteral">&#39;activeAcademicPeriod&#39;</span> =&gt; $activeAcademicPeriod,</div>
+<div class="line"><a id="l01827" name="l01827"></a><span class="lineno"> 1827</span>            <span class="stringliteral">&#39;proposalWindow&#39;</span> =&gt; $proposalWindow,</div>
+<div class="line"><a id="l01828" name="l01828"></a><span class="lineno"> 1828</span>            <span class="stringliteral">&#39;ideaBalanceRecommendations&#39;</span> =&gt; $ideaBalanceRecommendations,</div>
+<div class="line"><a id="l01829" name="l01829"></a><span class="lineno"> 1829</span>        ]);</div>
+<div class="line"><a id="l01830" name="l01830"></a><span class="lineno"> 1830</span>    }</div>
 </div>
-<div class="line"><a id="l01833" name="l01833"></a><span class="lineno"> 1833</span> </div>
-<div class="foldopen" id="foldopen01837" data-start="{" data-end="}">
-<div class="line"><a id="l01837" name="l01837"></a><span class="lineno"><a class="line" href="classApp_1_1Http_1_1Controllers_1_1ProjectController.html#acc9c5eacfea40b9ea411d8a281058cf9"> 1837</a></span>    <span class="keyword">public</span> function <a class="code hl_function" href="classApp_1_1Http_1_1Controllers_1_1ProjectController.html#acc9c5eacfea40b9ea411d8a281058cf9">store</a>(Request $request): View|RedirectResponse</div>
-<div class="line"><a id="l01838" name="l01838"></a><span class="lineno"> 1838</span>    {</div>
-<div class="line"><a id="l01839" name="l01839"></a><span class="lineno"> 1839</span>        [$user, $isProfessor, $isStudent, $isResearchStaff] = $this-&gt;ensureRoleAccess(<span class="keyword">true</span>);</div>
-<div class="line"><a id="l01840" name="l01840"></a><span class="lineno"> 1840</span> </div>
-<div class="line"><a id="l01841" name="l01841"></a><span class="lineno"> 1841</span>        <span class="keywordflow">try</span> {</div>
-<div class="line"><a id="l01842" name="l01842"></a><span class="lineno"> 1842</span>            <span class="keywordflow">if</span> ($isResearchStaff) {</div>
-<div class="line"><a id="l01843" name="l01843"></a><span class="lineno"> 1843</span>                abort(403, <span class="stringliteral">&#39;El personal de investigación no puede crear ideas de proyecto.&#39;</span>);</div>
-<div class="line"><a id="l01844" name="l01844"></a><span class="lineno"> 1844</span>            }</div>
-<div class="line"><a id="l01845" name="l01845"></a><span class="lineno"> 1845</span> </div>
-<div class="line"><a id="l01846" name="l01846"></a><span class="lineno"> 1846</span>            <span class="keywordflow">if</span> (! AcademicCalendarService::isProcessWindowOpen(AcademicProcessWindow::PROCESS_IDEA_PROPOSAL)) {</div>
-<div class="line"><a id="l01847" name="l01847"></a><span class="lineno"> 1847</span>                <span class="keywordflow">return</span> view(</div>
-<div class="line"><a id="l01848" name="l01848"></a><span class="lineno"> 1848</span>                    <span class="stringliteral">&#39;academic-calendar.unavailable&#39;</span>,</div>
-<div class="line"><a id="l01849" name="l01849"></a><span class="lineno"> 1849</span>                    AcademicCalendarService::unavailableActivityViewData(AcademicProcessWindow::PROCESS_IDEA_PROPOSAL)</div>
-<div class="line"><a id="l01850" name="l01850"></a><span class="lineno"> 1850</span>                );</div>
-<div class="line"><a id="l01851" name="l01851"></a><span class="lineno"> 1851</span>            }</div>
-<div class="line"><a id="l01852" name="l01852"></a><span class="lineno"> 1852</span> </div>
-<div class="line"><a id="l01853" name="l01853"></a><span class="lineno"> 1853</span>            $activeAcademicPeriod = AcademicCalendarService::currentActivePeriod();</div>
-<div class="line"><a id="l01854" name="l01854"></a><span class="lineno"> 1854</span>            $proposalWindow = AcademicCalendarService::currentWindowForProcess(AcademicProcessWindow::PROCESS_IDEA_PROPOSAL);</div>
-<div class="line"><a id="l01855" name="l01855"></a><span class="lineno"> 1855</span> </div>
-<div class="line"><a id="l01856" name="l01856"></a><span class="lineno"> 1856</span>            <span class="keywordflow">if</span> (! $activeAcademicPeriod || ! $proposalWindow) {</div>
-<div class="line"><a id="l01857" name="l01857"></a><span class="lineno"> 1857</span>                <span class="keywordflow">return</span> view(</div>
-<div class="line"><a id="l01858" name="l01858"></a><span class="lineno"> 1858</span>                    <span class="stringliteral">&#39;academic-calendar.unavailable&#39;</span>,</div>
-<div class="line"><a id="l01859" name="l01859"></a><span class="lineno"> 1859</span>                    AcademicCalendarService::unavailableActivityViewData(AcademicProcessWindow::PROCESS_IDEA_PROPOSAL)</div>
-<div class="line"><a id="l01860" name="l01860"></a><span class="lineno"> 1860</span>                );</div>
-<div class="line"><a id="l01861" name="l01861"></a><span class="lineno"> 1861</span>            }</div>
-<div class="line"><a id="l01862" name="l01862"></a><span class="lineno"> 1862</span> </div>
-<div class="line"><a id="l01863" name="l01863"></a><span class="lineno"> 1863</span>            <span class="keywordflow">if</span> ($isProfessor) {</div>
-<div class="line"><a id="l01864" name="l01864"></a><span class="lineno"> 1864</span>                $professorProfile = $this-&gt;resolveProfessorProfile($user);</div>
-<div class="line"><a id="l01865" name="l01865"></a><span class="lineno"> 1865</span> </div>
-<div class="line"><a id="l01866" name="l01866"></a><span class="lineno"> 1866</span>                <span class="keywordflow">return</span> $this-&gt;persistProfessorProject($request, $professorProfile, null, $activeAcademicPeriod, $proposalWindow);</div>
-<div class="line"><a id="l01867" name="l01867"></a><span class="lineno"> 1867</span>            }</div>
+<div class="line"><a id="l01831" name="l01831"></a><span class="lineno"> 1831</span> </div>
+<div class="foldopen" id="foldopen01835" data-start="{" data-end="}">
+<div class="line"><a id="l01835" name="l01835"></a><span class="lineno"><a class="line" href="classApp_1_1Http_1_1Controllers_1_1ProjectController.html#acc9c5eacfea40b9ea411d8a281058cf9"> 1835</a></span>    <span class="keyword">public</span> function <a class="code hl_function" href="classApp_1_1Http_1_1Controllers_1_1ProjectController.html#acc9c5eacfea40b9ea411d8a281058cf9">store</a>(Request $request): View|RedirectResponse</div>
+<div class="line"><a id="l01836" name="l01836"></a><span class="lineno"> 1836</span>    {</div>
+<div class="line"><a id="l01837" name="l01837"></a><span class="lineno"> 1837</span>        [$user, $isProfessor, $isStudent, $isResearchStaff] = $this-&gt;ensureRoleAccess(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l01838" name="l01838"></a><span class="lineno"> 1838</span> </div>
+<div class="line"><a id="l01839" name="l01839"></a><span class="lineno"> 1839</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l01840" name="l01840"></a><span class="lineno"> 1840</span>            <span class="keywordflow">if</span> ($isResearchStaff) {</div>
+<div class="line"><a id="l01841" name="l01841"></a><span class="lineno"> 1841</span>                abort(403, <span class="stringliteral">&#39;El personal de investigación no puede crear ideas de proyecto.&#39;</span>);</div>
+<div class="line"><a id="l01842" name="l01842"></a><span class="lineno"> 1842</span>            }</div>
+<div class="line"><a id="l01843" name="l01843"></a><span class="lineno"> 1843</span> </div>
+<div class="line"><a id="l01844" name="l01844"></a><span class="lineno"> 1844</span>            <span class="keywordflow">if</span> (! AcademicCalendarService::isProcessWindowOpen(AcademicProcessWindow::PROCESS_IDEA_PROPOSAL)) {</div>
+<div class="line"><a id="l01845" name="l01845"></a><span class="lineno"> 1845</span>                <span class="keywordflow">return</span> view(</div>
+<div class="line"><a id="l01846" name="l01846"></a><span class="lineno"> 1846</span>                    <span class="stringliteral">&#39;academic-calendar.unavailable&#39;</span>,</div>
+<div class="line"><a id="l01847" name="l01847"></a><span class="lineno"> 1847</span>                    AcademicCalendarService::unavailableActivityViewData(AcademicProcessWindow::PROCESS_IDEA_PROPOSAL)</div>
+<div class="line"><a id="l01848" name="l01848"></a><span class="lineno"> 1848</span>                );</div>
+<div class="line"><a id="l01849" name="l01849"></a><span class="lineno"> 1849</span>            }</div>
+<div class="line"><a id="l01850" name="l01850"></a><span class="lineno"> 1850</span> </div>
+<div class="line"><a id="l01851" name="l01851"></a><span class="lineno"> 1851</span>            $activeAcademicPeriod = AcademicCalendarService::currentActivePeriod();</div>
+<div class="line"><a id="l01852" name="l01852"></a><span class="lineno"> 1852</span>            $proposalWindow = AcademicCalendarService::currentWindowForProcess(AcademicProcessWindow::PROCESS_IDEA_PROPOSAL);</div>
+<div class="line"><a id="l01853" name="l01853"></a><span class="lineno"> 1853</span> </div>
+<div class="line"><a id="l01854" name="l01854"></a><span class="lineno"> 1854</span>            <span class="keywordflow">if</span> (! $activeAcademicPeriod || ! $proposalWindow) {</div>
+<div class="line"><a id="l01855" name="l01855"></a><span class="lineno"> 1855</span>                <span class="keywordflow">return</span> view(</div>
+<div class="line"><a id="l01856" name="l01856"></a><span class="lineno"> 1856</span>                    <span class="stringliteral">&#39;academic-calendar.unavailable&#39;</span>,</div>
+<div class="line"><a id="l01857" name="l01857"></a><span class="lineno"> 1857</span>                    AcademicCalendarService::unavailableActivityViewData(AcademicProcessWindow::PROCESS_IDEA_PROPOSAL)</div>
+<div class="line"><a id="l01858" name="l01858"></a><span class="lineno"> 1858</span>                );</div>
+<div class="line"><a id="l01859" name="l01859"></a><span class="lineno"> 1859</span>            }</div>
+<div class="line"><a id="l01860" name="l01860"></a><span class="lineno"> 1860</span> </div>
+<div class="line"><a id="l01861" name="l01861"></a><span class="lineno"> 1861</span>            <span class="keywordflow">if</span> ($isProfessor) {</div>
+<div class="line"><a id="l01862" name="l01862"></a><span class="lineno"> 1862</span>                $professorProfile = $this-&gt;resolveProfessorProfile($user);</div>
+<div class="line"><a id="l01863" name="l01863"></a><span class="lineno"> 1863</span> </div>
+<div class="line"><a id="l01864" name="l01864"></a><span class="lineno"> 1864</span>                <span class="keywordflow">return</span> $this-&gt;persistProfessorProject($request, $professorProfile, null, $activeAcademicPeriod, $proposalWindow);</div>
+<div class="line"><a id="l01865" name="l01865"></a><span class="lineno"> 1865</span>            }</div>
+<div class="line"><a id="l01866" name="l01866"></a><span class="lineno"> 1866</span> </div>
+<div class="line"><a id="l01867" name="l01867"></a><span class="lineno"> 1867</span>            $studentAcademicProgress = app(StudentAcademicProgressService::class);</div>
 <div class="line"><a id="l01868" name="l01868"></a><span class="lineno"> 1868</span> </div>
-<div class="line"><a id="l01869" name="l01869"></a><span class="lineno"> 1869</span>            $studentAcademicProgress = app(StudentAcademicProgressService::class);</div>
-<div class="line"><a id="l01870" name="l01870"></a><span class="lineno"> 1870</span> </div>
-<div class="line"><a id="l01871" name="l01871"></a><span class="lineno"> 1871</span>            <span class="keywordflow">if</span> (! $studentAcademicProgress-&gt;canCreateProposal($user-&gt;<a class="code hl_function" href="classApp_1_1Models_1_1User.html#af8dcd04bd243a915211126ed63a33839">student</a>, $activeAcademicPeriod)) {</div>
-<div class="line"><a id="l01872" name="l01872"></a><span class="lineno"> 1872</span>                abort(403, $studentAcademicProgress-&gt;blockedProposalMessage($user-&gt;<a class="code hl_function" href="classApp_1_1Models_1_1User.html#af8dcd04bd243a915211126ed63a33839">student</a>, $activeAcademicPeriod));</div>
+<div class="line"><a id="l01869" name="l01869"></a><span class="lineno"> 1869</span>            <span class="keywordflow">if</span> (! $studentAcademicProgress-&gt;canCreateProposal($user-&gt;<a class="code hl_function" href="classApp_1_1Models_1_1User.html#af8dcd04bd243a915211126ed63a33839">student</a>, $activeAcademicPeriod)) {</div>
+<div class="line"><a id="l01870" name="l01870"></a><span class="lineno"> 1870</span>                <span class="keywordflow">return</span> redirect()</div>
+<div class="line"><a id="l01871" name="l01871"></a><span class="lineno"> 1871</span>                    -&gt;route(<span class="stringliteral">&#39;projects.index&#39;</span>)</div>
+<div class="line"><a id="l01872" name="l01872"></a><span class="lineno"> 1872</span>                    -&gt;with(<span class="stringliteral">&#39;warning&#39;</span>, $studentAcademicProgress-&gt;blockedProposalMessage($user-&gt;<a class="code hl_function" href="classApp_1_1Models_1_1User.html#af8dcd04bd243a915211126ed63a33839">student</a>, $activeAcademicPeriod));</div>
 <div class="line"><a id="l01873" name="l01873"></a><span class="lineno"> 1873</span>            }</div>
 <div class="line"><a id="l01874" name="l01874"></a><span class="lineno"> 1874</span> </div>
 <div class="line"><a id="l01875" name="l01875"></a><span class="lineno"> 1875</span>            <span class="keywordflow">return</span> $this-&gt;persistStudentProject($request, $user-&gt;<a class="code hl_function" href="classApp_1_1Models_1_1User.html#af8dcd04bd243a915211126ed63a33839">student</a>, null, $activeAcademicPeriod, $proposalWindow);</div>
@@ -2662,7 +2662,7 @@ $(document).ready(function(){initNavTree('ProjectController_8php_source.html',''
 <div class="line"><a id="l02686" name="l02686"></a><span class="lineno"> 2686</span>                -&gt;whereHas(<span class="stringliteral">&#39;projects&#39;</span>, function ($query) use ($project) {</div>
 <div class="line"><a id="l02687" name="l02687"></a><span class="lineno"> 2687</span>                    $query-&gt;where(<span class="stringliteral">&#39;project_id&#39;</span>, <span class="stringliteral">&#39;!=&#39;</span>, $project?-&gt;<span class="keywordtype">id</span>)</div>
 <div class="line"><a id="l02688" name="l02688"></a><span class="lineno"> 2688</span>                        -&gt;whereHas(<span class="stringliteral">&#39;projectStatus&#39;</span>, function ($statusQuery) {</div>
-<div class="line"><a id="l02689" name="l02689"></a><span class="lineno"> 2689</span>                            $statusQuery-&gt;whereNotIn(<span class="stringliteral">&#39;name&#39;</span>, [<span class="stringliteral">&#39;Rechazado&#39;</span>]);</div>
+<div class="line"><a id="l02689" name="l02689"></a><span class="lineno"> 2689</span>                            $statusQuery-&gt;whereNotIn(<span class="stringliteral">&#39;name&#39;</span>, Student::INACTIVE_PROJECT_STATUSES);</div>
 <div class="line"><a id="l02690" name="l02690"></a><span class="lineno"> 2690</span>                        });</div>
 <div class="line"><a id="l02691" name="l02691"></a><span class="lineno"> 2691</span>                })</div>
 <div class="line"><a id="l02692" name="l02692"></a><span class="lineno"> 2692</span>                -&gt;exists();</div>
@@ -3078,7 +3078,7 @@ $(document).ready(function(){initNavTree('ProjectController_8php_source.html',''
 <div class="ttc" id="aclassApp_1_1Http_1_1Controllers_1_1ProjectController_html_acbf5e3b5ca783271f1794f1c6d242983"><div class="ttname"><a href="classApp_1_1Http_1_1Controllers_1_1ProjectController.html#acbf5e3b5ca783271f1794f1c6d242983">App::Http::Controllers::ProjectController::participantQuery</a></div><div class="ttdeci">participantQuery(?int $excludeProfessorId=null)</div><div class="ttdoc">Build the base query for participants, optionally excluding the authenticated profile.</div><div class="ttdef"><b>Definition</b> <a href="ProjectController_8php_source.html#l02035">ProjectController.php:2035</a></div></div>
 <div class="ttc" id="aclassApp_1_1Http_1_1Controllers_1_1ProjectController_html_acc2e77076795cc48c569966e0be202f9"><div class="ttname"><a href="classApp_1_1Http_1_1Controllers_1_1ProjectController.html#acc2e77076795cc48c569966e0be202f9">App::Http::Controllers::ProjectController::create</a></div><div class="ttdeci">create()</div><div class="ttdoc">Show the form used to create a new project idea.</div><div class="ttdef"><b>Definition</b> <a href="ProjectController_8php_source.html#l01698">ProjectController.php:1698</a></div></div>
 <div class="ttc" id="aclassApp_1_1Http_1_1Controllers_1_1ProjectController_html_acc4b8648ebd9ab32f2d695709f64f055"><div class="ttname"><a href="classApp_1_1Http_1_1Controllers_1_1ProjectController.html#acc4b8648ebd9ab32f2d695709f64f055">App::Http::Controllers::ProjectController::participantsPage</a></div><div class="ttdeci">participantsPage()</div><div class="ttdoc">Render a simple view that consumes the JSON endpoint to list participants.</div><div class="ttdef"><b>Definition</b> <a href="ProjectController_8php_source.html#l02017">ProjectController.php:2017</a></div></div>
-<div class="ttc" id="aclassApp_1_1Http_1_1Controllers_1_1ProjectController_html_acc9c5eacfea40b9ea411d8a281058cf9"><div class="ttname"><a href="classApp_1_1Http_1_1Controllers_1_1ProjectController.html#acc9c5eacfea40b9ea411d8a281058cf9">App::Http::Controllers::ProjectController::store</a></div><div class="ttdeci">store(Request $request)</div><div class="ttdoc">Persist a new project idea following the role specific business rules.</div><div class="ttdef"><b>Definition</b> <a href="ProjectController_8php_source.html#l01837">ProjectController.php:1837</a></div></div>
+<div class="ttc" id="aclassApp_1_1Http_1_1Controllers_1_1ProjectController_html_acc9c5eacfea40b9ea411d8a281058cf9"><div class="ttname"><a href="classApp_1_1Http_1_1Controllers_1_1ProjectController.html#acc9c5eacfea40b9ea411d8a281058cf9">App::Http::Controllers::ProjectController::store</a></div><div class="ttdeci">store(Request $request)</div><div class="ttdoc">Persist a new project idea following the role specific business rules.</div><div class="ttdef"><b>Definition</b> <a href="ProjectController_8php_source.html#l01835">ProjectController.php:1835</a></div></div>
 <div class="ttc" id="aclassApp_1_1Http_1_1Controllers_1_1ProjectController_html_adb174590d6ee0bdf06f6f4463afc04f4"><div class="ttname"><a href="classApp_1_1Http_1_1Controllers_1_1ProjectController.html#adb174590d6ee0bdf06f6f4463afc04f4">App::Http::Controllers::ProjectController::programsAndLinesProjectsQuery</a></div><div class="ttdeci">programsAndLinesProjectsQuery(array $filters, ?User $user)</div><div class="ttdoc">Build the query used by the programs and lines report.</div><div class="ttdef"><b>Definition</b> <a href="ProjectController_8php_source.html#l01138">ProjectController.php:1138</a></div></div>
 <div class="ttc" id="aclassApp_1_1Http_1_1Controllers_1_1ProjectController_html_ae1323a36bd9ece1992b9536d1cb3e1f0"><div class="ttname"><a href="classApp_1_1Http_1_1Controllers_1_1ProjectController.html#ae1323a36bd9ece1992b9536d1cb3e1f0">App::Http::Controllers::ProjectController::show</a></div><div class="ttdeci">show(Project $project)</div><div class="ttdoc">Display the details of a project, including its latest version.</div><div class="ttdef"><b>Definition</b> <a href="ProjectController_8php_source.html#l01897">ProjectController.php:1897</a></div></div>
 <div class="ttc" id="aclassApp_1_1Http_1_1Controllers_1_1ProjectController_html_ae2d60f77787b6f4f48187a7735aa6054"><div class="ttname"><a href="classApp_1_1Http_1_1Controllers_1_1ProjectController.html#ae2d60f77787b6f4f48187a7735aa6054">App::Http::Controllers::ProjectController::applyTraceabilitySearchFilter</a></div><div class="ttdeci">applyTraceabilitySearchFilter(Builder $query, string $search, array $commentContentIds)</div><div class="ttdef"><b>Definition</b> <a href="ProjectController_8php_source.html#l01423">ProjectController.php:1423</a></div></div>
@@ -3098,18 +3098,18 @@ $(document).ready(function(){initNavTree('ProjectController_8php_source.html',''
 <div class="ttc" id="aclassApp_1_1Models_1_1Professor_html_a40972ba6a5a24a8fa59596c0268da934"><div class="ttname"><a href="classApp_1_1Models_1_1Professor.html#a40972ba6a5a24a8fa59596c0268da934">App::Models::Professor::user</a></div><div class="ttdeci">user()</div><div class="ttdoc">Get the user associated with the professor.</div><div class="ttdef"><b>Definition</b> <a href="Professor_8php_source.html#l00045">Professor.php:45</a></div></div>
 <div class="ttc" id="aclassApp_1_1Models_1_1Professor_html_ad2da7b4e640a943b256c39e03b9bf74c"><div class="ttname"><a href="classApp_1_1Models_1_1Professor.html#ad2da7b4e640a943b256c39e03b9bf74c">App::Models::Professor::cityProgram</a></div><div class="ttdeci">cityProgram()</div><div class="ttdoc">Get the city program that the professor belongs to.</div><div class="ttdef"><b>Definition</b> <a href="Professor_8php_source.html#l00053">Professor.php:53</a></div></div>
 <div class="ttc" id="aclassApp_1_1Models_1_1Project_html"><div class="ttname"><a href="classApp_1_1Models_1_1Project.html">App::Models::Project</a></div><div class="ttdef"><b>Definition</b> <a href="Project_8php_source.html#l00014">Project.php:15</a></div></div>
-<div class="ttc" id="aclassApp_1_1Models_1_1Project_html_a15197eb4854cf5d7ecd802ff9647b515"><div class="ttname"><a href="classApp_1_1Models_1_1Project.html#a15197eb4854cf5d7ecd802ff9647b515">App::Models::Project::professors</a></div><div class="ttdeci">professors()</div><div class="ttdef"><b>Definition</b> <a href="Project_8php_source.html#l00087">Project.php:87</a></div></div>
-<div class="ttc" id="aclassApp_1_1Models_1_1Project_html_a152d496578f09f42e1a3c553b0707128"><div class="ttname"><a href="classApp_1_1Models_1_1Project.html#a152d496578f09f42e1a3c553b0707128">App::Models::Project::contentFrameworkProjects</a></div><div class="ttdeci">contentFrameworkProjects()</div><div class="ttdef"><b>Definition</b> <a href="Project_8php_source.html#l00097">Project.php:97</a></div></div>
-<div class="ttc" id="aclassApp_1_1Models_1_1Project_html_a2957d15a78ccb6a5d46712c9ecb0503b"><div class="ttname"><a href="classApp_1_1Models_1_1Project.html#a2957d15a78ccb6a5d46712c9ecb0503b">App::Models::Project::projectStatus</a></div><div class="ttdeci">projectStatus()</div><div class="ttdef"><b>Definition</b> <a href="Project_8php_source.html#l00045">Project.php:45</a></div></div>
-<div class="ttc" id="aclassApp_1_1Models_1_1Project_html_a420e5cdaa9461c251dbb35622fd6f71c"><div class="ttname"><a href="classApp_1_1Models_1_1Project.html#a420e5cdaa9461c251dbb35622fd6f71c">App::Models::Project::proposalAcademicPeriod</a></div><div class="ttdeci">proposalAcademicPeriod()</div><div class="ttdef"><b>Definition</b> <a href="Project_8php_source.html#l00055">Project.php:55</a></div></div>
-<div class="ttc" id="aclassApp_1_1Models_1_1Project_html_a481cceca5ff749aeaead65b9482cfd23"><div class="ttname"><a href="classApp_1_1Models_1_1Project.html#a481cceca5ff749aeaead65b9482cfd23">App::Models::Project::versions</a></div><div class="ttdeci">versions()</div><div class="ttdef"><b>Definition</b> <a href="Project_8php_source.html#l00077">Project.php:77</a></div></div>
-<div class="ttc" id="aclassApp_1_1Models_1_1Project_html_a6e148fe6ffa1778de91228a3cbe51ec5"><div class="ttname"><a href="classApp_1_1Models_1_1Project.html#a6e148fe6ffa1778de91228a3cbe51ec5">App::Models::Project::students</a></div><div class="ttdeci">students()</div><div class="ttdef"><b>Definition</b> <a href="Project_8php_source.html#l00092">Project.php:92</a></div></div>
-<div class="ttc" id="aclassApp_1_1Models_1_1Project_html_aa00af01096f4ca490f1caf0642e07e55"><div class="ttname"><a href="classApp_1_1Models_1_1Project.html#aa00af01096f4ca490f1caf0642e07e55">App::Models::Project::contentFrameworks</a></div><div class="ttdeci">contentFrameworks()</div><div class="ttdef"><b>Definition</b> <a href="Project_8php_source.html#l00102">Project.php:102</a></div></div>
-<div class="ttc" id="aclassApp_1_1Models_1_1Project_html_aa7f598c5341f3abbdc5c667597789ac4"><div class="ttname"><a href="classApp_1_1Models_1_1Project.html#aa7f598c5341f3abbdc5c667597789ac4">App::Models::Project::stageHistories</a></div><div class="ttdeci">stageHistories()</div><div class="ttdef"><b>Definition</b> <a href="Project_8php_source.html#l00082">Project.php:82</a></div></div>
-<div class="ttc" id="aclassApp_1_1Models_1_1Project_html_aa96cc7a6d2323571a8ae63459a55a083"><div class="ttname"><a href="classApp_1_1Models_1_1Project.html#aa96cc7a6d2323571a8ae63459a55a083">App::Models::Project::thematicArea</a></div><div class="ttdeci">thematicArea()</div><div class="ttdef"><b>Definition</b> <a href="Project_8php_source.html#l00050">Project.php:50</a></div></div>
+<div class="ttc" id="aclassApp_1_1Models_1_1Project_html_a15197eb4854cf5d7ecd802ff9647b515"><div class="ttname"><a href="classApp_1_1Models_1_1Project.html#a15197eb4854cf5d7ecd802ff9647b515">App::Models::Project::professors</a></div><div class="ttdeci">professors()</div><div class="ttdef"><b>Definition</b> <a href="Project_8php_source.html#l00107">Project.php:107</a></div></div>
+<div class="ttc" id="aclassApp_1_1Models_1_1Project_html_a152d496578f09f42e1a3c553b0707128"><div class="ttname"><a href="classApp_1_1Models_1_1Project.html#a152d496578f09f42e1a3c553b0707128">App::Models::Project::contentFrameworkProjects</a></div><div class="ttdeci">contentFrameworkProjects()</div><div class="ttdef"><b>Definition</b> <a href="Project_8php_source.html#l00117">Project.php:117</a></div></div>
+<div class="ttc" id="aclassApp_1_1Models_1_1Project_html_a2957d15a78ccb6a5d46712c9ecb0503b"><div class="ttname"><a href="classApp_1_1Models_1_1Project.html#a2957d15a78ccb6a5d46712c9ecb0503b">App::Models::Project::projectStatus</a></div><div class="ttdeci">projectStatus()</div><div class="ttdef"><b>Definition</b> <a href="Project_8php_source.html#l00046">Project.php:46</a></div></div>
+<div class="ttc" id="aclassApp_1_1Models_1_1Project_html_a420e5cdaa9461c251dbb35622fd6f71c"><div class="ttname"><a href="classApp_1_1Models_1_1Project.html#a420e5cdaa9461c251dbb35622fd6f71c">App::Models::Project::proposalAcademicPeriod</a></div><div class="ttdeci">proposalAcademicPeriod()</div><div class="ttdef"><b>Definition</b> <a href="Project_8php_source.html#l00056">Project.php:56</a></div></div>
+<div class="ttc" id="aclassApp_1_1Models_1_1Project_html_a481cceca5ff749aeaead65b9482cfd23"><div class="ttname"><a href="classApp_1_1Models_1_1Project.html#a481cceca5ff749aeaead65b9482cfd23">App::Models::Project::versions</a></div><div class="ttdeci">versions()</div><div class="ttdef"><b>Definition</b> <a href="Project_8php_source.html#l00097">Project.php:97</a></div></div>
+<div class="ttc" id="aclassApp_1_1Models_1_1Project_html_a6e148fe6ffa1778de91228a3cbe51ec5"><div class="ttname"><a href="classApp_1_1Models_1_1Project.html#a6e148fe6ffa1778de91228a3cbe51ec5">App::Models::Project::students</a></div><div class="ttdeci">students()</div><div class="ttdef"><b>Definition</b> <a href="Project_8php_source.html#l00112">Project.php:112</a></div></div>
+<div class="ttc" id="aclassApp_1_1Models_1_1Project_html_aa00af01096f4ca490f1caf0642e07e55"><div class="ttname"><a href="classApp_1_1Models_1_1Project.html#aa00af01096f4ca490f1caf0642e07e55">App::Models::Project::contentFrameworks</a></div><div class="ttdeci">contentFrameworks()</div><div class="ttdef"><b>Definition</b> <a href="Project_8php_source.html#l00122">Project.php:122</a></div></div>
+<div class="ttc" id="aclassApp_1_1Models_1_1Project_html_aa7f598c5341f3abbdc5c667597789ac4"><div class="ttname"><a href="classApp_1_1Models_1_1Project.html#aa7f598c5341f3abbdc5c667597789ac4">App::Models::Project::stageHistories</a></div><div class="ttdeci">stageHistories()</div><div class="ttdef"><b>Definition</b> <a href="Project_8php_source.html#l00102">Project.php:102</a></div></div>
+<div class="ttc" id="aclassApp_1_1Models_1_1Project_html_aa96cc7a6d2323571a8ae63459a55a083"><div class="ttname"><a href="classApp_1_1Models_1_1Project.html#aa96cc7a6d2323571a8ae63459a55a083">App::Models::Project::thematicArea</a></div><div class="ttdeci">thematicArea()</div><div class="ttdef"><b>Definition</b> <a href="Project_8php_source.html#l00051">Project.php:51</a></div></div>
 <div class="ttc" id="aclassApp_1_1Models_1_1Student_html"><div class="ttname"><a href="classApp_1_1Models_1_1Student.html">App::Models::Student</a></div><div class="ttdoc">students table model, manages communication with the database using the root user,...</div><div class="ttdef"><b>Definition</b> <a href="Student_8php_source.html#l00015">Student.php:16</a></div></div>
-<div class="ttc" id="aclassApp_1_1Models_1_1Student_html_a46fcfb5c48fcf7591c7541e8767ac37f"><div class="ttname"><a href="classApp_1_1Models_1_1Student.html#a46fcfb5c48fcf7591c7541e8767ac37f">App::Models::Student::cityProgram</a></div><div class="ttdeci">cityProgram()</div><div class="ttdoc">Get the city program that the student belongs to.</div><div class="ttdef"><b>Definition</b> <a href="Student_8php_source.html#l00062">Student.php:62</a></div></div>
-<div class="ttc" id="aclassApp_1_1Models_1_1Student_html_af3237a316f5e0d39630a7fc7f40d5f19"><div class="ttname"><a href="classApp_1_1Models_1_1Student.html#af3237a316f5e0d39630a7fc7f40d5f19">App::Models::Student::projects</a></div><div class="ttdeci">projects()</div><div class="ttdoc">Get the projects assigned to the student.</div><div class="ttdef"><b>Definition</b> <a href="Student_8php_source.html#l00070">Student.php:70</a></div></div>
+<div class="ttc" id="aclassApp_1_1Models_1_1Student_html_a46fcfb5c48fcf7591c7541e8767ac37f"><div class="ttname"><a href="classApp_1_1Models_1_1Student.html#a46fcfb5c48fcf7591c7541e8767ac37f">App::Models::Student::cityProgram</a></div><div class="ttdeci">cityProgram()</div><div class="ttdoc">Get the city program that the student belongs to.</div><div class="ttdef"><b>Definition</b> <a href="Student_8php_source.html#l00075">Student.php:75</a></div></div>
+<div class="ttc" id="aclassApp_1_1Models_1_1Student_html_af3237a316f5e0d39630a7fc7f40d5f19"><div class="ttname"><a href="classApp_1_1Models_1_1Student.html#af3237a316f5e0d39630a7fc7f40d5f19">App::Models::Student::projects</a></div><div class="ttdeci">projects()</div><div class="ttdoc">Get the projects assigned to the student.</div><div class="ttdef"><b>Definition</b> <a href="Student_8php_source.html#l00083">Student.php:83</a></div></div>
 <div class="ttc" id="aclassApp_1_1Models_1_1User_html"><div class="ttname"><a href="classApp_1_1Models_1_1User.html">App::Models::User</a></div><div class="ttdoc">user table model, manages communication with the database using the root user, should not be used by ...</div><div class="ttdef"><b>Definition</b> <a href="User_8php_source.html#l00017">User.php:18</a></div></div>
 <div class="ttc" id="aclassApp_1_1Models_1_1User_html_a49efcb9e3b03c4867ce680e80d9f427f"><div class="ttname"><a href="classApp_1_1Models_1_1User.html#a49efcb9e3b03c4867ce680e80d9f427f">App::Models::User::professor</a></div><div class="ttdeci">professor()</div><div class="ttdoc">Professor profile associated with the user.</div><div class="ttdef"><b>Definition</b> <a href="User_8php_source.html#l00077">User.php:77</a></div></div>
 <div class="ttc" id="aclassApp_1_1Models_1_1User_html_af8dcd04bd243a915211126ed63a33839"><div class="ttname"><a href="classApp_1_1Models_1_1User.html#af8dcd04bd243a915211126ed63a33839">App::Models::User::student</a></div><div class="ttdeci">student()</div><div class="ttdoc">Student profile associated with the user.</div><div class="ttdef"><b>Definition</b> <a href="User_8php_source.html#l00085">User.php:85</a></div></div>

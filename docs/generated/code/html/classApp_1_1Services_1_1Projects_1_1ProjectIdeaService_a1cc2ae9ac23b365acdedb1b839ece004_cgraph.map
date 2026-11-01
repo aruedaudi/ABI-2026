@@ -18,7 +18,7 @@
 <area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="110,400,157,465,189,499,226,529,247,541,245,546,222,534,185,503,153,468,106,403"/>
 <area shape="rect" id="Node000015" href="$classApp_1_1Services_1_1Projects_1_1ProjectIdeaService.html#a0b47b1f39f1eeaf3a430ac8317b89639" title="Synchronises the contact fields for the student and their linked user." alt="" coords="253,621,435,676"/>
 <area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="103,401,119,446,144,502,180,559,201,585,226,608,242,619,239,623,222,612,198,589,176,562,140,504,114,448,98,403"/>
-<area shape="rect" id="Node000016" href="$classApp_1_1Services_1_1Projects_1_1ProjectIdeaService.html#aff7e931a99d3894b0909ac0d3df392f6" title="Checks if any teammate already owns a different project idea." alt="" coords="224,700,464,755"/>
+<area shape="rect" id="Node000016" href="$classApp_1_1Services_1_1Projects_1_1ProjectIdeaService.html#aff7e931a99d3894b0909ac0d3df392f6" title="Checks if any teammate already owns a different project idea that is still active." alt="" coords="224,700,464,755"/>
 <area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="98,401,110,460,133,537,150,578,171,617,196,654,226,687,229,690,226,694,222,691,192,657,166,620,145,580,128,539,105,461,93,402"/>
 <area shape="rect" id="Node000006" href="$classApp_1_1Models_1_1Project.html#a6e148fe6ffa1778de91228a3cbe51ec5" title=" " alt="" coords="531,235,685,275"/>
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="446,253,517,253,517,258,446,258"/>

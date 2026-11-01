@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AcademicProcessWindow;
 use App\Models\Postulation;
 use App\Models\PostulationMember;
 use App\Models\PostulationPriority;
@@ -58,7 +59,12 @@ class PostulationController extends Controller
         $activePeriod = AcademicCalendarService::currentActivePeriod();
 
         if (! $this->academicProgress->canAccessIdeaBank($student, $activePeriod)) {
-            abort(403, $this->academicProgress->blockedIdeaBankMessage($student, $activePeriod));
+    return redirect('/students/projects/postulations')
+        ->with('error', $this->academicProgress->blockedIdeaBankMessage($student, $activePeriod));
+}
+
+        if ($unavailable = $this->ensureProjectIsPostulable($project, $student)) {
+            return $unavailable;
         }
 
         if ($student->hasActiveProject()) {
@@ -88,7 +94,7 @@ class PostulationController extends Controller
             ->where('semester', $student->semester)
             ->where('id', '!=', $student->id)
             ->whereDoesntHave('projects', function ($q) {
-                $q->whereHas('projectStatus', fn ($s) => $s->whereNotIn('name', ['Rechazado', 'Devuelto para correccion']));
+                $q->whereHas('projectStatus', fn ($s) => $s->whereNotIn('name', Student::INACTIVE_PROJECT_STATUSES));
             })
             ->orderBy('name')
             ->orderBy('last_name')
@@ -113,17 +119,32 @@ class PostulationController extends Controller
         return view('postulations.student.create', compact('project', 'student', 'availableStudents', 'availablePriorities', 'maxStudents'));
     }
 
-    public function store(Request $request)
+        public function store(Request $request)
     {
         $student = Student::where('user_id', Auth::id())->firstOrFail();
         $project = Project::findOrFail($request->project_id);
+        $activePeriod = AcademicCalendarService::currentActivePeriod();
 
-        // Si ya existe una postulación rechazada para este mismo proyecto y este estudiante,
-        // la eliminamos ANTES de validar para liberar la prioridad y evitar conflictos UNIQUE
-        Postulation::where('project_id', $project->id)
+        if (! $this->academicProgress->canAccessIdeaBank($student, $activePeriod)) {
+            abort(403, $this->academicProgress->blockedIdeaBankMessage($student, $activePeriod));
+        }
+
+        // Debe validarse antes de tocar datos: el borrado de abajo es destructivo.
+        if ($unavailable = $this->ensureProjectIsPostulable($project, $student)) {
+            return $unavailable;
+        }
+
+        if ($unavailable = $this->ensureProjectIsPostulable($project, $student)) {
+            return $unavailable;
+        }
+
+        // Postulaciones rechazadas de este estudiante al mismo proyecto. Se reemplazan
+        // (UNIQUE project_id + lead_student_id) solo cuando la nueva se guarda bien.
+        $rejectedPostulations = Postulation::where('project_id', $project->id)
             ->where('lead_student_id', $student->id)
             ->where('status', 'rejected')
-            ->delete();
+            ->get();
+        $rejectedIds = $rejectedPostulations->pluck('postulation_id')->all();
 
         $maxStudents = $project->maxStudents();
 
@@ -138,16 +159,24 @@ class PostulationController extends Controller
                 'required',
                 'integer',
                 'in:1,2,3',
-                Rule::unique('postulation_priorities', 'priority_order')->where('student_id', $student->id),
+                Rule::unique('postulation_priorities', 'priority_order')
+                    ->where('student_id', $student->id)
+                    ->whereNotIn('postulation_id', $rejectedIds),
             ],
             'teammates' => ['required_if:modality,team', 'array', 'max:'.($maxStudents - 1)],
             'teammates.*.id' => [
                 'nullable',
+                'distinct', // REGLA NUEVA: Evita que el mismo ID se repita en el arreglo
+                Rule::notIn([$student->id]), // REGLA NUEVA: Evita que el líder se agregue a sí mismo
                 Rule::exists('students', 'id')
                     ->where('city_program_id', $student->city_program_id)
                     ->where('semester', $student->semester),
             ],
             'teammates.*.role' => 'required_with:teammates.*.id|nullable|string|max:255',
+        ], [
+            // MENSAJES NUEVOS: Para avisarle al estudiante qué pasó
+            'teammates.*.id.distinct' => 'No puedes seleccionar al mismo compañero más de una vez.',
+            'teammates.*.id.not_in' => 'No puedes seleccionarte a ti mismo como compañero de equipo.',
         ]);
 
         if ($student->hasActiveProject()) {
@@ -172,6 +201,10 @@ class PostulationController extends Controller
 
         DB::beginTransaction();
         try {
+            // Se borran dentro de la transacción: si algo falla, el rollback las conserva.
+            // Sus miembros y prioridades se eliminan en cascada.
+            Postulation::whereIn('postulation_id', $rejectedIds)->delete();
+
             $filePath = $request->file('grades_file')->store('postulations/grades', 'local');
 
             $postulation = Postulation::create([
@@ -214,6 +247,13 @@ class PostulationController extends Controller
 
             DB::commit();
 
+            // Los PDF de notas de las postulaciones reemplazadas ya no tienen registro que los use
+            foreach ($rejectedPostulations as $rejected) {
+                if ($rejected->grades_file && $rejected->grades_file !== $filePath) {
+                    Storage::disk('local')->delete($rejected->grades_file);
+                }
+            }
+
             return redirect()->route('students.postulations.index')
                 ->with('success', 'Tu postulación ha sido enviada exitosamente.');
 
@@ -223,8 +263,33 @@ class PostulationController extends Controller
                 Storage::disk('local')->delete($filePath);
             }
 
-            return back()->with('error', 'Ocurrió un error al procesar tu postulación: '.$e->getMessage());
+            // Guardamos el error técnico en laravel.log para los programadores
+            \Log::error('Error al procesar postulación: ' . $e->getMessage(), ['exception' => $e]);
+            
+            // Al estudiante le mostramos un mensaje amigable y conservamos sus datos con withInput()
+            return back()->withInput()->with('error', 'Ocurrió un error inesperado al procesar tu postulación. Por favor, verifica los datos e inténtalo de nuevo.');
         }
+    }
+
+    /**
+     * Aplica las mismas reglas del banco de ideas: ventana de selección abierta,
+     * proyecto aprobado y perteneciente al programa del estudiante.
+     */
+    private function ensureProjectIsPostulable(Project $project, Student $student)
+    {
+        if (! AcademicCalendarService::currentWindowForProcess(AcademicProcessWindow::PROCESS_IDEA_SELECTION)) {
+            return view(
+                'academic-calendar.unavailable',
+                AcademicCalendarService::unavailableActivityViewData(AcademicProcessWindow::PROCESS_IDEA_SELECTION)
+            );
+        }
+
+                if (! $project->isAvailableForStudent($student)) {
+            return redirect()->route('students.projects.approved.index')
+                ->with('error', 'Solo puedes postularte a ideas aprobadas de tu programa académico.');
+        }
+
+        return null;
     }
 
     public function destroy(Postulation $postulation)

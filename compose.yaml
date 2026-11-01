@@ -1,0 +1,69 @@
+# Despliegue con Docker. La variable APP_MODE del .env (development | production)
+# decide el comportamiento del Dockerfile y del entrypoint.
+#   docker compose up -d --build
+
+services:
+  app:
+    build:
+      context: .
+      args:
+        APP_MODE: ${APP_MODE:-production}
+    image: abi-app
+    ports:
+      - "${APP_PORT:-8000}:80"
+    env_file:
+      - .env
+    environment:
+      APP_MODE: ${APP_MODE:-production}
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_USERNAME: root
+      DB_PASSWORD: ${DB_PASSWORD:-root}
+      DB_DATABASE: ${DB_DATABASE:-laravel}
+      SETUP_DB_ROLES: ${SETUP_DB_ROLES:-true}
+      RUN_SEEDERS: ${RUN_SEEDERS:-true}
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - storage-data:/var/www/html/storage/app/public
+    restart: unless-stopped
+    networks:
+      - abi
+
+  db:
+    image: mariadb:11
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MARIADB_ROOT_PASSWORD: ${DB_PASSWORD:-root}
+      MARIADB_DATABASE: ${DB_DATABASE:-abi}
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "mariadb-admin",
+          "ping",
+          "-h",
+          "localhost",
+          "-u",
+          "root",
+          "-p${DB_PASSWORD:-root}",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 400s
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - abi
+
+volumes:
+  db-data:
+  storage-data:
+
+networks:
+  abi:
+    driver: bridge

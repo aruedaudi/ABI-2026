@@ -20,8 +20,8 @@ yarn-error.log
 .scribe
 .env
 docker-compose.yml
-
+.claude-flow
 
 .continue
 /database/sql/my-roles.sql
-/scripts/my-set-db-roles.ps1
+/scripts/set-db-roles.ps1

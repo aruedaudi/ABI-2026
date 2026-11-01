@@ -1,27 +1,29 @@
 <map id="App::Models::Project::students" name="App::Models::Project::students">
-<area shape="rect" id="Node000001" title=" " alt="" coords="1100,431,1255,471"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="1100,467,1255,507"/>
 <area shape="rect" id="Node000002" href="$classApp_1_1Http_1_1Controllers_1_1BankApprovedIdeasAssignController.html#aaa40633f6ad94204084042152841fb74" title=" " alt="" coords="785,31,1052,85"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1171,418,1163,351,1143,265,1128,220,1107,176,1082,135,1050,99,1036,88,1040,83,1054,95,1086,131,1112,173,1133,218,1148,263,1168,350,1177,417"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1173,454,1166,380,1148,285,1132,234,1111,185,1084,139,1050,99,1036,88,1040,83,1054,95,1089,136,1116,183,1137,232,1153,283,1172,379,1178,453"/>
 <area shape="rect" id="Node000003" href="$classApp_1_1Http_1_1Controllers_1_1ProjectVersionController.html#adacb95202c38fa936cb57ac339917dc0" title="Restrict the version history to the project&#39;s own participants, research staff, and committee leaders..." alt="" coords="825,109,1012,164"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1168,419,1155,365,1132,300,1098,234,1076,204,1050,177,1032,165,1011,155,1013,150,1035,160,1054,173,1080,200,1103,231,1137,298,1160,364,1173,417"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1170,454,1159,395,1137,320,1122,281,1102,243,1079,208,1050,177,1032,164,1011,154,1013,150,1035,160,1054,173,1083,205,1107,240,1127,279,1143,318,1164,393,1175,453"/>
 <area shape="rect" id="Node000008" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#a2a1b70d892c5194d1203a6449baadfac" title="Guard access to edit/update operations ensuring the user participates in the project." alt="" coords="815,267,1023,321"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="1150,423,1106,377,1079,354,1051,335,1022,321,1024,316,1053,330,1083,350,1110,373,1153,419"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="1156,457,1113,394,1084,362,1051,335,1022,320,1024,315,1053,330,1087,358,1117,391,1160,453"/>
 <area shape="rect" id="Node000009" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#a97e2b94a18babf3ec770fb491b12fa5a" title=" " alt="" coords="798,345,1039,400"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="1101,430,1051,414,1014,403,1015,397,1053,409,1103,425"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="1135,462,1095,437,1051,414,1022,403,1024,398,1053,409,1098,432,1138,457"/>
 <area shape="rect" id="Node000013" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#a8eca93212c12c16305928089124a9a7f" title="Build a portable snapshot so each version preserves the project state of that moment." alt="" coords="807,424,1031,479"/>
-<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="1086,454,1031,454,1031,449,1086,449"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="1086,477,1031,470,1031,464,1087,472"/>
 <area shape="rect" id="Node000014" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#a1a5cbe33cd3fb125fa815009ad08ece0" title="Display the edit form with the existing project information." alt="" coords="833,503,1005,543"/>
-<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="1101,478,1053,493,1003,506,1002,501,1051,487,1100,473"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="1087,503,1005,514,1004,509,1086,497"/>
 <area shape="rect" id="Node000015" href="$classApp_1_1Services_1_1Projects_1_1ProjectIdeaService.html#a8508965dd3de4879787a4bd55f11f4a7" title="Determines if a duplicate project already exists for the provided student lineup." alt="" coords="817,568,1020,623"/>
-<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="1149,483,1106,522,1053,558,1021,572,1019,567,1051,553,1103,518,1145,479"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="1133,517,1053,558,1019,570,1018,565,1051,553,1131,512"/>
 <area shape="rect" id="Node000017" href="$classApp_1_1Http_1_1Controllers_1_1ProjectController.html#a01f301c831deec8989b3edf0f3b00a0c" title="Persist the project data for a student either creating or updating a record." alt="" coords="823,647,1014,701"/>
-<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="1165,485,1147,521,1123,562,1091,603,1054,638,1016,658,1013,653,1050,633,1087,599,1118,559,1142,518,1160,483"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="1160,520,1116,580,1087,611,1053,638,1015,656,1013,651,1051,633,1083,607,1112,577,1155,517"/>
 <area shape="rect" id="Node000018" href="$classApp_1_1Http_1_1Controllers_1_1ProjectVersionController.html#a66279c21a7515cf7b7e7227dc4bcaa2b" title="Build a compatible snapshot for legacy and new versions." alt="" coords="825,188,1012,243"/>
-<area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="1162,420,1145,382,1121,337,1089,293,1050,256,1011,235,1013,231,1054,252,1093,290,1125,335,1150,379,1167,418"/>
+<area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="1165,455,1150,410,1126,356,1093,302,1073,278,1050,256,1032,244,1011,234,1013,229,1034,239,1054,252,1077,274,1098,299,1131,354,1155,408,1170,453"/>
 <area shape="rect" id="Node000019" href="$classApp_1_1Http_1_1Controllers_1_1BankApprovedIdeasForProfessorsController.html#aeb7ae4b548502b0d6d8ff88d43a38acf" title="Los profesores pueden ver el detalle de una idea aprobada sin depender de la ventana del calendario." alt="" coords="795,725,1043,780"/>
-<area shape="poly" id="edge20_Node000001_Node000019" title=" " alt="" coords="1172,485,1158,536,1135,598,1101,662,1079,691,1054,716,1038,727,1035,723,1050,712,1075,687,1097,659,1130,596,1153,535,1167,484"/>
+<area shape="poly" id="edge20_Node000001_Node000019" title=" " alt="" coords="1169,522,1154,566,1130,618,1097,671,1076,695,1054,716,1037,727,1034,723,1050,712,1073,691,1092,668,1125,616,1149,564,1164,520"/>
 <area shape="rect" id="Node000020" href="$classApp_1_1Http_1_1Controllers_1_1BankApprovedIdeasForStudentsController.html#a1da16a4a5c61221cfdcd5ec9887a8a9e" title=" " alt="" coords="800,804,1037,859"/>
-<area shape="poly" id="edge21_Node000001_Node000020" title=" " alt="" coords="1176,486,1167,551,1147,634,1131,677,1110,720,1085,760,1054,795,1039,806,1036,802,1050,791,1081,756,1106,717,1126,675,1141,632,1162,550,1171,485"/>
+<area shape="poly" id="edge21_Node000001_Node000020" title=" " alt="" coords="1175,521,1163,580,1142,653,1126,692,1106,729,1082,764,1054,795,1039,806,1035,802,1050,791,1078,761,1102,726,1121,690,1137,652,1158,579,1169,520"/>
+<area shape="rect" id="Node000021" href="$classApp_1_1Http_1_1Controllers_1_1Api_1_1ProjectApiController.html#ae795800d857da0b352925261c7439254" title=" " alt="" coords="824,883,1013,937"/>
+<area shape="poly" id="edge22_Node000001_Node000021" title=" " alt="" coords="1178,521,1171,593,1152,688,1137,738,1115,787,1088,833,1054,873,1035,887,1015,897,1012,893,1033,883,1050,869,1084,830,1111,785,1132,736,1147,687,1166,593,1173,520"/>
 <area shape="rect" id="Node000004" href="$classApp_1_1Http_1_1Controllers_1_1ProjectVersionController.html#a1e7a29698c8e8059016e3c415930966d" title="Display an informational screen because versions are generated automatically." alt="" coords="529,5,716,60"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="811,109,784,99,736,75,705,63,707,58,738,70,786,94,813,104"/>
 <area shape="rect" id="Node000005" href="$classApp_1_1Http_1_1Controllers_1_1ProjectVersionController.html#a54f3f58279e6aa956031453c044284e9" title="Display an informational screen because versions are read&#45;only." alt="" coords="513,85,733,125"/>

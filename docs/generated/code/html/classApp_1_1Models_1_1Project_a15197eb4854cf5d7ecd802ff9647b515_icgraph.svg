@@ -48,7 +48,7 @@
 <script type="application/ecmascript">
 var viewWidth = 931;
 var viewHeight = 707;
-var sectionId = 'dynsection-7';
+var sectionId = 'dynsection-8';
 </script>
 <script type="application/ecmascript" xlink:href="svg.min.js"/>
 <svg id="graph" class="graph">
@@ -266,11 +266,11 @@ var sectionId = 'dynsection-7';
 <!-- Node20 -->
 <g id="Node000020" class="node">
 <title>Node20</title>
-<g id="a_Node000020"><a xlink:href="classApp_1_1Http_1_1Controllers_1_1BankApprovedIdeasForStudentsController.html#a1da16a4a5c61221cfdcd5ec9887a8a9e" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="767,-41 589,-41 589,0 767,0 767,-41"/>
-<text text-anchor="start" x="597" y="-29" font-family="Helvetica,sans-Serif" font-size="10.00">App::Http::Controllers</text>
-<text text-anchor="start" x="597" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">::BankApprovedIdeasForStudents</text>
-<text text-anchor="middle" x="678" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Controller::show</text>
+<g id="a_Node000020"><a xlink:href="classApp_1_1Http_1_1Controllers_1_1Api_1_1ProjectApiController.html#ae795800d857da0b352925261c7439254" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="749,-41 607,-41 607,0 749,0 749,-41"/>
+<text text-anchor="start" x="615" y="-29" font-family="Helvetica,sans-Serif" font-size="10.00">App::Http::Controllers</text>
+<text text-anchor="start" x="615" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">::Api::ProjectApiController</text>
+<text text-anchor="middle" x="678" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">::update</text>
 </a>
 </g>
 </g>
@@ -278,7 +278,7 @@ var sectionId = 'dynsection-7';
 <g id="edge21_Node000001_Node000020" class="edge">
 <title>Node1&#45;&gt;Node20</title>
 <g id="a_edge21_Node000001_Node000020"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M862.26,-285.08C857.36,-233.29 838.93,-114.96 771,-49.5 767.74,-46.36 764.15,-43.56 760.33,-41.07"/>
+<path fill="none" stroke="#63b8ff" d="M862.26,-285.08C857.36,-233.29 838.93,-114.96 771,-49.5 764.73,-43.46 757.21,-38.67 749.21,-34.88"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="858.8,-285.69 863.14,-295.36 865.78,-285.09 858.8,-285.69"/>
 </a>
 </g>
